@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{width: 100px;height: 100px;background: yellow;transition:4s;}
+		input{width: 100px;}
+		*{margin: 0;padding: 0;} 
+	</style>
+</head>
+<body>
+	<input type="button" value = "改变样式" id = "btn">
+	<div id = "div1"></div>
+
+	<script>
+		//通过id获取元素
+		var Btn = document.getElementById("btn");
+		var Div = document.getElementById("div1");
+		Btn.onclick = function(){
+			Div.style.background= "pink";
+			Div.style.width     = "300px";
+			Div.style.height     = "300px";
+		}
+	</script>
+</body>
+</html>
