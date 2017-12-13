@@ -17,21 +17,20 @@
 		//通过id获取元素
 		var Btn = document.getElementById("btn");
 		var Div = document.getElementById("div1");
-		// Btn.onclick = function(){
-		// 	Div.style.background= "pink";
-		// 	Div.style.width     = "300px";
-		// 	Div.style.height     = "300px";
-		// }
-		Btn.onmouseover = function(){
-			Div.style.background= "pink";
-			Div.style.width     = "300px";
-			Div.style.height     = "300px";
-		}
-		Btn.onmouseout = function(){
-			Div.style.background= "yellow";
-			Div.style.width     = "100px";
-			Div.style.height     = "100px";
-		}
+		console.log(Btn);
+		console.dir(Btn);//key , value 键值对 的形式描述一个对象 
+		/*{属性名:属性值,
+			属性名:属性值,
+			属性名:属性值,
+			属性名:属性值,
+			属性名:属性值,
+			属性名:属性值,}
+			*/
+		/*属性操作
+			增删改查属性
+			*/
+			Btn.style.fontSize="50px";
+			Btn.style.width="300px";
 	</script>
 </body>
 </html>

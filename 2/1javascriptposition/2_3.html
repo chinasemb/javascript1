@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script>
+	let str = "12hueeuirfh428prnejfn4y3fbw4yu3ih24748fu34";
+
+	let arr = [];
+
+	let temp = "";
+
+	for (let i = 0; i < str.length; i++) {
+		if(!isNaN(parseInt(str[i]))){
+			temp += str[i];
+		}else{
+			if(temp){
+				arr.push(temp);
+				temp = "";
+			}
+		}
+	};
+	if(temp){
+		arr.push(temp);
+		temp = "";
+	}
+	console.log(arr);
+</script>
+</body>
+</html>
