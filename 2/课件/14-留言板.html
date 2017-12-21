@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			div {
+				width: 100px;
+				height: 200px;
+				background: red;
+			}
+		</style>
+		
+	</head>
+
+	<body>
+		<input type="text" id="message" />
+		<input type="button" id="send" value="提交" />
+		<ul id="list">
+			<li>45</li>
+		</ul>
+		
+		<script>
+			// 点击提交按钮 找value值 value值写成 li结构放在 ul中
+
+			var message = document.getElementById('message');
+			var send = document.getElementById('send');
+			var list = document.getElementById('list');
+
+			message.focus(); // 自动获取光标
+
+			// 点击提交按钮
+			send.onclick = function () {
+				// 做事情
+				console.log(message.value); // 找value值
+				// '<li>message.value</li>' // 写成字符串的结构
+				// message.value 不能作为字符串的一部分，需要让浏览器解析 去元素中那value值
+				// 字符串拼接
+				// 先保留之前的html结构，然后拼上最新的
+				var oldHtml = list.innerHTML;
+				//list.innerHTML = oldHtml + '<li>'+message.value+'</li>';
+				list.innerHTML = '<li>'+message.value+'</li>' + oldHtml;
+
+				message.value = '';
+			}
+
+
+
+		</script>
+	</body>
+</html>

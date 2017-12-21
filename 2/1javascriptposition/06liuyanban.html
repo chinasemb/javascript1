@@ -7,18 +7,23 @@
 <body>
 	<input type="text" id = "message">
 	<input type="button" id = "btn" value = "提交">
-	<ul id = "list ">
-		<li>123</li>
+	<ul >
+		<li id = "list">123</li>
 	</ul>
 	<script>
 		var message    = document.getElementById("message");
 		var Btn        = document.getElementById("btn");
 		var list       = document.getElementById("list");
+
+		message.focus();
+
 		Btn.onclick = function(){
 			console.log(message.value);
 			
-			list.innerHTML = '<li>'+message.value+'</li>';
-			//message.value = "" ;
+			var oldHtml = list.innerHTML;
+			console.log(oldHtml);
+			list.innerHTML = '<li>'+message.value+'</li>' + oldHtml;
+			message.value = "" ;
 		}
 	</script>
 </body>

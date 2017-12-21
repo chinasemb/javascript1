@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			div {
+				width: 100px;
+				height: 100px;
+				background: yellow;
+				transition: 1s;
+			}
+		</style>
+		
+	</head>
+
+	<body>
+		<input type="button" value="改变div的样式" id="btn"  />
+		<div id="box"></div>
+		
+		<script>
+			/*
+				声明函数
+					function
+				语法：
+					function 函数名字(){
+						// 代码
+					}
+				调用函数
+					函数名字()
+
+				函数定义：
+					1. 函数声明
+						function 函数名字(){
+							// 代码
+						}
+					2. 函数表达式
+						把函数作为一个值赋给变量
+
+				匿名函数
+					没有名字的函数
+					function (){}
+					匿名函数必须立马使用
+						调用
+						赋给一个变量或属性
+
+			*/
+			// 函数表达式
+			var ketang = function func(){
+				console.log(123)
+				console.log(123)
+				console.log(123)
+				console.log(123)
+			}
+
+			ketang();
+
+			// 函数声明 一定要写名字
+			/*function (){  
+
+			}*/
+
+			// 匿名函数自执行
+			(function (){
+				console.log('miaov');
+				console.log('miaov');
+				console.log('miaov');
+				console.log('miaov');
+				console.log('miaov');
+			})()
+
+		</script>
+	</body>
+</html>
