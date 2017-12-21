@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{
+			width: 300px;
+			height: 300px;
+			border:1px solid red;
+			background-color: pink;
+
+		}
+		
+		.width{
+			width:100px;
+		}
+		.yellow{
+			background-color: yellow;
+		}
+		
+	</style>
+</head>
+<body>
+	<input type="button" value="测试改变样式" id="add">
+	<div id="box" class ="yellow">miaovketang</div>
+
+<script>
+	var changeStyle = document.getElementById("add");
+	var box = document.getElementById("box");
+
+	changeStyle.onclick = function(){
+		// box.style.width = "200px";
+		// box.style.height = "200px";
+		// box.style.fontSize = "28px";
+		// box.style.backgroundColor = "blue";
+		// box.className = "yellow width height"
+				
+		// box.classList.add("width");
+		// box.classList.remove("yellow");
+		box.classList.toggle("width");
+	}
+
+
+</script>	
+</body>
+</html>
