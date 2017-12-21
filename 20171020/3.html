@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{
+			width: 100px;
+			height: 100px;
+			background: red;
+			-webkit-transition: 5s;
+			-moz-transition: 5s ;
+			-ms-transition: 5s ;
+			-o-transition: 5s ;
+			transition: 5s ;
+		}
+	</style>
+</head>
+
+<body>
+	<input type="text" id = "num">
+	<input type="button" value = "测试" id="btn">
+	<div id = "box"></div>
+<script>
+
+	
+	/*
+		if(条件成立){
+			//条件成立为真,代码块执行        true
+			//条件不成立为真,代码块不执行    false
+
+			//在if()中会把条件转化成布尔值:true,false
+		}
+	*/
+	// var n =10;
+	// if(n<11){
+	// 	console.log("今天的心情非常美丽")
+	// };
+
+	var btn = document.getElementById("btn");
+	var box = document.getElementById("box");
+	var num = document.getElementById("num");
+
+	btn.onclick = function(){
+
+		var value = num.value;
+		if(value == "123"){
+			box.style.backgroundColor = "pink";
+			box.style.width = "600px";
+			box.style.height = "600px";
+		}
+	}
+
+
+</script>	
+</body>
+</html>
