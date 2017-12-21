@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" id="num1">
+	<input type="text" id="num2">
+	<input type="button" value="相加" id="add">
+	<span id="result"></span>
+
+<script>
+	/*
+		
+	*/
+	console.log(1+1);//加法运算
+
+	console.log("1"+1);
+
+	console.log("1"+1+1);//字符串拼接:如果有一边为字符串,也会把另外一边转化为字符串,做字符串拼接.
+
+	var num1 	= document.getElementById('num1')
+	var num2 	= document.getElementById('num2')
+	var add 	= document.getElementById('add')
+	var result  = document.getElementById('result')
+
+	add.onclick = function (){
+
+		result.innerHTML = num1.value + num2.value ;//一律不是数字,是字符串.
+	}
+
+</script>	
+</body>
+</html>
