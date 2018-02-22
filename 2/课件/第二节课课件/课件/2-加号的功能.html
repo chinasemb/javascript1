@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			
+		</script>
+	</head>
+
+	<body>
+		<input type="text" id="num1" />
+		<input type="text" id="num2" />
+		<input type="button" value="相加" id="add" />
+		<span id="result"></span>
+		<script>
+			//  type="text/javascript" 告诉js的解析器解析为js 可以省略
+
+			/*
+				+
+					加法运算
+						如果两边都为数字，做加法运算
+					 字符串拼接
+						如果有一边为字符串，会把另一边转成字符串，做字符串拼接
+			*/
+
+			var num1 = document.getElementById('num1');
+			var num2 = document.getElementById('num2');
+			var add = document.getElementById('add');
+			var result = document.getElementById('result')
+
+			// 获取的value值都是字符串
+
+			// 数据类型转换？？？
+
+			add.onclick = function(){ // 点击的时候获取value值
+				result.innerHTML = num1.value + num2.value;
+			}
+
+
+
+		</script>
+	</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			
+		</script>
+	</head>
+
+	<body>
+		<input type="text" id="num1" />
+		<span>+</span>
+		<input type="text" id="num2" />
+		<input type="button"  value="相加" id="add" />
+		<script>
+			/*
+				转数字类型 		=> Number(要转换的值)
+				转字符串类型 	=> String(要转换的值)
+				转布尔值类型	=> Boolean(要转换的值)
+
+			*/
+
+			// 转成数字类型 内置对象 Number()
+
+			/*
+				NaN
+				要转的值不能转为数字时，用NaN表示
+				NaN：Not a Number
+				特点：
+					NaN是数字类型
+					NaN和任何值都不相等，包括他自身
+					NaN和任何值运算比较时，都为false
+
+			*/
+
+			/*console.log( Number(1) );
+			console.log( Number("123") );  // 纯数字的字符串
+			console.log( Number("miaov") );   // NaN
+			console.log( Number("3mia1ov") );  // NaN
+			console.log( Number(true) );      // 1
+			console.log( Number(false) );     // 0
+			console.log( Number(undefined) );  // NaN
+			console.log( Number(null) );     // 0
+			console.log( Number({}) );      // NaN*/
+
+			/*console.log(typeof NaN);  // 'number'
+
+			console.log( {} - 123 );
+			console.log( undefined + 123 );  // NaN
+
+			*/
+
+			console.log(NaN == NaN);
+			console.log(NaN == 1);
+			console.log(NaN == true);
+			console.log(NaN < 10);
+			console.log(NaN <= 10);
+			console.log(NaN >= 10);
+			console.log(NaN + 1);
+			console.log(NaN - 1);
+			console.log(NaN * 1);
+			console.log(1 == 1);
+
+		</script>
+	</body>
+</html>

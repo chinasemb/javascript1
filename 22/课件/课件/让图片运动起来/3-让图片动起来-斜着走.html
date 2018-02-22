@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			#runImg {
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+		</style>
+		<script>
+			
+		</script>
+	</head>
+
+	<body>
+		<img src="./logo.jpg" id="runImg" />
+		<script>
+			let runImg = document.getElementById("runImg");
+			// 同时按下去两个键，只能记录一个键
+			let timer = null;
+
+			let saveKeyCodeObj = {}
+			// {37：true,38:true}
+			// {37:true,38:false}
+
+			document.onkeydown = function (ev){
+
+				saveKeyCodeObj[ev.keyCode] = true
+				if(timer) {
+					return;
+				}
+				run();	
+			}
+
+			document.onkeyup = function (ev){
+				saveKeyCodeObj[ev.keyCode] = false
+
+				// 所有的键都抬起的时候才清
+				let state = true; // 假装都停止
+				for(let attr in saveKeyCodeObj){
+					if( saveKeyCodeObj[attr] ){
+						state = false;  // 立马标示为false，说明有一个还没停止
+						break;
+					}
+				}
+
+				if(state){
+					clearInterval(timer);
+					timer = null;
+				}
+
+			}
+
+			function run(){
+				timer = setInterval(function (){
+					console.log(123);
+					if(saveKeyCodeObj[37]){
+						runImg.style.left = runImg.offsetLeft - 1 + 'px';
+					}
+					if(saveKeyCodeObj[38]){
+						runImg.style.top = runImg.offsetTop - 1 + 'px';
+					}
+					if(saveKeyCodeObj[39]){
+						runImg.style.left = runImg.offsetLeft + 1 + 'px';
+					}
+					if(saveKeyCodeObj[40]){
+						runImg.style.top = runImg.offsetTop + 1 + 'px';
+					}	
+				})
+			}
+
+
+			/*
+
+				// 开启一个定时器,在最小的时间
+				//clearInterval(timer)
+				if(timer) { //保证只能有一个定时器开启
+					return;
+				}
+				timer = setInterval(function (){
+					if(ev.keyCode === 39){
+						runImg.style.left = runImg.offsetLeft + 1 + 'px';
+					}else if(ev.keyCode === 40){
+						runImg.style.top = runImg.offsetTop + 1 + 'px';
+					}
+					else if(ev.keyCode === 37){
+						runImg.style.left = runImg.offsetLeft - 1 + 'px';
+					}
+					else if(ev.keyCode === 38){
+						runImg.style.top = runImg.offsetTop - 1 + 'px';
+					}	
+				})
+			*/
+
+
+		</script>
+	</body>
+</html>

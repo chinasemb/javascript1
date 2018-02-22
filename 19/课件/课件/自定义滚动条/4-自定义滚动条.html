@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			#bar-box {
+				height: 500px;
+				width: 30px;
+				border-left: 1px solid #000;
+				position: absolute;
+				right: 0;
+				top: 0;
+			}
+			#bar {
+				width: 100%;
+				height: 50px;
+				position: absolute;
+				left: 0;
+				top: 0;
+				background: green;
+			}
+			#box {
+				width: 300px;
+				height: 500px;
+				overflow: hidden;
+				border: 1px solid #000;
+				position: absolute;
+				left: 400px;
+				top: 100px;
+			}
+			#list {
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+		</style>
+		<script>
+			function mousewheel(element,upFn,downFn){
+				element.addEventListener('mousewheel',wheel)
+				element.addEventListener('DOMMouseScroll',wheel)
+
+				function wheel(ev){
+					let d = true;  // 默认方向为向上  向上 true 向下为false
+
+					if(ev.wheelDelta){
+						d = ev.wheelDelta > 0 ? true : false
+					}else if(ev.detail){
+						d = ev.detail < 0 ? true :  false;
+					}
+
+					if(d){  // 向上
+						typeof upFn === 'function' && upFn.call(element,ev)
+					}else{
+						typeof downFn === 'function' && downFn.call(element,ev)
+					}
+
+				}	
+			}
+		</script>
+	</head>
+
+	<body style="height: 2000px;">
+		
+		<div id="box">
+			<ul id="list">
+				<li>111</li>
+				<li>111</li>
+				<li>111</li>
+				<li>111</li>
+			</ul>
+			<div id="bar-box">
+				<div id="bar"></div>
+			</div>
+		</div>
+		<script>
+
+			let list = document.getElementById('list');
+
+			let html = '';
+			for( var i = 0; i < 100; i++ ){
+				html += `<li>${i+1}</li>`
+			}
+
+			list.innerHTML = html;
+
+			// 内容越高，滚动条越低
+
+			let barBox = document.getElementById("bar-box")
+			let bar = document.getElementById("bar")
+
+			let box = document.getElementById('box');
+
+			// box的内容高度？scrollHeight
+
+			// 算一下滚动条的高度
+
+			// 内容的高度？
+			let contentH = box.scrollHeight;
+			// 容器可视区高度
+			let clientH = box.clientHeight;
+
+			// 滚动条的高度
+			bar.style.height = clientH/contentH * barBox.clientHeight + 'px';
+
+			let minY = 0;
+			let maxY = barBox.clientHeight - bar.offsetHeight;
+
+			// 内容能走到最大高度
+			let contentHMaxY = contentH - clientH;
+
+			// 拖动滚动条走，内容也要跟着走？
+
+			bar.onmousedown = function (ev){
+				let disY = ev.clientY - bar.offsetTop;
+
+				document.onmousemove = function (ev){
+					let y = ev.clientY - disY;
+					if(y < minY) {
+						y = minY;
+					}
+					if(y > maxY){
+						y = maxY
+					}
+					bar.style.top = y + 'px';	
+
+					list.style.top = -y/maxY * contentHMaxY + 'px';
+				}
+				document.onmouseup = function (ev){
+					document.onmousemove = 	document.onmouseup = null;
+				}	
+
+				ev.preventDefault();	
+			}	
+
+			mousewheel(box,function (ev){
+				let y = bar.offsetTop - 5;
+				if( y < minY){
+					y = minY
+				}
+				bar.style.top = y + 'px';	
+				list.style.top = -y/maxY * contentHMaxY + 'px';
+				ev.preventDefault();
+			},function (ev){
+				let y = bar.offsetTop + 5;
+				if( y > maxY){
+					y = maxY
+				}
+				bar.style.top = y + 'px';	
+				list.style.top = -y/maxY * contentHMaxY + 'px';	
+				ev.preventDefault();
+			})	
+
+		</script>
+	</body>
+</html>

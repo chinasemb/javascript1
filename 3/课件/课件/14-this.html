@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			#box{
+
+			}
+			div{
+
+			}
+			.first{
+
+			}
+			#list1 .active {
+
+			}
+		</style>
+		<script>
+			
+		</script>
+	</head>
+
+	<body>
+		<div id="box">hello</div>
+		<ul id="list1">
+			<li class="first">1</li>
+			<li>2</li>
+			<li class="active">3</li>
+			<li>4</li>
+			<li class="active">5</li>
+		</ul>
+		<script>
+
+			
+			var lis = document.getElementsByTagName("li");  // 类数组
+
+			console.log(lis[0])
+			console.log(lis[4])
+			console.log(lis[5]); // undefined
+
+			// lis[0] lis[1] lis[2]
+			// 每一个元素绑定事件处理，使用for循环
+
+			for(var i = 0; i < lis.length; i++){
+				lis[i].onclick = function (){
+					// 点击哪一个li，就给哪一个li添加背景颜色
+
+					console.log(this); // 指向的是触发事件的元素
+				}
+			}
+
+			console.log(i)
+
+
+		</script>
+	</body>
+</html>

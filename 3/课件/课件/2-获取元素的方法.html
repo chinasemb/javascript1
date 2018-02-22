@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			#box{
+
+			}
+			div{
+
+			}
+			.first{
+
+			}
+		</style>
+		<script>
+			
+		</script>
+	</head>
+
+	<body>
+		<div id="box">hello</div>
+		<ul id="list1">
+			<li class="first">1</li>
+			<li>2</li>
+			<li class="active">3</li>
+			<li>4</li>
+			<li class="active">5</li>
+		</ul>
+		<div id="form">
+			<input type="text" name="userName" />
+			<input type="checkbox" name="checkbox" />
+			<input type="checkbox" name="checkbox" />
+			<input type="checkbox" name="checkbox" />
+		</div>
+		<script>
+			/*
+				通过id获取元素
+					document.getElementById(id名字)
+				通过标签获取元素
+					document/元素.getElementsByTagName(标签名)
+
+				
+			*/
+
+
+			// 类数组 不是数组  即便是只获取一个元素也要用下标获取
+			var uls = document.getElementsByTagName('ul');  // [ul]
+
+			// 使用下标获取ul
+
+			uls[0].onclick = function (){
+				alert("123")	
+			}
+
+
+		</script>
+	</body>
+</html>

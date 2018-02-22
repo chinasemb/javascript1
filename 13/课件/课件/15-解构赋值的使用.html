@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			// 暴露了太多的全局函数了
+
+			// 学到node 每一个文件就是一个模块
+			let tools = (function (){
+				function isFunction(f){
+					return typeof f === 'function'
+				}
+				function add(a,b){
+					return a+b
+				}
+				function isArray(a){
+					return Array.isArray(a)
+				}
+				return 	{
+					isFunction: isFunction,
+					add: add,
+					isArray: isArray,
+				}
+			})()
+		</script>
+		<script>
+
+			// 工具函数 判断类型 
+
+			let {isFunction,isArray} = tools;
+
+			isFunction('a')
+			isFunction('a')
+			isFunction('a')
+			isFunction('a')
+			isFunction('a')
+			isFunction('a')
+
+		</script>
+	</head>
+
+	<body>
+		
+	</body>
+</html>

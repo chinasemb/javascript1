@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+
+			// 排序 从大到小 从小到大  随机排序
+
+			// 冒泡排序
+
+			var arr = [3,1,6,2,0,5,7,8,10,4];
+			// 从小到大排序
+
+			// 拿出数组中的两个值进行比较，如果后一个数比前一个数小 交换位置
+
+			// 第一次  [1, 3, 6, 2, 0, 5, 7, 8, 10, 4]
+
+			if(arr[0] > arr[1]){  // 交换位置
+				var c = arr[0]
+				arr[0] = arr[1];
+				arr[1] = c;
+			}
+
+			console.log(arr);
+
+			// 第二次 [1, 3, 6, 2, 0, 5, 7, 8, 10, 4]
+
+			if(arr[1] > arr[2]){
+				var c = arr[1]
+				arr[1] = arr[2];
+				arr[2] = c;
+			}
+
+			console.log(arr);
+
+			// 第三次
+			if(arr[2] > arr[3]){
+				var c = arr[2]
+				arr[2] = arr[3];
+				arr[3] = c;
+			}
+
+			console.log(arr);
+
+
+
+		</script>
+	</head>
+
+	<body>
+		
+	</body>
+</html>

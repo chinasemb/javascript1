@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+				var arr = [1,2,3,3,4,6,76,5,4,21,1,2,3,3,4,1,1,1,"1"];
+
+				// 利用特性 对象的key值是唯一的
+
+				var obj = {
+					a:1,
+					a:10,
+					a:20
+				}
+
+			//	obj.b = 'momo'; // 无情的把原有的属性覆盖掉
+
+				// 有则不添加；没有就添加
+				// 没有b这个属性 obj.b返回undefined
+				console.log(!obj.b);
+				if(!obj.b){
+					obj.b = 'momo'
+				}
+
+				console.log(obj);
+
+
+
+		</script>
+	</head>
+
+	<body>
+		
+	</body>
+</html>

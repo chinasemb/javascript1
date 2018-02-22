@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			var obj = {a:1,b:2,c:3};
+
+			// 取出每一个属性的值存在变量中
+			/*let a = obj.a;
+			let b = obj.b;
+			let c = obj.c;*/
+
+			// 解构赋值
+			// 声明变量
+			// let {a,b,d} = obj;
+			// = 默认值
+			// : 别名
+			/*let {a:first,b,d:abc=10} = obj;
+
+
+			console.log(first,b,abc);
+
+			var arr = [1,2,3,4];
+
+			let [one,two,three,four,five=5] = arr;
+
+			console.log(one,two,three,five);
+
+			var str = 'miaovketang';
+
+			let [m,i] = str;
+
+			console.log(m,i);*/
+
+			function fn({a}){
+				console.log(a);
+			}
+
+			fn({a:1})
+
+		</script>
+	</head>
+
+	<body>
+		
+	</body>
+</html>

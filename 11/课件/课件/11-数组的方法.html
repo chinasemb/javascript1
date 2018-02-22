@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+
+			var arr = ['wang','zhong','liu','leo'];
+
+			var arr2 = ['活着']
+
+			// 仓库 书架
+
+			/*
+				1. 把数组调换位置
+				2. 把数组每一项根据连接符拼成字符串 把数组转成字符串
+				3. 拼接数组
+				4. 循环数组
+			*/
+
+			// 数组调用方法后，对原数组有没有副作用
+
+			// 4
+
+			// 循环数组要干什么？  循环 遍历 枚举  得到什么？？？？
+
+			// 取值 下标
+
+			// 好处 运行速度快
+			// 不好 写的比较长
+			/*for( var i = 0; i < arr.length; i++ ){
+				arr[i]
+			}*/
+			// 好处 简便 清晰 函数式编程
+			// 不好 不能停止循环
+			/*arr.forEach(function(item,index){  // 每次循环内部都会调用这个传入的函数
+				// 调用一次这个回调函数，这个回调函数会得到两个参数
+				console.log(item,index);
+				console.log(this);  // this => window
+			});*/
+
+			// 改变forEach回调函数的this指向,用到forEach的第二参数
+
+			arr.forEach(function(item,index){  // 每次循环内部都会调用这个传入的函数
+				// 调用一次这个回调函数，这个回调函数会得到两个参数
+				console.log(item,index);
+				console.log(this); 
+			},[1,2,3]);
+
+			//3
+
+			/*arr.concat(arr2); // 拼接两个数组 不会改变原数组
+
+			var newArr = arr.concat(arr2)
+
+			console.log(newArr);
+
+			var newArr2 = arr.concat(arr2,1,2,3,4); // 遇到数组展开，把每一项放在新数组中，不是数组直接放在新数组中
+			console.log(newArr2);
+
+			// 浅复制一个数组
+			var newArr3 = arr.concat();
+
+			console.log(newArr3);
+
+			console.log(arr);*/
+
+			/*// 2
+
+			// 字符串 -> 数组 str.split('分割符')
+			// 数组 -> 字符串 str.join('连接符')
+
+			arr.join("-");  // 跟就-把数组每一项连接起来成为一个字符串,不会改变原数组
+
+			var str = arr.join('-');
+			var str2 = arr.join('');
+
+			console.log(str);
+			console.log(str2);
+
+			console.log(arr);*/
+
+
+			/*// 1 
+
+			arr.reverse();  // 翻转数组 会影响原数组
+
+			console.log(arr);*/
+
+
+		</script>
+	</head>
+
+	<body>
+		<div id="box"></div>
+		<script>
+
+		</script>
+	</body>
+</html>

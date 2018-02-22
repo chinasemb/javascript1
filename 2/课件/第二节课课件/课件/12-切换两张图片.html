@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <img src="./1.png" id="tabImg" />
+    <script>
+        /*
+            img的src获取的是绝对路径
+
+            两张图片切换
+        */
+        var tabImg = document.getElementById('tabImg');
+
+        var state = '我是1.png';  // 记录此时切换的图片 
+
+        tabImg.onclick  = function (){
+            // 切换条件成立和不成立
+            if(state == '我是1.png'){  // 如果条件成立，说明当前已经显示的1.png，要切换到2.png
+                tabImg.src = './2.png';
+                state = '我是2.png';
+            }else{
+                tabImg.src = './1.png';
+                state = '我是1.png';
+            }
+            
+        }
+
+    </script>
+</body>
+</html>

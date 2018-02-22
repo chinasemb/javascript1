@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			div {
+				padding: 50px;
+				background: red;
+				font-size: 30px;
+
+			}
+			#div2 {
+				background: green;
+			}
+			#div3 {
+				background: blue;
+			}
+		</style>
+	</head>
+
+	<body>
+		<input type="text" id="addLiText" />
+		<input type="button" id="send" value="提交" />
+		<ul id="list">
+			<li>123</li>
+			<li>123</li>
+			<li>123</li>
+			<li>123</li>
+		</ul>
+		
+		<script>
+			// 事件委托
+			// 点击li的时候，弹出一个1
+
+			let list = document.getElementById("list");
+			let lis = list.getElementsByTagName('li');
+
+			let addLiText = document.getElementById("addLiText");
+			let send = document.getElementById("send");
+
+			send.onclick = function (){
+				// 重新渲染了，这一次的结构和上一次的结构长得一样，但是不是同一个结构
+				list.innerHTML = list.innerHTML + '<li>'+addLiText.value+'</li>'
+
+				let lis = list.getElementsByTagName('li');	
+				Array.from(lis).forEach(function (item){
+					item.onclick = function (){
+						alert(1)	
+					}
+				})
+			}
+
+
+			Array.from(lis).forEach(function (item){
+				item.onclick = function (){
+					alert(1)	
+				}
+			})
+
+
+
+		</script>
+	</body>
+</html>

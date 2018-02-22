@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			
+		</script>
+	</head>
+
+	<body>
+		<input type="text" id="num1" />
+		<span>+</span>
+		<input type="text" id="num2" />
+		<input type="button"  value="相加" id="add" />
+		<script>
+			/*
+				Undefined类型
+					表示未定义  值 undefined
+
+				使用var声明变量未赋值时候，默认值为undefined，
+				访问对象的属性不存在时，返回undefined
+				
+				一个函数，如果没有返回值，那么执行之后的结果是undefined
+
+			*/
+
+			var str = undefined;
+
+			console.log(str);
+			// 使用var声明变量未赋值时候，默认值为undefined
+			var miaov;
+			console.log(miaov);
+			// 访问对象的属性不存在时，返回undefined
+			var arr = ['m','i'];
+			console.log(arr[2]);
+
+			var add = document.getElementById('add');  // 元素对象
+
+			console.log(add.ids);
+
+		</script>
+	</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			#box {
+				width:100px;
+				height: 200px;
+				background: red;
+			}
+		</style>
+		<script>
+			
+		</script>
+	</head>
+
+	<body>
+
+		<input type="button"  value="改变div的width" id="btn" />
+		<div id="box" style="width: 100px;height: 100px;background: blue;"></div>
+
+		<script>
+
+			/*
+				转成布尔值 内置对象 Boolean
+
+				转成false的
+					0 '' null undefined NaN
+			*/
+
+			/*console.log( Boolean(123) );  // true
+			console.log( Boolean(0) );   // false
+			console.log( Boolean('miaov') );  // true
+			console.log( Boolean('') );  // false*/
+
+			/*console.log(Boolean(undefined)); // false
+			console.log(Boolean(null));  // false
+			console.log(Boolean({}));  // true
+			console.log(Boolean([]));  //true
+
+			console.log(Boolean(NaN));  // false*/
+
+			// 转成布尔值 !! 数据
+			/*console.log( !!'miaov' );
+			console.log( !!'' );
+			console.log( !!{} );*/
+
+			// !值：先转成布尔值，然后取反
+
+			console.log( !'' );  // 先把值转成布尔值然后取反
+			console.log( !{} ); // false
+
+
+		</script>
+	</body>
+</html>

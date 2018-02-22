@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+        <style>
+            body {
+                margin: 0;
+            }
+            div {
+                width: 500px;
+                height: 500px;
+                background: red;
+            }
+
+            #div2 {
+                width: 300px;
+                height: 300px;
+                background: blue;
+            }
+
+            #div3 {
+                width: 100px;
+                height: 100px;
+                background: green;
+            }
+
+        </style>
+        <script>
+            
+        </script>
+    </head>
+
+    <body>
+        <div id="div1" style="position: absolute;left:0;top:0;">
+            div1
+            <div id="div2" >div2
+                <div id="div3" style="position: absolute;left:0;top:0;">
+                    div3
+                </div>
+            </div>
+        </div>
+        <script>
+            // 可获取到最近的定位父级，如果没有定位元素，定位父级为body
+
+            // 离这个元素最近的祖先节点中有定位的，就是定位父级
+            var div3 = document.getElementById("div3");
+            // console.log( div3.offsetParent );  // 没有定位的祖先节点，默认是body
+
+            // 获取定位父级，要保证自己也要定位
+
+            //console.log( div3.offsetParent );
+
+            
+
+        </script>
+    </body>
+</html>

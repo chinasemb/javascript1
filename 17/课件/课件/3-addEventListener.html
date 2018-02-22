@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			function miaov(){
+				alert(1)
+			}
+		</script>
+	</head>
+
+	<body>
+		<!-- <input type="button" id="btn" onclick="miaov()" /> -->
+		<input type="button" id="btn" />
+		<script>
+
+			/*
+				元素.addEventListener(
+					事件名,
+					事件处理函数，
+					[是否捕获]
+				);
+			*/
+
+			let btn = document.getElementById('btn');
+
+			// A同学的需求： 点击btn弹出1
+
+			btn.addEventListener('click',function (){
+				alert(1)
+			})
+
+			// B同学的需求：点击btn弹出2
+
+			btn.addEventListener('click',function (){
+				alert(2)	
+			})
+
+		</script>
+	</body>
+</html>

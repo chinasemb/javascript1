@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			
+		</script>
+	</head>
+
+	<body>
+		<a href="http:www.miaov.com" id="aLink">妙味课堂</a>
+		<script>
+			/*
+				a标签跳转就是默认行为
+				双击选中文字
+				拖拽文字
+				拖拽图片
+				空格键滚动页面
+				右击出现弹框
+
+				阻止默认行为
+			*/
+			let  aLink = document.getElementById('aLink');
+
+			/*aLink.onclick = function (){
+				return false;  // 阻止默认行为  这种写法只能在已on开头的事件中	
+			}*/
+			aLink.addEventListener('click',function (ev){
+				ev.preventDefault();
+			})
+		</script>
+	</body>
+</html>

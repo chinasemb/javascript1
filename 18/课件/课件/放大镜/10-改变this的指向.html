@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			/*
+				call()
+					函数.call():可改变函数的this指向
+						1. 函数下的一个方法
+						2. 函数调用call这个方法的时候，就直接调用了这个函数
+					参数：
+						第1个参数 
+							改变this指向的那个值
+							如果设置了null或者undefined，
+							函数中的this仍然指向window
+						
+						从第二个参数开始，依次传入的参数，
+						就是给用call来调用的那个函数传入的实参
+
+			*/
+			function fn(){
+				console.log(this);
+			}
+
+			// []
+
+			let t = [1,2,3]
+			// 当要改变这个函数的this指向的时候需要调用这个函数
+			//fn.call();  // 函数会立马执行
+			fn.call(t); 
+			fn.call({a:1}); 
+			fn.call(1); 
+		</script>
+	</head>
+
+	<body>
+		
+	</body>
+</html>

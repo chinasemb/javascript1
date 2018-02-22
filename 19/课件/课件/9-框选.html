@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			.box{
+				width: 200px;
+				height: 200px;
+				background: red;
+				float: left;
+				margin-left:20px;
+			}
+			.dialog{
+				width: 0px;
+				height: 0px;
+				border:1px dashed #000;
+				position: absolute;
+				left: 0;
+				top:0;
+				background: skyblue;
+				opacity: .5;
+			}
+		</style>
+		<script>
+			
+		</script>
+	</head>
+
+	<body>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<script>
+
+			// 都已浏览器左边和上边为基准
+
+			function getRect(element){
+				return element.getBoundingClientRect()
+			}
+
+			function collision(obj1,obj2){
+				let dragRect = getRect(obj1)
+				let boxRect = getRect(obj2)
+
+				if(dragRect.right < boxRect.left || dragRect.bottom < boxRect.top || dragRect.left > boxRect.right || dragRect.top > boxRect.bottom){
+					return false
+				}else{
+					return true
+				}	
+			}
+
+			let  boxs = document.querySelectorAll('.box')
+
+			// 生成框框
+
+			document.onmousedown = function (ev){
+				let newDiv = document.createElement('div');
+				newDiv.className = 'dialog';
+				document.body.appendChild(newDiv);
+
+				let disX = ev.clientX
+				let disY = ev.clientY
+
+				newDiv.style.left = disX + 'px';
+				newDiv.style.top = disY + 'px';
+
+				document.onmousemove = function (ev){
+					newDiv.style.width = Math.abs(ev.clientX - disX) + 'px';
+					newDiv.style.height = Math.abs(ev.clientY - disY) + 'px';
+					newDiv.style.left = Math.min(ev.clientX, disX) + 'px';
+					newDiv.style.top = Math.min(ev.clientY, disY) + 'px';
+
+					// 和所有的box进行碰撞检测
+
+					for( var i = 0; i < boxs.length; i++ ){
+						if(collision(newDiv,boxs[i])){
+							boxs[i].style.background = 'blue'
+						}else{
+							boxs[i].style.background = 'red'
+						}
+					}
+
+				}
+
+				document.onmouseup = function (){
+					document.onmousemove = 	document.onmouseup = null;
+
+					newDiv.remove();
+					for( var i = 0; i < boxs.length; i++ ){
+						boxs[i].style.background = 'red'
+					}
+				}
+
+				ev.preventDefault();
+
+			}
+
+
+
+		</script>
+	</body>
+</html>

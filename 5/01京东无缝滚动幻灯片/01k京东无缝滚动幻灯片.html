@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button>1</button>
+	<button>2</button>
+	<button>3</button>
+	<script>
+		var buttons = document.querySelectorAll("button");
+		for (var i = 0; i < buttons.length; i++) {
+			buttons[i].index = i ;
+			buttons[i].onclick = function(){
+				alert(this.index)
+			}
+		};
+	</script>
+</body>
+</html>

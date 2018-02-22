@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			#box {
+				background: red;
+				width: 100px;
+				height: 100px;
+			}
+		</style>
+		<script>
+
+
+
+		</script>
+	</head>
+
+	<body>
+		<a href="?a=10">改变search值</a>
+		<a href="#miaoweiketang">改变hash值</a>
+		<div id='box'>改变自己的颜色</div>
+		<script>
+			let box = document.getElementById('box');
+			box.onclick = function (){
+				this.style.background = 'yellow';	
+			}
+			// 改变search值会重新刷新
+			// 改变hash不会刷新页面
+		</script>
+	</body>
+</html>

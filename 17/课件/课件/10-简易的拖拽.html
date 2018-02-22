@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			#dragObj {
+				width: 200px;
+				height: 200px;
+				background: red;
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+		</style>
+	</head>
+
+	<body>
+		
+		<div id="dragObj">妙味课堂</div>
+		<script>
+			// 在浏览器中把一个元素对着拖着走
+			/*
+				拖拽需要三大事件：
+					1. mousedown  鼠标摁下触发
+					2. mousemove  鼠标移动触发
+					3. mouseup    鼠标抬起触发
+			*/
+
+			// 浏览器的默认行为
+			// 在浏览器中拖动文字就是默认行为
+			// 取消浏览器默认行为
+			// 事件对象.preventDeafult()
+
+			let dragObj = document.getElementById('dragObj');
+			let disX = 0;
+			let disY = 0;
+			dragObj.onmousedown = function (ev){
+				// 鼠标到元素左边/上边的距离
+				disX = 	ev.clientX - dragObj.offsetLeft;
+				disY = 	ev.clientY - dragObj.offsetTop;
+				document.onmousemove = function (ev){
+					dragObj.style.left = ev.clientX - disX + 'px';	
+					dragObj.style.top = ev.clientY - disY + 'px';	
+				}
+				document.onmouseup = function (){
+					document.onmousemove = null;	
+					document.onmouseup = null;
+				}
+				ev.preventDefault();
+			}
+			/*// 只要在元素身上移动就会触发
+			dragObj.onmousemove = function (ev){
+				console.log(123);
+				dragObj.style.left = ev.clientX - disX + 'px';	
+				dragObj.style.top = ev.clientY - disY + 'px';	
+			}*/
+
+
+		</script>
+	</body>
+</html>

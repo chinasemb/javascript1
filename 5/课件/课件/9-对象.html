@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			
+		</script>
+	</head>
+
+	<body>
+		<input type="text" id="num1" />
+		<span>+</span>
+		<input type="text" id="num2" />
+		<input type="button"  value="相加" id="add" />
+		<script>
+			/*
+				对象是属性组成的无序集合，属性由”名/值”对构成
+
+				对象数据结构的 key 可以是 任意的 字符串
+				属性值可以是任意类型
+
+				key值可以写引号也可以不写,要符合标识符的命名
+
+				如果不符合，没关系，加引号
+
+				定义普通对象
+					{
+						key1:value1,
+						key2:value2
+					}
+
+			*/
+			var add = document.getElementById("add"); // 对象
+			add.abc  = 10;
+			console.dir(add);
+			// 定义对象
+			var obj = {
+				miaov: 123,
+				abc:345,
+				k: 'miaov',
+				'miaov-ketang': 123
+			};
+
+			console.log(obj);
+
+			console.log(obj.miaov);
+			console.log(obj['miaov-ketang']);
+
+		</script>
+	</body>
+</html>

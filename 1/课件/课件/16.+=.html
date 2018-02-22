@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			div {
+				width: 100px;
+				height: 200px;
+				background: red;
+			}
+		</style>
+		
+	</head>
+
+	<body>
+		<input type="text" id="message" />
+		<input type="button" id="send" value="提交" />
+		<ul id="list">
+			<li>45</li>
+		</ul>
+		
+		<script>
+			/*
+				什么是字符串
+				用一对单引号或者双引号包起来的0个或多个字符组成的串
+				       ''  空字符串
+
+			*/
+
+			var str = "miaov";
+
+			//str = str + 'ketang';  // 赋值，先算右边 在赋给左边
+
+			str += 'ketang';  // str之前的值加上最新值再赋值给str
+
+			console.log(str)
+
+		</script>
+	</body>
+</html>

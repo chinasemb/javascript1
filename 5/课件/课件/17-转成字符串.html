@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			#box {
+				width:100px;
+				height: 200px;
+				background: red;
+			}
+		</style>
+		<script>
+			
+		</script>
+	</head>
+
+	<body>
+
+		<input type="button"  value="改变div的width" id="btn" />
+		<div id="box" style="width: 100px;height: 100px;background: blue;"></div>
+
+		<script>
+
+			/*
+				转成字符串 内置对象 String
+			*/
+
+			/*console.log( String(123) );
+			console.log( String(true) );  // 'true'
+			console.log( String(false) ); // 'false'
+			console.log( String(undefined) ); // 'undefined'
+			console.log( String(null) ); // 'null'
+			console.log( String({}) );  // [object Object]
+			console.log( String([1,2,3,4]) );  // 把数组中每一项用,连接起来
+
+			console.log(true == 'true');*/
+
+			// + 有一边为字符串，会把另一边转成字符串，然后拼接
+			console.log( "" + true );
+			console.log( "" + {} );
+
+		</script>
+	</body>
+</html>

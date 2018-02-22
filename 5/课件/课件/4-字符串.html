@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			
+		</script>
+	</head>
+
+	<body>
+		<input type="text" id="num1" />
+		<span>+</span>
+		<input type="text" id="num2" />
+		<input type="button"  value="相加" id="add" />
+		<script>
+			/*
+				String类型
+					字符串
+
+			*/
+
+			var str = 'miaov';
+			var str2 = '';
+
+			var str3 = ""
+
+			console.log(str.length);
+
+			// 下标
+			console.log(str[1]);  // 低版本不要这样去对应下标的值
+
+			console.log( str.charAt(1) );  // 这个方法根据下标找对应的字符
+
+			// 字符串一旦定义是不能改
+			str[0] = 'z';
+
+			console.log(str);
+
+
+			var arr = ['m','i','v'];
+
+			arr[0] = 'z';  // 数组是能改的
+			console.log(arr);
+
+
+		</script>
+	</body>
+</html>

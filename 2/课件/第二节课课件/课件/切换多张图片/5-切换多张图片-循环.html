@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<link rel="stylesheet" type="text/css" href="slide.css" />
+		<style type="text/css">
+			body{
+				background-color: #ffd800;
+			}
+			.nav .blue {
+				background-color: blue;
+			}
+		</style>
+		<script>
+
+		</script>
+	</head>
+
+	<body>
+		<div class="slide">
+			<div  class="tagClient">
+				<ul class="list">
+					<li>
+						<img src="" id="tabImg" />
+					</li>
+				</ul>
+			</div>
+			<div class="prev" id="prev"></div>
+			<div class="next" id="next"></div>
+		</div>
+		<script>
+
+			var arr = ['111.png','33444.png','7778900.png','fffffgrt.png','u789.png'];
+
+			var next = document.getElementById("next");
+			var prev = document.getElementById("prev");
+			var tabImg = document.getElementById("tabImg");
+
+			var n = 0;
+			// 初始
+			tabImg.src = './ads2/'+arr[n];
+			next.onclick  = function (){
+				n++;
+				if(n > arr.length-1  ){
+					n = 0;
+				}
+				tabImg.src = './ads2/'+arr[n];
+			}
+			// 上一张
+			prev.onclick = function (){
+				n--;  
+				if(n < 0){
+					n = arr.length-1; 
+				}
+				tabImg.src = './ads2/'+arr[n];
+				
+			}
+
+		</script>
+	</body>
+
+</html>

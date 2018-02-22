@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+
+			var str = 'miaovketang';
+			/*// 一旦定义不能更改，所以调用字符串的方法之后，不会对原字符串产生副作用
+			// 首字母变为大写
+
+			var char = str.charAt(0).toUpperCase();
+
+			// 找到第一个字符变为大写，然后拼接上原字符串从第1为截取到之后的字符串
+
+			var newStr = char + str.slice(1)
+
+			console.log(newStr);*/
+
+			function toFirstCharUpper(str){
+				var char = str.charAt(0).toUpperCase();
+				return char + str.slice(1)
+			}
+
+			console.log(toFirstCharUpper(str));
+			console.log(toFirstCharUpper('leo'));
+			console.log(toFirstCharUpper('king'));
+
+
+		</script>
+	</head>
+
+	<body>
+		<div id="box"></div>
+		<script>
+
+		</script>
+	</body>
+</html>

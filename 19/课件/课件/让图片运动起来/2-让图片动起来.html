@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			#runImg {
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+		</style>
+		<script>
+			
+		</script>
+	</head>
+
+	<body>
+		<img src="./logo.jpg" id="runImg" />
+		<script>
+			let runImg = document.getElementById("runImg");
+			// 当摁下去一个键的时候，不会立马连续的触发，会有一个缓冲的时间
+			let timer = null;
+			document.onkeydown = function (ev){
+				
+
+				// 开启一个定时器,在最小的时间
+				//clearInterval(timer)
+				if(timer) { //保证只能有一个定时器开启
+					return;
+				}
+				timer = setInterval(function (){
+					if(ev.keyCode === 39){
+						runImg.style.left = runImg.offsetLeft + 1 + 'px';
+					}else if(ev.keyCode === 40){
+						runImg.style.top = runImg.offsetTop + 1 + 'px';
+					}
+					else if(ev.keyCode === 37){
+						runImg.style.left = runImg.offsetLeft - 1 + 'px';
+					}
+					else if(ev.keyCode === 38){
+						runImg.style.top = runImg.offsetTop - 1 + 'px';
+					}	
+				})
+					
+			}
+
+			document.onkeyup = function (ev){
+				clearInterval(timer);
+				timer = null;
+			}
+
+			// 现在只能向一个方向运动，假如想斜着走，怎么办？
+
+			// 键盘摁下去，只能有一个起作用，怎么能保存两个方向键？？？
+
+			// 思路：在摁下去的时候，用变量来存方向键摁下去的状态？？？
+
+		</script>
+	</body>
+</html>

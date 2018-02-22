@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			
+		</script>
+	</head>
+
+	<body>
+		<input type="text" id="num1" />
+		<span>+</span>
+		<input type="text" id="num2" />
+		<input type="button"  value="相加" id="add" />
+		<script>
+			
+			var str = {};
+
+			console.log(typeof str);  // "string"
+			console.log(typeof 1);  // "number"
+			console.log(typeof true);  // "boolean"
+			console.log(typeof false); // "boolean"
+			console.log(typeof undefined); // "undefined"
+			console.log(typeof {});  // "object"
+			console.log(typeof []); // "object"
+
+			if(typeof str == 'string'){
+				console.log("这个值是字符串类型");
+			}else if(typeof str == 'boolean'){
+				console.log("这个值是Boolean类型");
+			}else if (typeof str == 'object') {
+				console.log('这个值是Object');
+			}
+
+			// 函数是可以被调用的对象 function
+
+			function fn(){
+
+			}
+
+			console.log(typeof fn);  // "function"
+
+			// 判断是不是函数，是函数就执行
+
+			var func = function(){
+				console.log('我执行了');
+			};
+
+			if(typeof func == 'function'){
+				func();
+			}else{
+				console.log("不好意思，不是函数，不能执行");
+			}
+
+		</script>
+	</body>
+</html>

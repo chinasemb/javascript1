@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+				var arr = [1,2,3,3,4,6,76,5,4,21,1,2,3,3,4,1,1,1,"1"];
+				var newArr = [];
+
+				var obj = {};
+				var i = 0,len=arr.length;
+				for(; i < len; i++ ){
+					// 把arr没的一项作为对象的key值，如果这一项没有作为key值，则添加这个属性，如果已经有了，就不添加了，说明之前已经添加过了
+					var s = (typeof arr[i])+'---'+arr[i]
+					if(!obj[s]){
+						newArr.push(arr[i]);
+						obj[s] = true;  // 把这一项作为对象的key值
+					}
+				}
+
+				console.log(newArr);
+				console.log(obj);
+
+				/*var o = {};  // 对象的key值类型是字符串
+
+				o[1] = 10;
+				o["1"] = 20;
+
+				console.log(o[1]);*/
+
+
+
+
+		</script>
+	</head>
+
+	<body>
+		
+	</body>
+</html>

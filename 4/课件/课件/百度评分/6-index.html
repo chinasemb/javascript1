@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>百度评分</title>
+		<style>
+			body,h1 {
+				margin: 0;
+				padding: 0;
+				-webkit-font-smoothing: antialiased;
+			}
+			.starts{
+				overflow:hidden;
+			}
+			.starts span{
+				display: block;
+				float: left;
+				padding: 3px;
+			}
+			.starts span:after {
+				content: '☆'
+			}
+			.starts .e4c6e4:after,.starts .e15671:after {
+				content: '★'
+			}
+
+			.wrap .starts .e4c6e4 {
+				color: #e4c6e4;
+			}
+			.wrap .starts .e15671 {
+				color: #e15671;
+			}
+		</style>
+		<link rel="stylesheet" type="text/css" href="./style/pingfen.css"/>
+	</head>
+	<body>
+		<div class="wrap">
+			<div class="baidu">
+				<div class="caption">
+					<h1></h1>
+					<span>总体评价</span>
+				</div>
+				<div class="context">
+					<div class="starts">
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+					<div class="info"></div>
+				</div>
+				<div class="tips">
+					小提示：点击星星就能打分
+				</div>
+			</div>
+		</div>
+		<script>
+			/*
+				1. 给每一个span绑定移入事件处理
+					跟每一个span对比，对比过程中
+						如果 小于移入的span的下标
+								如果 移入的span下标小于2 
+									className为#e4c6e4
+								否则
+									className为#e15671
+						否则
+							className清空
+				2. 鼠标移开
+					如果 点击了span
+						
+					否则
+						className清空
+				3. 点击某一个span	
+						记录点击了
+						记录点击的span的下标
+			*/
+
+			//定义要显示的信息数组
+			var arr = ['极差', '一般', '不错', '推荐', '力推'];
+
+			var spans = document.querySelectorAll('.starts span')
+			var len = spans.length;
+
+			var clickIndex = -1; 
+
+			function addClass(index){
+				for( var j = 0; j < len; j++ ){
+					if( j <= index ){ // 左边
+						if(index <= 1){
+							spans[j].className = 'e4c6e4'
+						}else{
+							spans[j].className = 'e15671'
+						}
+					}else{ // 右边
+						spans[j].className = ''
+					}
+				}
+			}
+
+			for( var i = 0; i < len; i++ ){
+				spans[i].index = i;
+				spans[i].onmouseover = function () {
+					var index = this.index;
+					addClass(index)
+
+				}
+				spans[i].onmouseout = function () {
+					addClass(clickIndex)
+
+				}
+				spans[i].onclick = function () {
+					clickIndex = this.index; 
+				}
+
+			}
+			
+		</script>
+	</body>
+</html>

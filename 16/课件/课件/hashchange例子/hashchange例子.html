@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title></title>
+  <style>
+    html, body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+    }
+    .btns {
+      position: absolute;
+      left: 100px;
+      top: 50px;
+      width: 400px;
+      height: 60px;
+      z-index: 999;
+    }
+    .btns button {
+      width: 100px;
+      height: 100%;
+    }
+    .box {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    .box div {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 180px;
+      color: #fff;
+      transition: 500ms;
+      opacity: 0;
+    }
+    .box div.active {
+      opacity: 1;
+    }
+    .box div:nth-child(1) {
+      background-color: rgb(61, 196, 59);
+    }
+    .box div:nth-child(2) {
+      background-color: rgb(28, 101, 162);
+    }
+    .box div:nth-child(3) {
+      background-color: rgb(165, 30, 213);
+    }
+  </style>
+</head>
+<body>
+  <div class="btns">
+    <button>box1</button>
+    <button>box2</button>
+    <button>box3</button>
+  </div>
+  <div class="box">
+    <div>box1</div>
+    <div>box2</div>
+    <div>box3</div>
+  </div>
+  <script>
+    let btns = document.querySelectorAll('button');
+
+    btns.forEach((item,index) => {
+      item.onclick = function (){
+        window.location.hash = index;   
+      }
+    })
+
+    let divs = document.querySelectorAll('.box div')
+
+    // 页面初始化拿到hash
+    let hash = window.location.hash.slice(1);
+    divs[hash].className = 'active'
+    window.onhashchange = function (){
+      let hash = window.location.hash.slice(1);
+      for( var i = 0; i < divs.length; i++ ){
+        divs[i].className = '';
+      }
+      divs[hash].className = 'active'
+    }
+
+  </script>
+</body>
+</html>

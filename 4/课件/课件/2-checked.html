@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			
+		</script>
+	</head>
+
+	<body>
+		<!-- checked="a" -->
+		<input type="checkbox" id="checkboxBtn"  />
+		<script>
+			var checkboxBtn = document.querySelector('#checkboxBtn');
+
+			// 在js中想知道，checkbox的状态 是否选中
+			/*
+				checked  是checkbox元素上的一个属性
+				用来记录当前这儿checkbox是否是选中
+					选中 true
+					不选中flase
+
+				既可以读也可以写
+					读  的是是否选中的状态
+					写  选中还是不选中
+			*/
+
+			/*document.onclick = function (){
+				checkboxBtn.checked = false;
+				console.log(checkboxBtn.checked); // 读
+
+			}*/
+			// 这个事件处理函数并不是用来控制checkbox选中还是不选中
+			checkboxBtn.onclick = function(){
+				// 在点击checkbox的时候，获取点击的checkbox的checked的状态
+
+				console.log(this.checked)
+
+				if(this.checked){
+					document.body.style.background = 'red'
+				}else{
+					document.body.style.background = '#fff'
+				}
+
+			}
+			
+
+		</script>
+	</body>
+</html>

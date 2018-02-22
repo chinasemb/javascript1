@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			
+		</script>
+	</head>
+
+	<body>
+		<input type="text" id="num1" />
+		<span>+</span>
+		<input type="text" id="num2" />
+		<input type="button"  value="相加" id="add" />
+		<script>
+			/*
+				转数字类型 		=> Number(要转换的值)
+				转字符串类型 	=> String(要转换的值)
+				转布尔值类型	=> Boolean(要转换的值)
+
+			*/
+
+			// 转成数字类型 内置对象 Number()
+
+			/*
+				NaN
+				要转的值不能转为数字时，用NaN表示
+				NaN：Not a Number
+				特点：
+					NaN是数字类型
+					NaN和任何值都不相等，包括他自身
+					NaN和任何值运算比较时，都为false
+
+			*/
+			var m  =10;
+			var n = m + 123;
+
+			// 不放心的是 m+123真的是数字吗？
+			// 判断一下n是不是NaN就可以了，
+			// 用一个方法 isNaN() 来判断这个值是不是NaN
+			/*
+				是NaN true
+				不是NaN false
+			*/
+
+			console.log( isNaN(n) );
+
+			console.log(isNaN(NaN));
+			console.log(isNaN(1));
+
+
+		</script>
+	</body>
+</html>

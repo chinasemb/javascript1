@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			.bg {
+				background: yellow;
+			}
+			.tab_content div {
+				width: 200px;
+				height: 200px;
+				border: 1px solid #333;
+				font-size: 50px;
+				text-align: center;
+				line-height: 200px;
+				display: none;
+			}
+			.content {
+				width: 200px;
+				margin: 50px auto;
+			}
+		</style>
+		<script>
+			
+		</script>
+	</head>
+
+	<body>
+		<div class="content">
+			<div class="tab_top">
+				<button class="bg">新闻</button>
+				<button>体育</button>
+				<button>娱乐</button>
+			</div>
+			<div class="tab_content">
+				<div style="display: block;">新闻</div>
+				<div>体育</div>
+				<div>娱乐</div>
+			</div>
+		</div>
+		<script>
+			var buttons = document.querySelectorAll('button');
+			var tab_content_div = document.querySelectorAll('.tab_content div');
+
+
+			var len = buttons.length;
+
+			for(var i = 0; i < len; i++){
+				buttons[i].index = i;  
+
+				buttons[i].onclick = function (){
+
+					for(var j = 0; j < len; j++){
+						buttons[j].classList.remove('bg');
+						tab_content_div[j].style.display = 'none';
+					}
+
+					//tab_content_div[this.index] // 找到点击button对应的div
+					tab_content_div[this.index].style.display = 'block';
+					this.classList.add('bg')
+				};
+			}
+
+		</script>
+	</body>
+</html>

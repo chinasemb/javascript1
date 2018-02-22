@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			li {
+				width: 100%;
+				height: 30px;
+				background: red;
+			}
+			ul {
+				border: 2px solid blue;
+			}
+		</style>
+		<script>
+			
+		</script>
+	</head>
+
+	<body>
+		<ul id="list">
+			<li>miaov</li>
+			<li>ketang</li>
+			<li>leo</li>
+		</ul>
+		<script>
+			let list = document.getElementById('list');
+			let lis = list.getElementsByTagName('li');
+
+			// mouseover和mouseout都会冒泡
+
+			list.onmouseenter = function (){
+				console.log('list:onmouseenter');
+			}
+			list.onmouseleave = function (){
+				console.log('list:onmouseleave');
+			}
+
+			Array.from(lis).forEach((item) => {
+				
+				item.onmouseenter = function (){
+						console.log('li:onmouseenter');
+				}
+				item.onmouseleave = function (){
+						console.log('li:onmouseleave');
+				}
+			})
+
+		</script>
+	</body>
+</html>

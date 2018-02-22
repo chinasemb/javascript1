@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+
+
+
+
+		</script>
+	</head>
+
+	<body>
+		<ul id="list" a="10">
+			<!--这是注释-->
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+		<script>
+
+			/*
+				节点分类：
+					元素节点：每个 HTML元素	
+					属性节点：HTML元素的属性
+					文本节点：HTML元素内的文本	
+					注释节点：注释 <!---->
+					文档节点：整个文档document	
+
+				节点类型 --- nodeType
+					元素节点：1	属性节点：2
+					文本节点：3	注释节点：8
+					文档节点：9	
+				节点名称 --- nodeName
+					元素节点：与标签名相同	属性节点：是属性的名称
+					文本节点：为#text	注释节点：为#comment
+					文档节点：为#document
+			*/
+
+			var list = document.getElementById('list'); 
+			// 元素节点
+			console.log(list.nodeName);   // UL 
+
+			// 属性节点 先找到所有的标签行间内的属性 id a
+
+			console.log(list.attributes.id.nodeName); 
+
+			// 获取list下所有的（元素节点 文本节点 注释节点）子节点
+
+			console.log( list.childNodes[0].nodeName );  // #text
+
+			// 注释节点
+
+			console.log( list.childNodes[1].nodeName );  // #comment
+
+			// 文档节点
+
+			console.log( document.nodeName );  // #document
+
+		</script>
+	</body>
+</html>

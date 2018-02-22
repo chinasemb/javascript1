@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+
+
+
+
+		</script>
+	</head>
+
+	<body>
+		<ul id="list">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+		<script>
+
+			/*
+				Object.defineProperty();
+			*/
+
+			// 给对象定义属性
+			var o = {a:1};
+
+			o.abc = 10;
+			/*o['miaov'] = 'ketang';  
+			o['miaov'] = 'leo';  // 属性的值被改写了 能不能不被改写？*/
+
+			// 定义属性
+			// 第三个参数是一个对象
+			/*
+				数据描述符
+				 对定义的属性记性描述
+				 	是否可以被改写
+				 	是否可以被遍历
+				 	是否可以被删除
+				 	属性值为什么？
+
+				configurable 是否可被删除 默认为false
+				enumerable  是否可被枚举 默认为false
+				value	       属性对应的值 默认为 undefined
+				writable        是否可被赋值运算符改变值 默认为false
+
+			*/
+			Object.defineProperty(o, 'miaov', {
+				value: '123',
+				writable: true,
+				enumerable: true,
+				configurable: true
+			})
+
+			o.miaov = 'leo';
+
+			// 枚举
+			for(var attr in o){
+				console.log(attr);
+			}
+
+			// 删除属性  运算符 delete 用来删除某个对象的属性
+
+			delete o.a;
+			delete o.miaov;
+
+			console.log(o);
+
+		</script>
+	</body>
+</html>

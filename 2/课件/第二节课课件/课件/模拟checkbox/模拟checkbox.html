@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            display: inline-block;
+            border: 2px solid #bdcec6;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        div.checked {
+            border-color: rgb(228, 57, 60);
+            background: url(images/1.png) no-repeat right bottom;
+        }
+    </style>
+</head>
+<body>
+    <div id="checkbox"></div>
+    <input type="checkbox" />
+    <script>
+        var checkbox = document.getElementById('checkbox');
+        checkbox.onclick = function () {
+            checkbox.classList.toggle('checked');
+        }
+    </script>
+</body>
+</html>

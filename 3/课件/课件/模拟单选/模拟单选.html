@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            display: inline-block;
+            border: 2px solid #bdcec6;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        div.checked {
+            border-color: rgb(228, 57, 60);
+            background: url(images/1.png) no-repeat right bottom;
+        }
+    </style>
+</head>
+<body>
+    <div class="radio">男</div>
+    <div class="radio">女</div>
+    <div class="radio">不确定</div>
+    <hr />
+    <input type="radio" name="sex" />男
+    <input type="radio" name="sex"  />女
+    <input type="radio" name="sex"  />不确定
+    <script>
+        /*
+            每次选中之后一个选中，一旦选定不能取消
+        */
+
+        var radio = document.querySelectorAll('.radio');
+
+        // for循环的作用是给每一个div绑定点击处理的，页面一加载就执行
+        for(var i = 0; i < radio.length; i++){
+            radio[i].onclick = function (){
+
+                // 只有点击的div添加class，其他的都去掉class
+
+                // 去掉所有div的class  checked
+                // 点击的时候才执行
+                for(var j = 0; j < radio.length; j++){
+                    radio[j].classList.remove('checked')
+                }
+
+                // 点击哪一个div就添加class
+                this.classList.add('checked')    
+            }
+        }
+
+    </script>
+</body>
+</html>

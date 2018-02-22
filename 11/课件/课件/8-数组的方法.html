@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+
+			var arr = ['wang','zhong','liu','leo'];
+
+			// 仓库 书架
+
+			/*
+				1. 向数组中后面追加一个到多个元素
+				2. 向数组的前面添加一个到多个元素
+				3. 删除最后一个元素
+				4. 删除第一个元素
+				5. 取出指定位置（开始，结束）的元素
+				6. 删除指定位置的元素
+				7. 指定位置的元素替换为别的元素
+			*/
+
+			// 数组调用方法后，对原数组有没有副作用
+
+			// 4. 
+
+
+			arr.shift(); //删除第一个元素  改变了原数组
+			arr.shift();
+			var v = arr.shift();
+
+			console.log(v);
+
+			console.log(arr);
+
+
+			/*// 3. 
+
+			arr.pop();  // 删除最后一个元素  改变了原数组
+			arr.pop();
+			var v = arr.pop();  // 返回值为删除后元素
+
+			console.log(v);
+
+			console.log(arr);*/
+
+			/*// 2.
+
+			arr.unshift(1,2,3);  // 向数组的前面添加了元素 改变了原数组
+			var m = arr.unshift('abc');
+
+			console.log(m);  // 返回值是向前添加后数组的长度
+
+			console.log(arr);*/
+
+
+			/*// 1.
+
+			arr.push('abc');  // 向数组后追加元素 改变了原数组
+			arr.push('a','b','c')
+
+			var n = arr.push('miaov'); // push的返回值是追加后数组的长度
+
+			console.log(n);
+
+			console.log(arr);*/
+
+
+		</script>
+	</head>
+
+	<body>
+		<div id="box"></div>
+		<script>
+
+		</script>
+	</body>
+</html>

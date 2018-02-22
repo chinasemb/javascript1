@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			
+			console.log(window.location);  // 获取地址栏信息  这一个对象
+
+			console.log(window.location.href);
+			console.log(window.location.search);
+			console.log(window.location.hash);
+
+			// 以上三个属性可读可写
+
+			document.onclick = function (){
+				// 重新赋值，跳转页面
+				//window.location.href = 'http://www.baidu.com'	
+				//window.location.search = 'a=10&b=20'	
+				window.location.hash = 'miaovweiketang'	
+			}
+
+		</script>
+	</head>
+
+	<body>
+	</body>
+</html>

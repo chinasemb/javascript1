@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+
+			
+			/*
+				=> 箭头
+				() => {};
+				把箭头函数作为值赋值给变量
+			*/
+
+			let func = (a,b) => a+b;  // 箭头后面就是返回值 自动返回
+			console.log(func(1,2));
+
+			let func1 = (a,b) => {
+				if(a < 10){
+					a = 40;
+				}
+				return a +b;
+			}
+
+			console.log(func1(1,2));
+
+			/*function fn() {
+				console.log(this); // this的值是在调用函数的时候确定
+			}
+
+			fn();
+
+			document.onclick = fn;*/
+
+			/*let fn = () => {
+				console.log(this);  // 是定义箭头函数确定的，在那个范围定义this就指向谁
+			}
+
+			fn();
+
+			document.onclick = fn;*/
+
+			document.onclick = function (){
+				setTimeout( () => {
+					console.log(this);
+				},1000)	
+			}
+
+			let f = () => {
+				console.log(arguments);  //箭头函数中没有arguments
+			}
+
+			f(1,2)
+
+		</script>
+	</head>
+
+	<body>
+		
+	</body>
+</html>

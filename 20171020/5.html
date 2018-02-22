@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		li{list-style: none;}
+		body{margin:0;padding:0;}
+		.list{position:relative;}
+		img{width: 1139px;height: 687px;position:absolute;top:10px;left:200px;border: 15px solid pink;}
+		#next{position:absolute;top:300px;right:350px;color:red;font-size: 40px;border: 5px solid pink;}
+		#prev{position:absolute;top:300px;left:300px;color: red;font-size: 40px;border: 5px solid pink;}
+	</style>
+</head>
+<body>
+	<div class="slide">
+		<div class="tagClient">
+			<div class="list">
+				<li><img src="./tabs./1.png" id = "tabImg" alt=""></li>
+				<div id="next">></div>
+				<div id="prev"><</div>
+			</div>
+		</div>
+		
+	</div>	
+<script>
+	var next = document.getElementById('next');
+	var prev = document.getElementById('prev');
+	var tabImg = document.getElementById('tabImg');
+	var n = 1;
+
+	next.onclick = function(){
+		n++;
+		
+		if(n>5){
+			n = 1 ;
+			tabImg.src = "./tabs./"+n+".png";
+		}else{
+			tabImg.src = "./tabs./"+n+".png";
+		}
+	}
+
+	prev.onclick = function(){
+		n--;
+		
+		if(n<1){
+			n = 5 ;
+			tabImg.src = "./tabs./"+n+".png";
+		}else{
+			tabImg.src = "./tabs./"+n+".png";
+		}
+	}
+
+</script>
+</body>
+</html>

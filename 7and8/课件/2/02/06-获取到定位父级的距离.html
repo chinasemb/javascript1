@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title></title>
+  <style>
+    .div1 {
+      width: 400px;
+      height: 400px;
+      border: 2px solid #000;
+      position: relative;
+    }
+    .div2 {
+      margin: 20px;
+      width: 280px;
+      height: 280px;
+      border: 2px solid red;
+    }
+    .div3 {
+      width: 100px;
+      height: 100px;
+      margin: 40px;
+      border: 2px solid blue;
+    }
+  </style>
+</head>
+<body>
+  <div class="div1">
+    <div class="div2">
+      <div class="div3"></div>
+    </div>
+  </div>
+  <script>
+    /**
+     * ele.offsetLeft 获取当前 ele 这个元素到其定位父级的 left 值
+     * ele.offsetTop 获取当前 ele 这个元素到其定位父级的 top 值
+     *
+     * 上面两个属性，无论当前这个 ele 自身有没有定位，能都能获取到
+     */
+    
+    var div1 = document.querySelector('.div1');
+    var div2 = document.querySelector('.div2');
+    var div3 = document.querySelector('.div3');
+    
+    // console.log(div1.offsetLeft, div1.offsetTop);
+    
+    // console.log(div2.offsetLeft);
+    console.log(div3.offsetLeft);
+    
+    
+  </script>
+</body>
+</html>

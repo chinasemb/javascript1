@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			.bg {
+				background: yellow;
+			}
+			.tab_content div {
+				width: 200px;
+				height: 200px;
+				border: 1px solid #333;
+				font-size: 50px;
+				text-align: center;
+				line-height: 200px;
+				display: none;
+			}
+			.content {
+				width: 200px;
+				margin: 50px auto;
+			}
+		</style>
+		<script>
+			
+		</script>
+	</head>
+
+	<body>
+		<div class="content">
+			<div class="tab_top">
+				<button class="bg">新闻</button>
+				<button>体育</button>
+				<button>娱乐</button>
+			</div>
+			<div class="tab_content">
+				<div style="display: block;">新闻</div>
+				<div>体育</div>
+				<div>娱乐</div>
+			</div>
+		</div>
+		<script>
+			var buttons = document.querySelectorAll('button');
+
+
+			var len = buttons.length;
+
+			// 自定义属性  开发者为了存某一个值在这个元素上，自定义了一个属性
+			buttons[0].abc = 10;  // 添加一个属性
+
+
+			console.dir(buttons[0].abc)
+
+			for(var i = 0; i < len; i++){
+
+				//buttons[i] // 每一个button
+				buttons[i].index = i;  // 每一个button添加自定属性，存的就是循环过程中i的值，其实这个i就是当前button的下标
+
+				buttons[i].onclick = function (){
+					// 点击的button在所有的button中所处的下标
+					alert(this.index)	
+				};
+			}
+
+		</script>
+	</body>
+</html>

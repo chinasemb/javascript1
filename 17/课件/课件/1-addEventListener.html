@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			function miaov(){
+				alert(1)
+			}
+		</script>
+	</head>
+
+	<body>
+		<!-- <input type="button" id="btn" onclick="miaov()" /> -->
+		<input type="button" id="btn" />
+		<script>
+			let btn = document.getElementById('btn');
+			// 事件处理函数
+			btn.onclick = function (){
+				alert(1)
+				btn.onclick = null;  // 解绑
+			}
+			// 一个元素的同一个事件不能绑定多个事件处理函数
+
+			console.dir(btn);
+
+		</script>
+	</body>
+</html>

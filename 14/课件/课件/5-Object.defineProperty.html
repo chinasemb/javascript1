@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+
+
+
+
+		</script>
+	</head>
+
+	<body>
+		<ul id="list">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+		<script>
+
+			/*
+				Object.defineProperty();
+			*/
+
+			// 给对象定义属性
+			var o = {a:1};
+
+			o.abc = 10;
+			/*o['miaov'] = 'ketang';  
+			o['miaov'] = 'leo';  // 属性的值被改写了 能不能不被改写？*/
+
+			// 定义属性
+			// 第三个参数是一个对象
+			/*
+				存取描述器
+					getter 
+						取值会触发这个函数
+					setter
+						设置值会触发这个函数
+					enumerable :true,
+				 configurable : true,
+
+			*/
+			var v = 123;
+			Object.defineProperty(o, 'miaov', {
+				enumerable :true,
+				configurable : true,
+				get(){  // 定义函数
+					console.log('我取值了');
+					return v
+				},
+				set(newVal){
+					console.log("设置值"+newVal);
+					v = newVal;
+				}
+			})
+
+			console.log( o.miaov );
+
+			o.miaov = 10;
+
+
+			console.log(o);
+
+		</script>
+	</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			#dragObj {
+				width: 200px;
+				height: 200px;
+				background: red;
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+		</style>
+	</head>
+
+	<body>
+		
+		<div id="dragObj"></div>
+		<script>
+			// 在浏览器中把一个元素对着拖着走
+			/*
+				拖拽需要三大事件：
+					1. mousedown  鼠标摁下触发
+					2. mousemove  鼠标移动触发
+					3. mouseup    鼠标抬起触发
+			*/
+
+			let dragObj = document.getElementById('dragObj');
+
+			dragObj.onmousedown = function (){
+				console.log('mousedown');	
+			}
+
+			dragObj.onmousemove = function (){
+				console.log('mousemove');	
+			}
+			dragObj.onmouseup = function (){
+				console.log('onmouseup');	
+			}
+
+
+		</script>
+	</body>
+</html>

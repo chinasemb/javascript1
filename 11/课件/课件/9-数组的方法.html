@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+
+			var arr = ['wang','zhong','liu','leo'];
+
+			// 仓库 书架
+
+			/*
+				1. 向数组中后面追加一个到多个元素
+				2. 向数组的前面添加一个到多个元素
+				3. 删除最后一个元素
+				4. 删除第一个元素
+				5. 取出指定（开始，结束）位置的元素
+				6. 删除指定位置的元素
+				7. 指定位置的元素替换为别的元素
+			*/
+
+			// 数组调用方法后，对原数组有没有副作用
+
+			// 7
+
+			// 把第二个位置替换为 miaov
+
+			// arr.splice(2,1,'miaov')
+
+			//arr.splice(2,1,'miaov','ke','tang')  // 删除指定位置，替换为第三个参数开始的值
+
+			// 把第二个位置插入为 miaov
+			arr.splice(2,0,'miaov','ke','tang')  // 指定位置插入从第三个参数之后的值
+
+			console.log(arr);
+
+
+			/*// 6
+
+			// 删除第2项的元素
+
+			// arr.splice(2);  // 从指定位置一直删除到最后  会改变原数组
+
+			// arr.splice(2,1);  // 指定删除的个数
+
+			// arr.splice(1,0);  // 不删除
+
+			//var newArr = arr.splice(1,0);  // 返回的是一个数组 ，数组的值是删除的元素
+			var newArr = arr.splice(2);
+			console.log(newArr);
+
+
+			console.log(arr);*/
+
+
+			// 5
+			/*arr.slice(1,2);  // 取出指定（开始，结束）位置的元素  不改变原数组
+
+			var newArr = arr.slice(1,2);  // 返回是数组 数组中的值是截取的值，不包含结束位置的值  ["zhong"]
+
+			console.log(newArr);
+
+			var newArr2 = arr.slice(1);  // 从指定位置截取到最后
+
+			console.log(newArr2);
+
+			console.log(arr);*/
+
+		</script>
+	</head>
+
+	<body>
+		<div id="box"></div>
+		<script>
+
+		</script>
+	</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			#box {
+				width: 100px;
+				height: 100px;
+				background: red;
+			}
+		</style>
+		<script>
+			
+		</script>
+	</head>
+
+	<body>
+		<div id="box">
+			
+		</div>
+		<script>
+			let box = document.getElementById('box')
+			box.onclick = function (){
+				console.log('click');	
+			}
+			// 在元素上摁下抬起才会触发click
+			box.ondblclick = function (){
+				console.log('ondblclick');	
+			}
+			box.onmousedown = function (){
+				console.log('omousedown');	
+			}
+			box.onmouseup = function (){
+				console.log('omouseup');	
+			}
+			box.onmouseover = function (){
+				console.log('omouseover');	
+			}
+			box.onmouseout = function (){
+				console.log('omouseout');	
+			}
+			box.onmousemove = function (){
+				console.log('onmousemove');	
+			}
+
+
+
+		</script>
+	</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			#box{
+
+			}
+			div{
+
+			}
+			.first{
+
+			}
+		</style>
+		<script>
+			
+		</script>
+	</head>
+
+	<body>
+		<div id="box">hello</div>
+		<ul id="list1">
+			<li class="first">1</li>
+			<li>2</li>
+			<li class="active">3</li>
+			<li>4</li>
+			<li class="active">5</li>
+		</ul>
+		<ul id="list2">
+			<li class="first">1</li>
+			<li>2</li>
+			<li class="active">3</li>
+			<li>4</li>
+			<li class="active">5</li>
+		</ul>
+		<div id="form">
+			<input type="text" name="userName" />
+			<input type="checkbox" name="checkbox" />
+			<input type="checkbox" name="checkbox" />
+			<input type="checkbox" name="checkbox" />
+		</div>
+		<script>
+			/*
+				通过id获取元素
+					document.getElementById(id名字)
+				通过标签获取元素
+					document/元素.getElementsByTagName(标签名)
+				通过class名字获取元素
+					document/元素.getElementsByClassName(class名字)
+
+				
+			*/
+
+			/*var first = document.getElementsByClassName('first');
+			first[0].style.background = 'red';
+			first[1].style.background = 'red';
+			console.log(first[0]);*/
+
+			var list1 = document.getElementById('list1');
+
+			var firstLi = list1.getElementsByClassName('first');
+
+			firstLi[0].style.background = 'blue';
+
+		</script>
+	</body>
+</html>

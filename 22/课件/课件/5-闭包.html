@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			/*for( var i = 0; i < 10; i++ ){
+				fn(i)
+			}
+			function fn(i){
+				document.addEventListener('click',function (){
+					alert(i)			
+				})
+			}*/
+
+			function fn(n){
+				return function (m){
+					return m + n;
+				}
+			}
+
+			let f = fn(10)
+
+			// 在10的基础上加
+
+			console.log(f(1));
+			console.log(f(2));
+			console.log(f(5));
+
+		</script>
+	</head>
+
+	<body>
+		
+	</body>
+</html>

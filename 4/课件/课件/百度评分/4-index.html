@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>百度评分</title>
+		<style>
+			body,h1 {
+				margin: 0;
+				padding: 0;
+				-webkit-font-smoothing: antialiased;
+			}
+			.starts{
+				overflow:hidden;
+			}
+			.starts span{
+				display: block;
+				float: left;
+				padding: 3px;
+			}
+			.starts span:after {
+				content: '☆'
+			}
+			.starts .e4c6e4:after,.starts .e15671:after {
+				content: '★'
+			}
+
+			.wrap .starts .e4c6e4 {
+				color: #e4c6e4;
+			}
+			.wrap .starts .e15671 {
+				color: #e15671;
+			}
+		</style>
+		<link rel="stylesheet" type="text/css" href="./style/pingfen.css"/>
+	</head>
+	<body>
+		<div class="wrap">
+			<div class="baidu">
+				<div class="caption">
+					<h1></h1>
+					<span>总体评价</span>
+				</div>
+				<div class="context">
+					<div class="starts">
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+					<div class="info"></div>
+				</div>
+				<div class="tips">
+					小提示：点击星星就能打分
+				</div>
+			</div>
+		</div>
+		<script>
+			/*
+				1. 给每一个span绑定移入事件处理
+					跟每一个span对比，对比过程中
+						如果 小于移入的span的下标
+								如果 移入的span下标小于2 
+									className为#e4c6e4
+								否则
+									className为#e15671
+						否则
+							className清空
+				2. 鼠标移开
+					如果 点击了span
+						
+					否则
+						className清空
+				3. 点击某一个span	
+						记录点击了
+						记录点击的span的下标
+			*/
+
+			//定义要显示的信息数组
+			var arr = ['极差', '一般', '不错', '推荐', '力推'];
+
+			// 1. 获取元素
+
+			var spans = document.querySelectorAll('.starts span')
+			var len = spans.length;
+			// 2. 循环绑定事件 mousover mouseout
+
+
+			var clickIndex = -1; // 记录点击的span的下标
+
+			for( var i = 0; i < len; i++ ){
+				// 3 记录每一个span的下标
+				spans[i].index = i;
+				spans[i].onmouseover = function () {
+					// 4. 鼠标移入，判断每一个span，小于鼠标移入的span的下标 就在左边，否则在右边
+					var index = this.index; // 鼠标移入的元素的下标
+					for( var j = 0; j < len; j++ ){
+						if( j <= index ){ // 左边
+
+							// 6. 左边分了两种情况  index < 2 加上浅红色的class 否则 加上深红色的
+
+							if(index <= 1){
+								spans[j].className = 'e4c6e4'
+							}else{
+								spans[j].className = 'e15671'
+							}
+
+							
+						}else{ // 右边
+							spans[j].className = ''
+						}
+					}
+
+				}
+				// 5. 鼠标移开去掉所有span的class
+				spans[i].onmouseout = function () {
+
+					// 8. 思考 当点击了span 就不能去掉所有的span的class了
+					// 没点击 就去掉所有span的class
+					for( var j = 0; j < len; j++ ){
+						if(j <= clickIndex){
+							if(clickIndex <= 1){
+								spans[j].className = 'e4c6e4';
+							}else{
+								spans[j].className = 'e15671';
+							}
+						}else{
+							spans[j].className = '';
+						}
+					}
+
+				}
+
+				// 7. 绑定点击处理
+				spans[i].onclick = function () {
+					// 原本思路 点了一下让点击的span左边元素绑定class
+
+					clickIndex = this.index; // 记录点击的span的下标
+				}
+
+			}
+			
+		</script>
+	</body>
+</html>

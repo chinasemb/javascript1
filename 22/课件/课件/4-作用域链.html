@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			
+			let abc = 10;
+
+			// 是可以访问，为什么能够访问？
+			// 每一次解析函数都会记录包含这个函数的外层的作用域
+
+			// 作用域就形成了作用域链
+			function fn1(){
+				function fn2(){
+					let abc = 30;
+					function fn3(){
+						console.log(abc);	
+					}
+				}
+			}
+
+
+
+		</script>
+	</head>
+
+	<body>
+		
+	</body>
+</html>

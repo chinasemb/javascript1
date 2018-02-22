@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+
+
+			var arr = [3,1,6,2,0,5,7,8,4,10];
+
+			arr.sort(function(a,b){ // 会接受两个数组中的值作为参数 这两个值要不要交换位置
+				// 取决于 sort的这个回调函数的返回值
+				// 负数 整数 0
+				console.log(a,b);
+				//return -3;  // 这个两个值不交换位置
+				//return 0; // 这个两个值不交换位置
+				//return 123; // 这个两个值交换位置
+
+				return b-a;  // 交换不交换位置取决于两个值的差，如果大于0 说明前一个数要大于后一个数，交换位置；
+			})
+
+
+			console.log(arr);
+
+
+		</script>
+	</head>
+
+	<body>
+		
+	</body>
+</html>

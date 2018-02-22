@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			/*
+				Math 全局的对象 用来处理数字
+				Math.ceil() 	对数进行向上取整
+
+				Math.floor() 	对数进行向下取整
+
+				Math.round()	对数进行四舍五入
+
+				Math.abs() 	取数的绝对值
+
+				https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Math
+
+			*/
+
+			/*console.log(Math.ceil(1.5));
+			console.log(Math.floor(1.5));
+			console.log(Math.round(1.2));
+			console.log(Math.round(1.5));
+			console.log(Math.abs(-1));
+			console.log(Math.abs(1));*/
+
+			console.log(Math.random());  // 返回0-1之间的随机数，不包含1
+
+			var arr = ['a','b','c','d'];
+
+			// 0 1 2 3 随机出现 0-3之间的随机数
+
+			// 10 - 20  x~y  Math.random() * (y-x) + x
+
+			//Math.random() * 10 + 10 // 0 - 0.9999999999999
+			var i = Math.round(Math.random() * 3);
+			console.log(i);
+			console.log(arr[i]);
+
+		</script>
+	</head>
+
+	<body>
+		
+	</body>
+</html>

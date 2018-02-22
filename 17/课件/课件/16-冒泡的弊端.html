@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			#box {
+				width: 300px;
+				height: 300px;
+				background: red;
+				display: none;
+			}
+		</style>
+		<script>
+			
+		</script>
+	</head>
+
+	<body>
+		<button id="login">登录</button>
+		<div id="box">登录显示页</div>
+		<script>
+			let login = document.getElementById('login');
+			let box = document.getElementById('box');
+
+			// 因为冒泡的原因，触发了document的onclick
+			// 停止传播
+			// 阻止冒泡 事件对象.stopPropagation()
+
+			login.onclick  = function (ev){
+				box.style.display = 'block';	
+				ev.stopPropagation();
+			}
+			document.onclick = function (){
+				console.log('冒到了我这里');
+				box.style.display = 'none';	
+			}
+		</script>
+	</body>
+</html>

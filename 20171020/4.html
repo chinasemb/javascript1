@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#img1{
+			width:600px;
+			height: 400px;
+			position:absolute;
+			top:100px;
+			left:300px;
+		}
+	</style>
+</head>
+<body>
+	<img src="./01.jpg" id = "img1" alt="">
+<script>
+	/*
+		遇到不成立的一定能够邀打印出来看
+
+		img.src 获取的是绝对路径 路径不要拿出来做判断
+
+		切换条件成立 条件不成立
+	*/
+	var tabImg = document.getElementById('img1');
+	var state  = 1;//记录此时切换的图片的状态
+
+	tabImg.onclick = function(){
+		if(state ==1){
+			tabImg.src = "./02.jpg";
+			state = 2 ;
+		}else{
+			tabImg.src = "./01.jpg";
+			state = 1 ;
+		}
+	}
+</script>	
+</body>
+</html>

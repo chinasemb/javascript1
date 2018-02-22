@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			div {
+				width: 100px;
+				height: 100px;
+				position: absolute;
+				left: 0px;
+				top: 0;
+			}
+			#dragElement {
+				background: red;
+			}
+			#box {
+				background: green;
+				left: 300px;
+				top: 300px;
+			}
+		</style>
+		<script>
+			
+		</script>
+	</head>
+
+	<body>
+		<div id="dragElement"></div>
+		<div id="box"></div>
+		<script>
+
+			// 都已浏览器左边和上边为基准
+
+			function getRect(element){
+				return element.getBoundingClientRect()
+			}
+
+			let dragElement = document.getElementById("dragElement");
+			let box = document.getElementById("box");
+
+			dragElement.onmousedown = function (ev){
+				let disX = ev.clientX - dragElement.offsetLeft;
+				let disY = ev.clientY - dragElement.offsetTop;
+
+				document.onmousemove = function (ev){
+					dragElement.style.left = ev.clientX - disX + 'px';	
+					dragElement.style.top = ev.clientY - disY + 'px';
+					if(collision(dragElement,box)){
+						box.style.background = 'blue'
+					}else{
+						box.style.background = 'green'
+					}
+				}
+				document.onmouseup = function (){
+					document.onmousemove = document.onmouseup = null;	
+				}
+			}
+			/*
+				参数:
+					1. 拖拽的元素
+					2. 被碰撞的元素
+
+				返回值：
+					碰上了 true
+					没碰上 false
+			*/
+			function collision(obj1,obj2){
+				let dragRect = getRect(obj1)
+				let boxRect = getRect(obj2)
+
+				if(dragRect.right < boxRect.left || dragRect.bottom < boxRect.top || dragRect.left > boxRect.right || dragRect.top > boxRect.bottom){
+					return false
+				}else{
+					return true
+				}	
+			}
+
+		</script>
+	</body>
+</html>

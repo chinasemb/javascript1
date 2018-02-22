@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+
+
+
+
+		</script>
+	</head>
+
+	<body>
+		<ul id="list">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+		<script>
+
+			/*// 简写方法
+
+			var a = 10;
+			var b = 20;
+
+			let o = {
+				fn: function(){},
+				func(){},
+				a:a,
+				b
+			}
+
+			console.log(o);
+
+			// 属性可以使表达式  对象的key值可以计算得到
+
+			var miaov = 'ketang123';
+
+			let obj = {
+				ketang: 1234567,
+				[miaov]: 1234567,
+				[miaov+'leo']:33333
+			}
+
+			console.log(obj);
+
+			console.log(NaN == NaN);
+			console.log(NaN === NaN);
+			console.log(Object.is(NaN,NaN));
+			console.log(Object.is(1,1));*/
+
+			// 合并对象
+
+			var obj123 = {a:1};
+			var obj456 = {b:2};
+			// 第一个参数是目标对象 从开始参数开始就是要合并的对象
+			Object.assign(obj123,obj456,{c:333});
+console.log(obj123);
+			let newObj = Object.assign({}, obj456);  // 复制一个对象 浅复制
+
+			console.log(newObj);
+
+			
+
+		</script>
+	</body>
+</html>

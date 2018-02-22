@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title></title>
+</head>
+<body>
+  <script>
+    /**
+     * 清除定时器
+     *  - clearInterval(要清除的定时器的编号)
+     *  - clearTimeout(要清除的定时器的编号)
+     *
+     * 这2个方法的参数，无论你给它们什么样的数据类型，都不会报错。
+     */
+    
+    var a = 1, timer;
+    
+    // 当a加到10的时候，就让它再加了
+    // timer = setInterval(function() {
+    //   if(a === 10){
+    //     // return clearInterval(timer);
+    //     return clearTimeout(timer);
+    //   }
+    //   a++;
+    //   console.log(a);
+    // }, 100);
+    
+    
+    timer = setTimeout(function() {
+      console.log(a);
+    }, 3000);
+    
+    document.onclick = function (){
+      clearTimeout(timer);
+    };
+  </script>
+</body>
+</html>

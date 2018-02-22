@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			
+		</script>
+	</head>
+
+	<body>
+		<input type="text" id="num" value="0" />
+		<input type="text" id="num2" value="0" />
+		<script>
+			// 封装通用的滚轮滚动的方法
+			/*
+				1. 绑定滚轮事件的元素
+				2. 向上滚动要执行的函数
+				3. 向下滚动要执行的函数
+			*/
+			function mousewheel(element,upFn,downFn){
+				element.addEventListener('mousewheel',wheel)
+				element.addEventListener('DOMMouseScroll',wheel)
+
+				function wheel(ev){
+					let d = true;  // 默认方向为向上  向上 true 向下为false
+
+					if(ev.wheelDelta){
+						d = ev.wheelDelta > 0 ? true : false
+					}else if(ev.detail){
+						d = ev.detail < 0 ? true :  false;
+					}
+
+					if(d){  // 向上
+						typeof upFn === 'function' && upFn()
+					}else{
+						typeof downFn === 'function' && downFn()
+					}
+
+				}	
+			}
+
+			let num = document.getElementById('num');
+			let num2 = document.getElementById('num2');
+
+			mousewheel(num,function (){
+				console.log(this);
+				num.value = ++num.value;	
+			},function (){
+				num.value = --num.value;	
+			})
+			mousewheel(num2,function (){
+				num2.value = ++num2.value;	
+			},function (){
+				num2.value = --num2.value;	
+			})
+
+		</script>
+	</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+
+			/*for( let i = 0; i < 10; i++ ){
+				//console.log(i);
+			}
+
+			console.log(i);*/
+
+			/*for( let i = 0; i < 10; i++ ){
+				// 0 1 2 3 ... 9
+				// i都是重新声明的
+				setTimeout(function (){
+					console.log(i);	
+				},1000)
+			}*/
+
+			for( var i = 0; i < 10; i++ ){
+				// 0 1 2 3 ... 9
+				(function (i){
+					setTimeout(function (){
+						console.log(i);	
+					},1000)	
+				})(i)
+			}	
+
+
+		</script>
+	</head>
+
+	<body>
+		
+	</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			
+		</script>
+	</head>
+
+	<body>
+		<input type="text" id="num1" />
+		<span>+</span>
+		<input type="text" id="num2" />
+		<input type="button"  value="相加" id="add" />
+		<script>
+			/*
+				转数字类型 		=> Number(要转换的值)
+				转字符串类型 	=> String(要转换的值)
+				转布尔值类型	=> Boolean(要转换的值)
+
+			*/
+
+			// 转成数字类型 内置对象 Number()
+
+			/*
+				NaN
+				要转的值不能转为数字时，用NaN表示
+				NaN：Not a Number
+				特点：
+					NaN是数字类型
+					NaN和任何值都不相等，包括他自身
+					NaN和任何值运算比较时，都为false
+
+				parseInt() 
+					从第一个字符开始，碰到不是数字的字符为止，把是数字的字符转成数字并返回
+						得到的值为整数
+						开头和结尾的空格是允许的	
+						如果字符串的第一个字符不能被转换为数字，那么会返回 NaN
+
+			*/
+
+			/*console.log( parseInt( 123 ) );
+			console.log( parseInt( "123" ) );
+			console.log( parseInt( "123miaov" ) );  // 123
+			console.log( parseInt( "miaov123" ) );  // NaN
+			console.log( parseInt( "123miaov456" ) ); // 123*/
+			console.log( parseInt(true) );  // NaN
+			console.log( parseInt(false) );// NaN
+			console.log( parseInt({}) );// NaN
+			console.log( parseInt(undefined) ); // NaN
+
+
+		</script>
+	</body>
+</html>

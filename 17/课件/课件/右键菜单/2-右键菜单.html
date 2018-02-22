@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+<style>
+#box{
+	width:180px;
+	height: 200px;
+	background: #fff;
+	position: absolute;
+	top:0;
+	left:0;
+	border:1px solid #f06b73;
+	box-shadow:1px 1px 10px #f06b73;
+	display: none;
+}
+ul{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+ul li{
+	height: 50px;
+	list-style: none;
+	text-indent:1.5em;
+	line-height: 50px;
+	font-size:16px;
+	color: #f5726c;
+	cursor: pointer;
+}
+ul li:hover{
+	background: #fde9e9;
+	color: #e6423c;
+}
+
+span{
+	width:19px;
+	height: 19px;
+	float:left;
+	background: url(img/demo2.png) no-repeat;
+	margin:14px 0 0 34px;
+	display: block;
+}
+span.s1{
+	background-position:0 0;
+}
+span.s2{
+	background-position:-19px 0;
+}
+span.s3{
+	background-position:-38px 0;
+}
+span.s4{
+	background-position:-56px 0;
+}
+</style>
+</head>
+<body style="height: 3000px;">
+	<div id="box">
+		<ul id="ul">
+			<li><span class="s1"></span>下载</li>
+			<li><span class="s2"></span>删除</li>
+			<li><span class="s3"></span>移动到...</li>
+			<li><span class="s4"></span>重命名</li>
+		</ul>
+	</div>
+<script type="text/javascript">
+
+	var box = document.querySelector("#box");
+
+	// 鼠标位置 clientX、clientY 相对视口视口
+
+	document.oncontextmenu = function (ev){
+		box.style.display = 'block'
+		box.style.left =  ev.clientX + 'px';
+		box.style.top = ev.clientY + 'px';
+		console.log( ev.clientX,ev.clientY );
+		ev.preventDefault();
+	}
+
+	document.onclick = function (){
+		box.style.display = 'none'	
+	}
+
+
+</script>
+</body>
+</html>

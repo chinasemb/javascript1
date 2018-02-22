@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="checkbox" id = "checkboxBtn" >
+
+	<script>
+		var checkboxBtn = document.getElementById("checkboxBtn");
+		
+		checkboxBtn.onclick = function (){
+			if(checkboxBtn.checked){
+				document.body.style.background = "green"
+			}else{
+				document.body.style.background = "#ccc"
+			}
+		}
+	</script>
+</body>
+</html>

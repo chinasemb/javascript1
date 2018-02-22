@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			#box{
+
+			}
+			div{
+
+			}
+			.first{
+
+			}
+			#list1 .active {
+
+			}
+		</style>
+		<script>
+			
+		</script>
+	</head>
+
+	<body>
+		<div id="box">hello</div>
+		<ul id="list1">
+			<li class="first">1</li>
+			<li>2</li>
+			<li class="active">3</li>
+			<li>4</li>
+			<li class="active">5</li>
+		</ul>
+		<script>
+
+			
+			var lis = document.getElementsByTagName("li");  // 类数组
+
+			console.log(lis[0])
+			console.log(lis[4])
+			console.log(lis[5]); // undefined
+
+			// lis[0] lis[1] lis[2]
+			// 每一个元素绑定事件处理，使用for循环
+
+			for(var i = 0; i < lis.length; i++){
+				lis[i].onclick = function (){
+					// 点击这个li，加上一个背景颜色
+					//console.log(lis[i]); // undefined  未定义
+					// 无论点击哪一个li，都是5
+					// i为什么是5？因为页面一旦打开，for循环立马就结束了，i为最终值为5
+					// 当点击的时候，for循环已经结束了，点击的时候打出i，只能是5了
+					console.log(i);
+					//lis[i].style.background = 'red';
+				}
+			}
+
+			console.log(i)
+
+
+		</script>
+	</body>
+</html>

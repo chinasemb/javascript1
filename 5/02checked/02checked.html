@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="checkbox" id = "checkboxBtn" checked>
+	<script>
+		var checkboxBtn = document.getElementById('checkboxBtn');
+
+		//在js 中想知道,checkbox 的状态是否选中 
+		/*
+			checked 是 checkbox 元素上的一个属性用来记录当前这儿checkbox
+			是否是选中的 
+			true 选中
+			false 未选中
+
+			既可以读也可以写
+				读的是是否选中的状态
+				写的是选中与否
+
+		*/
+		// document.onclick = function  () {
+		// 	checkboxBtn.checked = false;
+		// 	console.log(checkboxBtn.checked);
+		// }
+		checkboxBtn.onclick = function() {
+			if(checkboxBtn.checked ){
+				document.body.style.background = "pink"
+			}else{
+				document.body.style.background = "grey"
+			}
+		}
+	</script>
+</body>
+</html>

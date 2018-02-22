@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			function miaov(){
+				alert(1)
+			}
+		</script>
+	</head>
+
+	<body>
+		<!-- <input type="button" id="btn" onclick="miaov()" /> -->
+		<input type="button" id="btn" />
+		<script>
+			/*
+				事件对象
+					拿到这个事件对象
+
+				就作为事件处理函数的第一个参数
+			*/
+
+			let btn = document.getElementById('btn');
+
+			btn.onclick = function (ev){
+				console.log(ev);	// MouseEvent
+			}
+
+
+		</script>
+	</body>
+</html>

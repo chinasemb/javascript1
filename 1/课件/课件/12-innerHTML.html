@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			div {
+				width: 100px;
+				height: 200px;
+				background: red;
+			}
+		</style>
+		
+	</head>
+
+	<body>
+		<input type="button" value="改变div的样式" id="btn" class="miaov ketang"  />
+		<div id="box">
+			<p>123</p>
+			<p>123</p>
+			<p>123</p>
+			<p>123</p>
+		</div>
+		
+		<script>
+			/*
+				class 是关键字
+				使用 className 
+
+				value 
+					获取表单的控件上的值
+						input textarea select
+
+				既可以读也可以获取
+
+				innerHTML
+					获取设置一个标签包含的html结构
+
+			*/
+			
+			var box = document.getElementById('box');
+
+			console.log(box.innerHTML);  // html结构
+
+			box.innerHTML = '<span>hello</span>'//  清空之前的结构，重新赋值新的结构
+
+
+
+		</script>
+	</body>
+</html>

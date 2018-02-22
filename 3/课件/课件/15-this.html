@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			#box{
+
+			}
+			div{
+
+			}
+			.first{
+
+			}
+			#list1 .active {
+
+			}
+		</style>
+		<script>
+			
+		</script>
+	</head>
+
+	<body>
+		<div id="box">hello</div>
+		<ul id="list1">
+			<li class="first">1</li>
+			<li>2</li>
+			<li class="active">3</li>
+			<li>4</li>
+			<li class="active">5</li>
+		</ul>
+		<script>
+
+			console.log(this);  // 顶层对象 窗口对象  window
+
+			function fn(){
+				console.log(this);  // 当函数被调用的确定this的值
+			}
+			/*
+				1.直接调用函数  this => window
+				2. 事件触发的时候调用函数  this => 触发事件的元素
+			*/
+			// window.fn();  
+			fn();
+
+			var list1 = document.getElementById('list1');
+
+			list1.onclick = fn;
+
+		</script>
+	</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			
+		</script>
+	</head>
+
+	<body>
+		<input type="text" id="message"  value="获取焦点" />
+		<input type="text" id="message2"  value="获取焦点" />
+		<input type="checkbox" id="check"  value="获取焦点" />
+		<a href="http://www.baidu.com">百度</a>
+		<script>
+			/*
+				获取焦点的方式：
+					1. 点击获取焦点
+					2. tab键获取焦点
+					3. 方法获取焦点
+						focus()
+
+				获取焦点触发的事件 onfcus
+				失去焦点触发的事件 onblur
+			*/
+			let message = document.getElementById('message');
+			let check = document.getElementById('check');
+			// check.focus();
+
+			message.onfocus = function (){
+				console.log('我获取焦点');	
+			}
+			message.onblur = function (){
+				console.log('我失去焦点');	
+			}
+
+			// 事件 oninput  输入框中值发生变就会触发
+			// 无论是键盘还是右键粘贴复制的，只要值发生变化就会触发这个事件
+			message.oninput = function (){
+				console.log('我触发了oninput');	
+			}
+
+		</script>
+	</body>
+</html>

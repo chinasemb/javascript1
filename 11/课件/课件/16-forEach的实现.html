@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+
+			var arr = ['wang','zhong','liu','leo','wang','zhong','liu','leo','wang','zhong','liu','leo','wang','zhong','liu','leo'];
+
+			var arr2 = ['活着']
+
+			// map filter forEach
+
+			/*
+				1. 数组的每一项后面都拼上一个1
+					处理数组中的每一项
+					并且把处理后的结果放在一个新数组中
+				2. 过滤
+
+			*/
+
+			function forEach(arr,callback){
+				for( var i = 0; i < arr.length; i++ ){
+					callback(arr[i],i)
+				}
+			}
+
+			forEach(arr,function (item,index){
+				console.log(item,index);
+			})
+
+
+			// 工具库 如何封装工具方法
+
+			// underscore.js
+
+		</script>
+	</head>
+
+	<body>
+		<div id="box"></div>
+		<script>
+
+		</script>
+	</body>
+</html>

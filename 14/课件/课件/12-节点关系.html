@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+
+
+
+
+		</script>
+	</head>
+
+	<body>
+		<p>上一个</p>
+		<ul id="list" a="10">
+			<li>
+				<ul>
+					<li>1111</li>
+					<li>1111</li>
+					<li>1111</li>
+				</ul>
+			</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+		<div>下一个</div>
+		<script>
+
+			/*
+				包含是父子关系，并列是兄弟关系
+
+				祖先节点：当前节点往上的所有节点
+				子孙节点：当前节点往下的所有节点
+			*/
+
+			var list = document.getElementById('list');
+
+			// 父级
+			console.log( list.parentNode );
+			console.log( list.parentNode.parentNode.parentNode.parentNode );  // null
+
+			// 子级
+			console.log( list.children );
+			console.log( list.childNodes );
+
+			// 子孙节点 找所有的li
+
+			console.log( list.getElementsByTagName('li') );
+
+			function prveSibling(node){
+				return node.previousElementSibling 
+			}
+
+			// 上一个兄弟
+			console.log( list.previousElementSibling );  // 没有兄弟是null
+
+			// 下一个兄弟节点
+			console.log(list.nextElementSibling);
+
+			// 元素中第一个子节点
+			console.log( list.firstElementChild );
+
+			// 元素中最后一个子节点
+			console.log( list.lastElementChild );
+
+
+
+
+		</script>
+	</body>
+</html>

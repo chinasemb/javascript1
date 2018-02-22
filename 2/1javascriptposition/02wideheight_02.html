@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{
+			width: 300px;
+			height: 300px;
+			background:pink;
+			transition:3s;
+		}
+	</style>
+</head>
+<body>
+	<input id = "input1" type="button" value = "改变div的样式">
+	<div id = "div1">
+	</div>
+	<script>
+		var btn = document.getElementById("input1");
+		var box = document.getElementById("div1");
+
+		btn.onclick = function(){
+			box.style.width = "200px";
+			box.style.height = "200px";
+			box.style.background = "orange";
+		}
+	</script>
+</body>
+</html>

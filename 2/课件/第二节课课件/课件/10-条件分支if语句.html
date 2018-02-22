@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="num" />
+    <input type="button" value="测试if" id="btn" />
+    <div id="box"></div>
+    <script>
+
+        /*
+            if语句
+            语法：
+                if(条件){
+                    // 条件成立 执行这段代码块
+                    // 代码块
+                }
+
+                条件成立 为真  true来表示
+                条件不成立 为假  false来表示
+
+                在if中会把条件转成true或者false，
+    
+                布尔值Boolean
+                    true
+                    false
+
+            赋值运算符
+                = 
+            比较运算符
+                == 
+                >
+                <
+                > 比较左边值是否大于右边
+                < 比较右边值是否大于左边
+                == 比较两边的值是否相同
+
+            比较运算符在比较之后都会得到布尔值
+             true
+             false
+
+             if(条件){
+                // 条件成立，走这里的代码
+             }else{
+                // 条件不成立，走这里代码
+             }
+    
+            if(条件1){
+                // 条件1成立，执行这里的代码
+            }else if(条件2){
+                // 条件2成立，执行这里的代码
+            }else if(条件3){
+                // 条件3成立，执行这里的代码
+            }
+
+            // 其中有一个条件成立，就执行对应的代码块
+
+            if(条件1){
+                // 条件1成立，执行这里的代码
+            }else if(条件2){
+                // 条件2成立，执行这里的代码
+            }else if(条件3){
+                // 条件3成立，执行这里的代码
+            }else{
+                // 以上都不成立，走else
+            }   
+
+        */
+
+        var n = 30;
+
+        if( n == 10 ){
+            console.log('n为10');
+        }else if(n == 11){
+            console.log('n为11');
+        }else if(n == 20){
+            console.log('n为20');
+        }else {
+            console.log("以上都不成立");
+        }
+
+
+
+        var btn = document.getElementById("btn");
+        var box = document.getElementById("box");
+        var num = document.getElementById("num");
+
+        btn.onclick = function(){
+            var val = num.value;  // 输入的value值
+            // red yellow blue  #000
+
+            if(val == 'red'){
+                box.style.background = 'red'
+            }else if(val == 'yellow'){
+                box.style.background = 'yellow'
+            }else if(val == 'blue'){
+                box.style.background = 'blue'
+            }else{
+                box.style.background = '#000'
+            }
+
+        }
+
+
+
+        
+
+
+    </script>
+</body>
+</html>

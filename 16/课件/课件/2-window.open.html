@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			/*
+				window.open()
+					打开一个窗口
+					1. 直接调用方法
+						chrome/ff 做安全的限制，需要同意才能打开
+						ie 直接打开
+					2. 点击调用
+						ff chrome ie 都直接打开
+
+					参数：
+						1.指定要打开的页面地址。
+						2.打开方式 ： _blank _self ... iframName
+						3.浏览器的窗口特征 （宽，高，窗口位置等）
+							设置width、height、left、top
+							打开方式必须是_blank
+
+			*/
+
+			// window.open();
+			// 当页面中文档和资源加载之后触发，js代码放在了head中，需要用到window.onload
+			// 在ie下，document绑定点击需要加上window.onload
+			window.onload = function (){
+				document.onclick = function (){
+					//window.open('http://www.baidu.com');
+					// 默认在新窗口打开
+					// _self是当前窗口打开
+					//window.open('./test-open.html',"_self")
+					window.open('./test-open.html',"newIframe")
+				}	
+			}
+
+		</script>
+	</head>
+
+	<body>
+		<iframe width="1000" height="500" name="newIframe"></iframe>
+	</body>
+</html>

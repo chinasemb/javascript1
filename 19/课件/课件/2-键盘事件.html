@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			
+		</script>
+	</head>
+
+	<body>
+		<input type="text" id="message"  value="获取焦点" />
+		<input type="text" id="message2"  value="获取焦点" />
+		<input type="checkbox" id="check"  value="获取焦点" />
+		<a href="http://www.baidu.com">百度</a>
+		<script>
+			/*
+				键盘事件
+					摁下去 onkeydown
+						一直摁着某个键，会一直触发
+					抬起   onkeyup
+
+				只能绑在可以获取焦点的元素上
+				可以绑在document上，document会默认获取焦点
+
+				摁下去的是哪一个键？每一个键都有一个keyCode键值
+					ev.keyCode
+
+					enter 13
+					方向键：
+						左 37 
+						上 38
+						右 39
+						下 40
+			*/
+
+			document.onkeydown = function (ev){
+				console.log('down',ev.keyCode);	
+			}
+			document.onkeyup = function (){
+				console.log('up');	
+			}
+
+		</script>
+	</body>
+</html>

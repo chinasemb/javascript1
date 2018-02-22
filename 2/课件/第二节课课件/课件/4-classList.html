@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			div {
+				width: 100px;
+				height: 100px;
+				background: red;
+			}
+			.yellow {
+				background: yellow;
+			}
+			.width {
+				width: 300px;
+			}
+			.font {
+				font-size: 30px;
+			}
+		</style>
+		<script>
+			
+		</script>
+	</head>
+
+	<body>
+		<input type="button" value="测试改变样式" id="add" />
+		<div id="box" class="yellow">妙味课堂</div>
+		<script>
+			var changeStyleButton = document.getElementById("add");
+			var box = document.getElementById("box");
+
+			changeStyleButton.onclick = function (){
+				// 改变一个元素的样式
+				/*
+					1. 改变行间中的style
+					2. 通过class类去设置
+				*/
+
+				//box.className = 'yellow width font';
+				//box.className = 'width font';  // 重新设置值 不保留原来的值
+
+				// 追加  的一些方法
+
+			}
+
+
+
+		</script>
+	</body>
+</html>

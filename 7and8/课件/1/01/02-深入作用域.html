@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title></title>
+</head>
+<body>
+  <script>
+    /**
+     * 单线程：浏览器在执行JS脚本的时候是单线程的，同一时刻只能执行一行代码。
+     *
+     * 浏览器想运行JS脚本只要要包含3个部分：
+     *  - 编译器：负责把JS代码编译成计算机可以识别的数据
+     *    - 在编译的时候，首先会找到所有的标识符，如果看到变量了，那么会将这个变量名提升到当前作用域所有代码的最前端，如果看到了函数声明，那么会将这个函数整体提升到当前作用域最前端。
+     *  - JS引擎：逐行执行编译后的代码。
+     *  - 作用域
+     */
+    
+    // alert(1);
+    // 
+    // console.log(2);
+    
+    // ----------------------------------------------------
+    
+    // var a;
+    
+    // console.log(a);  // undefined   01010101
+    // 
+    // var a = 1;
+    
+    // ----------------------------------------------------
+    
+    // fn1();
+    // 
+    // function fn1(){
+    //   console.log(1);
+    // }
+    
+    // ----------------------------------------------------
+    
+    // fn2();   // undefined()   报错
+    // 
+    // var fn2 = function (){
+    //   console.log(1);
+    // };
+    
+    // -----------------------------------------------------
+    
+    var a = 1;
+    
+    function fn1(){
+      console.log(a++);  // undefined ++  NaN
+      a = 2;
+      console.log(a);  // 2
+      var a = 3;
+      fn2();
+      function fn2(){
+        console.log(a);  // 3
+      }
+    }
+    
+    fn1();
+    
+  </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+
+			/*
+				快速排序
+					先从数组中找一个基准值 
+					小于基准值的 放在左边[]
+						从左边的[]中找一个基准值
+							小于基准值的 放在左边[]
+							大于基准值的 放在右边[]
+					大于基准值的 放在右边[]
+						从右边的[]中找一个基准值
+							小于基准值的 放在左边[]
+							大于基准值的 放在右边[]
+			*/
+
+			var arr = [3,1,6,2,0,5,7,8,10,4];
+
+			var pivot = arr.shift();
+
+			var left = [];
+			var right = [];
+
+			for( var i = 0; i < arr.length; i++ ){
+				if(arr[i] < pivot){
+					left.push(arr[i])
+				}else{
+					right.push(arr[i])
+				}
+			}
+
+			var newArr = left.concat(pivot,right);
+
+			console.log(newArr);
+			// 左边
+			var leftPivot = left.shift();
+			var leftLeft = [];
+			var leftRight = [];
+
+			for( var i = 0; i < left.length; i++ ){
+				if(left[i] < leftPivot){
+					leftLeft.push(left[i])
+				}else{
+					leftRight.push(left[i])
+				}
+			}
+
+			var leftNewArr = leftLeft.concat(leftPivot,leftRight)
+
+			console.log(leftNewArr.concat(pivot,right));
+
+			// 右边
+			var rightPivot = right.shift();
+			var rightLeft = [];
+			var rightRight = [];
+
+			for( var i = 0; i < right.length; i++ ){
+				if(right[i] < rightPivot){
+					rightLeft.push(right[i])
+				}else{
+					rightRight.push(right[i])
+				}
+			}
+
+			var rightNewArr = rightLeft.concat(rightPivot,rightRight)
+
+			console.log(leftNewArr.concat(pivot,rightNewArr));
+
+
+
+
+
+		</script>
+	</head>
+
+	<body>
+		
+	</body>
+</html>

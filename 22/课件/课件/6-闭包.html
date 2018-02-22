@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+
+			//A同学 写功能函数 isArray isFunction  add
+
+			let tools = (function (){
+				let a = 10;
+
+				function isFunction(fn){
+					return typeof fn === 'function'
+				}
+
+				// 改变函数this指向
+				function bind(fn){
+					if(isFunction(fn)){
+						// 改变this指向
+					}	
+				}
+
+
+				return {
+					isFunction,
+					bind
+				}
+
+			})();
+
+			console.log(tools);
+
+			// B同学
+
+			(function (){
+				let a = 10;	
+			})()
+
+		</script>
+	</head>
+
+	<body>
+		
+	</body>
+</html>

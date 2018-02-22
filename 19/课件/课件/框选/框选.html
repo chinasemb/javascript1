@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			.box{
+				width: 200px;
+				height: 200px;
+				background: red;
+				float: left;
+				margin-left:20px;
+			}
+			.dialog{
+				width: 0px;
+				height: 0px;
+				border:1px dashed #000;
+				position: absolute;
+				left: 0;
+				top:0;
+				background: skyblue;
+				opacity: .5;
+			}
+		</style>
+		<script>
+			
+		</script>
+	</head>
+
+	<body>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<script>
+
+			function getRect(obj){
+				return obj.getBoundingClientRect();
+			}
+			function duang(obj1,obj2){
+				var obj1Info = getRect(obj1);	
+				var obj2Info = getRect(obj2);	
+
+				//obj1的上下左右
+
+				var obj1L = obj1Info.left;
+				var obj1R = obj1Info.right;
+				var obj1T = obj1Info.top;
+				var obj1B = obj1Info.bottom;
+
+				//obj2的上下左右
+				var obj2L = obj2Info.left;
+				var obj2R = obj2Info.right;
+				var obj2T = obj2Info.top;
+				var obj2B = obj2Info.bottom;
+
+				//排除掉没碰上的区域
+
+				if( obj1R < obj2L || obj1L > obj2R || obj1B < obj2T || obj1T > obj2B){
+					return false;
+				}else{
+					return true;
+				}
+			}
+
+			var boxs = document.querySelectorAll(".box");
+
+			for( var i = 0; i < boxs.length; i++ ){
+				boxs[i].onmouseup = function (){
+					alert("up")		
+				};
+			}	
+
+
+			//先有一个框
+			document.onmousedown = function (ev){
+				var newDiv = null;
+
+				
+
+				var disX = ev.clientX;
+				var disY = ev.clientY;
+
+				console.log(111);
+
+				document.onmousemove = function (ev){
+
+					if( Math.abs(ev.clientX - disX) > 20 ||  Math.abs(ev.clientY - disY) > 20 ){
+
+						if( !newDiv ){
+
+							newDiv = document.createElement("div");
+							newDiv.className = "dialog";
+							newDiv.style.left = disX + "px";
+							newDiv.style.top = disX + "px";
+
+							document.body.appendChild(newDiv);
+						}
+
+
+						newDiv.style.width = Math.abs(ev.clientX - disX) + "px";
+						newDiv.style.height = Math.abs(ev.clientY - disY) + "px";
+
+						newDiv.style.left = Math.min(ev.clientX , disX)+1 + "px";
+						newDiv.style.top = Math.min(ev.clientY , disY)+1 + "px";
+
+						//拖拽的过程中，newDiv和哪一个box碰上了
+						/*
+							碰上了 box为蓝色的背景
+							没碰上 box为红色的背景
+						*/
+
+						for( var i = 0; i < boxs.length; i++ ){
+							if( duang(newDiv,boxs[i]) ){
+								boxs[i].style.background  ="blue";
+							}else{
+								boxs[i].style.background  ="";
+							}
+						}
+					}
+
+
+
+				};
+				document.onmouseup = function (){
+					document.onmousemove = null;
+					if( newDiv ){
+						document.body.removeChild(newDiv);
+					}
+					
+					console.log(222);
+				}
+
+				ev.preventDefault();
+
+			};
+
+		</script>
+	</body>
+</html>

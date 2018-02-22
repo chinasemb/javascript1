@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			#box {
+				background: red;
+				width: 100px;
+				height: 100px;
+			}
+		</style>
+		<script>
+
+
+
+		</script>
+	</head>
+
+	<body>
+		<button>hash改变为1</button>
+		<button>hash改变为2</button>
+		<button>hash改变为3</button>
+		<script>
+			let btns = document.querySelectorAll('button');
+
+			btns.forEach((item,index) => {
+				item.onclick = function (){
+					window.location.hash = index+1;		
+				}
+			})
+
+			window.onhashchange = function (){
+				console.log(window.location.hash);	
+			}
+
+		</script>
+	</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			div {
+				width: 100px;
+				height: 100px;
+				background: yellow;
+				transition: 1s;
+			}
+		</style>
+		
+	</head>
+
+	<body>
+		<input type="button" value="改变div的样式" id="btn"  />
+		<div id="box"></div>
+		
+		<script>
+			// 获取元素 通过id获取
+			// document.getElementById('btn'); // 元素对象
+
+			/*
+				通过id获取元素
+					document.getElementById("id名字")
+
+				绑定事件
+					on click
+				做事情 要把做的事情写在函数中
+				
+				改变元素的样式
+					style.样式名 = 值
+
+			*/
+			// 当一个元素被点击的时候，做一些事情
+			document.getElementById('btn').onclick  = function(){
+				document.getElementById('box').style.width = '500px';
+				document.getElementById('box').style.height = '500px';
+			}
+
+		</script>
+	</body>
+</html>

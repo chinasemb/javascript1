@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+				var arr = [1,2,3,3,4,6,76,5,4,21,1,2,3,3,4,1,1,1,"1"];
+
+				// 把数组中重复的数组去除掉
+
+				var newArr = [arr[0]]; 
+
+				/*
+					newArr = [1]
+
+					开启for循环
+						arr[1] 2
+						newArr = [1,2]
+
+						arr[2] 3 
+						newArr = [1,2,3]
+
+						arr[3] 3  // 已经存在不放在新数组中
+						newArr = [1,2,3]
+				*/
+
+				for( var i = 1,len=arr.length; i < len; i++ ){
+					var isEsxit = false;  // 没有存在
+
+					// 拿到arr的一项后跟newArr每一项对比
+					for( var j = 0,len2 = newArr.length; j < len2; j++ ){
+						if(arr[i] === newArr[j]){  // 说明已经存在新数组中了
+							isEsxit = true;
+							break;
+						}
+					}
+					// 只有等上面的for循环完了之后，才知道有没有重复的项
+
+					if(!isEsxit){  // 没有存在
+						newArr.push(arr[i])
+					}
+				}
+
+				console.log(newArr);
+
+
+
+		</script>
+	</head>
+
+	<body>
+		
+	</body>
+</html>

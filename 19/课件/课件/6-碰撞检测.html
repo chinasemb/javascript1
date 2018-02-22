@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			div {
+				width: 100px;
+				height: 100px;
+				position: absolute;
+				left: 0px;
+				top: 0;
+			}
+			#dragElement {
+				background: red;
+			}
+			#box {
+				background: green;
+				left: 300px;
+				top: 300px;
+			}
+		</style>
+		<script>
+			
+		</script>
+	</head>
+
+	<body>
+		<div id="dragElement"></div>
+		<div id="box"></div>
+		<script>
+
+			// 都已浏览器左边和上边为基准
+
+			function getRect(element){
+				return element.getBoundingClientRect()
+			}
+
+			let dragElement = document.getElementById("dragElement");
+			let box = document.getElementById("box");
+
+			dragElement.onmousedown = function (ev){
+				let disX = ev.clientX - dragElement.offsetLeft;
+				let disY = ev.clientY - dragElement.offsetTop;
+
+				document.onmousemove = function (ev){
+					dragElement.style.left = ev.clientX - disX + 'px';	
+					dragElement.style.top = ev.clientY - disY + 'px';
+
+					let dragRect = getRect(dragElement)
+					let boxRect = getRect(box)
+
+					// 排除掉没有碰上的区域
+					// 第一个 拖拽的元素的右边到浏览器左边的距离< 被碰撞的元素左边的浏览器左边的距离
+					// 第二个 拖拽的元素的下边到浏览器上边的距离 < 被碰撞的元素上边到浏览器上边的距离
+
+					// 第三个 拖拽元素的左边到浏览器左边的距离 > 被碰撞的元素的右边到浏览器左边的距离
+
+					// 第四个 拖拽的元素的上边到浏览器上边的距离 > 被碰撞元素的下边到浏览器上边的距离
+
+					if(dragRect.right < boxRect.left || dragRect.bottom < boxRect.top || dragRect.left > boxRect.right || dragRect.top > boxRect.bottom){
+						console.log('没碰上');
+					}else{
+						console.log("碰上了");
+					}
+
+
+				}
+				document.onmouseup = function (){
+					document.onmousemove = document.onmouseup = null;	
+				}
+			}
+
+		</script>
+	</body>
+</html>

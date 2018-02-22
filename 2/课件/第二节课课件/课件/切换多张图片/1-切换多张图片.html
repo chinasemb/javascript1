@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<link rel="stylesheet" type="text/css" href="slide.css" />
+		<style type="text/css">
+			body{
+				background-color: #ffd800;
+			}
+			.nav .blue {
+				background-color: blue;
+			}
+		</style>
+		<script>
+
+		</script>
+	</head>
+
+	<body>
+		<div class="slide">
+			<div  class="tagClient">
+				<ul class="list">
+					<li>
+						<img src="./ads/1.png" id="tabImg" />
+					</li>
+				</ul>
+			</div>
+			<div class="prev" id="prev"></div>
+			<div class="next" id="next"></div>
+		</div>
+		<script>
+				/*
+					自增 
+						++
+						变量自增1
+				*/
+			// 点击下一张按钮 让一个数不断的增加 加1
+
+			var next = document.getElementById("next");
+			var tabImg = document.getElementById("tabImg");
+
+			var n = 1;
+
+			next.onclick  = function (){
+				//n = n + 1;
+				//n += 1;
+				n++;
+				console.log(n);
+
+				// 过界处理
+				/*
+					1. 提醒过界了
+					2. 循环
+				*/
+				//1.提醒过界了
+				/*if( n > 5){
+					alert("已经没有了")
+				}else{
+					tabImg.src = "./ads/"+n+".png"
+				}*/
+
+				// 2. 循环
+
+				if( n > 5){
+					n = 1;
+					tabImg.src = "./ads/"+n+".png"
+				}else{
+					tabImg.src = "./ads/"+n+".png"
+				}
+
+				
+			}
+
+		</script>
+	</body>
+
+</html>

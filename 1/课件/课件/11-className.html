@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			div {
+				width: 100px;
+				height: 200px;
+				background: red;
+			}
+		</style>
+		
+	</head>
+
+	<body>
+		<input type="button" value="改变div的样式" id="btn" class="miaov ketang"  />
+		<div id="box"></div>
+		
+		<script>
+			/*
+				class 是关键字
+				使用 className 
+
+				value 
+					获取表单的控件上的值
+						input textarea select
+
+				既可以读也可以获取
+
+
+			*/
+			var box = document.getElementById('btn'); // 元素对象
+
+			console.log(box.className);
+			console.log(box.value);
+
+			box.className = 'abc';
+			box.value = '妙味课堂';
+
+
+		</script>
+	</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			
+		</script>
+	</head>
+
+	<body>
+		<input type="text" id="num" value="0" />
+		<script>
+			/*
+				鼠标中键滚动时候触发的事件
+
+				ie chrome  使用onmousewheel
+				ff DOMMouseScroll  DOM3级事件
+					必须使用addEventLitener绑定
+			*/
+			let num = document.getElementById('num');
+
+			num.onmousewheel = function (){
+				console.log('我滚动了');	
+			}
+			num.addEventListener('DOMMouseScroll',function (){
+				console.log('我滚动了');
+			})
+		</script>
+	</body>
+</html>

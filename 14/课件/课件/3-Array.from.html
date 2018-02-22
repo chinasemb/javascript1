@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			// 静态方法  挂载函数上的方法称之为静态方法
+
+			console.dir( Array );
+
+			//Array.from(); // 把类数组 转成数组
+
+
+
+		</script>
+	</head>
+
+	<body>
+		<ul id="list">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+		<script>
+
+			var lis = document.querySelectorAll('#list li');  // 类数组
+			console.dir(lis);
+
+			let arr = Array.from(lis);
+
+			arr.map(function (item){
+				console.log(item)			
+			})
+
+			// 判断某个值是不是数组
+			console.log(Array.isArray(lis));
+			console.log(Array.isArray(arr));
+
+			// 类数组没有map方法
+			/*lis.map(function(item,index){
+					console.log(	item);
+			})*/
+
+		</script>
+	</body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style>
+    html {
+
+        width: 100%;
+        height: 100%;
+    }
+
+    body {
+        margin: 0px;
+        width: 100%;
+        height: 100%;
+    }
+
+    .main {
+        width: 100%;
+        height: 100%;
+        background: url(./image/bg.png) no-repeat;
+        background-size: 100% 100%;
+        overflow: hidden;
+    }
+
+    .logo {
+        display: block;
+        width: 200px;
+        height: 55px;
+        background: url(./image/logo.png) no-repeat;
+        margin: 20px auto;
+    }
+
+    ul {
+        list-style: none;
+        font-size: 22px;
+        color: #8c949c;
+        font-weight: bold;
+    }
+
+    ul li {
+        position: relative;
+        padding-left: 10px;
+    }
+
+    ul li div {
+        height: 98%;
+        width: 1px;
+        border-left: 1px dotted #ccc;
+        position: absolute;
+        left: 14px;
+        top: 18px;
+    }
+    
+    ul li span {
+        display: block;
+        line-height: 32px;
+        padding-left: 15px;
+        background: url(./image/icon.png) no-repeat left 500px;
+    }
+
+    ul li span.add {
+        background-position: 0px -32px;
+    }
+
+    ul li span.line {
+        background-position: 0px 11px;
+    }
+
+
+    .tree {
+        margin-left: 300px;
+    }
+    </style>
+    <script>
+    </script>
+</head>
+
+<body>
+    <div class="main">
+        <a href="http://www.miaov.com" class="logo"></a>
+        <div class="tree">
+            <!-- <ul>
+                <li>
+                	<span class="line">第一级菜单</span>
+                	<ul>
+                	    <li>
+                	    	<span class="line">第一级菜单</span>
+                	    </li>
+                	    <li>
+                	    	<span class="add">第一级菜单</span>
+                	    </li>
+                	    <li>
+                	    	<span class="add">第一集菜单</span>
+                	    </li>
+                	</ul>
+                </li>
+                <li>
+                	<span class="add">第一级菜单</span>
+                	<ul>
+                	    <li>
+                	    	<span class="line">第一级菜单</span>
+                	    </li>
+                	    <li>
+                	    	<span class="add">第一级菜单</span>
+                	    </li>
+                	    <li>
+                	    	<span class="add">第一集菜单</span>
+                	    </li>
+                	</ul>
+                </li>
+                <li>
+                	<span class="add">第一集菜单</span>
+                </li>
+            </ul> -->
+        </div>
+    </div>
+    <script>
+    	// 一个ul块就是一级
+    	// 每一个标题就是一个li
+    	// 如果有下一级，也是一个ul
+    	// 下一级的每一个标题是一个li
+
+    	// 一个标题
+    	
+    	var data = [
+    		{
+	    		title: '音乐人',
+	    		children: [
+	    			{
+		    			title: '周杰伦',
+		    			children: [
+		    				{
+		    					title: '发如雪',
+					    		children: [
+					    			{
+						    			title: '周杰伦',
+						    			children: [
+						    				{
+						    					title: '发如雪',
+						    					
+						    				}
+						    			]
+						    		},
+						    		{
+						    			title: '王杰'
+						    		},
+						    		{
+						    			title: '周杰伦'
+						    		}
+					    		]
+		    				}
+		    			]
+		    		},
+		    		{
+		    			title: '王杰'
+		    		},
+		    		{
+		    			title: '周杰伦'
+		    		}
+	    		]
+	    	},
+	    	{
+	    		title: '电影'
+	    	},
+	    	{
+	    		title: '体育',
+		    		children: [
+		    			{
+			    			title: '周杰伦',
+			    			children: [
+			    				{
+			    					title: '发如雪',
+			    					
+			    				}
+			    			]
+			    		},
+			    		{
+			    			title: '王杰'
+			    		},
+			    		{
+			    			title: '周杰伦'
+			    		}
+		    		]
+	    	}
+    	]
+
+    	var tree = document.querySelector('.tree');
+
+    	// 只要给一个数组，就生成这一级的结构
+
+    	function createTreeHtml(arr){
+    		var treeHtml = `<ul>`;
+
+    			arr.forEach(function(item){
+    				treeHtml += `<li>
+    					<span class="${item.children && item.children.length ? 'line' : '' }">
+    				${item.title}</span>`
+    				// 需要去得到一个结构
+    				
+    				if(item.children){
+    					treeHtml += createTreeHtml(item.children)
+    				}
+
+    				treeHtml += `</li>`
+    			})
+
+    		treeHtml += `</ul>`;
+
+    		return treeHtml;	
+    	}
+    	
+
+    	tree.innerHTML = createTreeHtml(data);
+
+
+
+
+
+    </script>
+</body>
+
+</html>

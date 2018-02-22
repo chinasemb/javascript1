@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			/*
+				arr.includes()
+			*/
+
+			var arr = [1,2,3,NaN];
+
+			// 数组中是否有NaN
+			// 数组也有indexOf()  首次出现的位置
+
+			console.log(arr.indexOf(2));  // 下标为1
+			console.log(arr.indexOf(NaN)); // -1 不能检测是否包含NaN
+
+			// ES6提供的方法
+			console.log(arr.includes(NaN));
+			console.log(arr.includes("1"));
+
+
+
+		</script>
+	</head>
+
+	<body>
+		
+	</body>
+</html>

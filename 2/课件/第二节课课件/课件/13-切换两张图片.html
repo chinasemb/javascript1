@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <img src="./1.png" id="tabImg" />
+    <script>
+        /*
+            img的src获取的是绝对路径
+
+            两张图片切换
+        */
+        var tabImg = document.getElementById('tabImg');
+
+       var state = true;  // 记录此时切换的图片的状态
+
+        tabImg.onclick  = function (){
+
+            if(state){  
+                tabImg.src = './2.png';
+                state = false;
+            }else{
+                tabImg.src = './1.png';
+                state = true;
+            }
+            
+        }
+
+    </script>
+</body>
+</html>

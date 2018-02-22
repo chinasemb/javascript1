@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			
+		</script>
+	</head>
+
+	<body>
+		<input type="text" id="message" />
+		<button id="send">提交</button>
+		<ul id="list">
+			<li>今天很好<button>删除</button></li>
+			<li>今天很好<button>删除</button></li>
+			<li>今天很好<button>删除</button></li>
+			<li>今天很好<button>删除</button></li>
+		</ul>
+		<hr>
+		<div id="box"></div>
+		<script>
+
+			/*
+				innerHTML需要要的是html结构类型是字符串
+			*/
+
+			var send = document.getElementById('send')
+			var list = document.getElementById('list')
+			var message = document.getElementById('message')
+			var box = document.getElementById('box')
+
+			list.onclick = function (){
+				alert(1)	
+			}
+
+			send.onclick = function (){
+
+				//let cloneList = list.cloneNode(); // 只会克隆ul,内容不会克隆
+
+				let cloneList = list.cloneNode(true); // 克隆自身以及子元素
+				cloneList.id = 'list2'
+
+				console.log(cloneList);  // 不会克隆事件
+
+				box.appendChild(cloneList)
+			}
+
+
+
+		</script>
+	</body>
+</html>

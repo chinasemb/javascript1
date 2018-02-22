@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			
+		</script>
+	</head>
+
+	<body>
+		<!--行间属性 attribute-->
+		<input type="button" id="btn" value="测试" leo='hello' />
+		<img src="./right.png" id="oImg" />
+		<script>
+			var btn = document.getElementById('btn'); // 元素对象/节点
+			// btn.className
+			// 对象上的属性 property
+
+			btn.miaov = 123; // 给这个对象自定一个属性 property 不定义在行间
+
+			console.log(btn.id);
+
+			// 给这个元素在行间添加属性 
+			btn.setAttribute('ketang','leo')
+
+			// 获取行间的属性值
+
+			console.log(btn.getAttribute('leo'));
+
+			//删除行间的属性
+			btn.removeAttribute('leo');
+
+			var oImg = document.getElementById("oImg");
+
+			console.log(oImg.src);
+
+			console.log(oImg.getAttribute('src'));
+
+
+
+		</script>
+	</body>
+</html>

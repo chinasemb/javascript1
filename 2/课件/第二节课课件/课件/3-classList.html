@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			#box {
+				width: 100px;
+				height: 100px;
+				background: red;
+			}
+		</style>
+		<script>
+			
+		</script>
+	</head>
+
+	<body>
+		<input type="button" value="测试改变样式" id="add" />
+		<div id="box" >妙味课堂</div>
+		<script>
+			var changeStyleButton = document.getElementById("add");
+			var box = document.getElementById("box");
+
+			changeStyleButton.onclick = function (){
+				// 改变一个元素的样式
+				/*
+					改变行间中的style
+				*/
+
+				/*box.style.width = '200px';
+				box.style.height = '200px';
+				box.style['font-size'] = '30px';*/
+
+				// cssText
+				box.style.cssText = 'width: 300px;height: 300px;font-size: 30px;background:yellow;';
+
+			}
+
+
+
+		</script>
+	</body>
+</html>

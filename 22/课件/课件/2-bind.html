@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			/*
+				bind 用来改变this的指向，但是不直接调用函数
+				call apply 
+			*/
+
+			/*setTimeout(function (){
+				console.log(this);	
+			}.call([1,2,3]),1000)
+
+			setTimeout(function (){
+				console.log(this);	
+			}.bind([1,2,3]),1000)*/
+
+			function fn(){
+				console.log(this);
+			}
+
+			fn.call({a:1})
+
+			let newFn = fn.bind({b:1})
+
+			newFn()
+
+		</script>
+	</head>
+
+	<body>
+		
+	</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			
+		</script>
+	</head>
+
+	<body>
+		<input type="text" id="message"  value="获取焦点" />
+		<ul id='list'>
+			<li>123</li>
+		</ul>
+		<script>
+			/*
+				功能键
+					shiftKey
+					ctrlKey
+					altKey
+			*/
+
+			document.onclick = function (ev){
+				console.log(ev);
+			}
+
+			let message = document.getElementById('message');
+			let list = document.getElementById('list');
+
+			message.onkeydown  = function (ev){
+				if(ev.keyCode === 13 && ev.ctrlKey){
+					let val = this.value;
+					if(val.trim() === ''){
+						alert('请输入')
+					}else {
+						list.innerHTML += '<li>'+val+'</li>'
+					}
+				}
+				
+			}
+
+		</script>
+	</body>
+</html>

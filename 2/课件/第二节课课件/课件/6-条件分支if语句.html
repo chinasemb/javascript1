@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            display: inline-block;
+            border: 2px solid #bdcec6;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        div.checked {
+            border-color: rgb(228, 57, 60);
+            background: url(images/1.png) no-repeat right bottom;
+        }
+    </style>
+</head>
+<body>
+    <div id="checkbox"></div>
+    <input type="checkbox" />
+    <script>
+
+        /*
+            if语句
+            语法：
+                if(条件){
+                    // 条件成立 执行这段代码块
+                    // 代码块
+                }
+
+                条件成立 为真  true来表示
+                条件不成立 为假  false来表示
+
+                在if中会把条件转成true或者false，
+    
+                布尔值Boolean
+                    true
+                    false
+
+
+        */
+
+        console.log( 1 > 2 );
+
+        // 做一个判断，当这个判断成立的时候，才打出来
+        var n = 5;
+
+        if( n < 10 ){
+            console.log('今天心情非常美丽')
+        }
+
+        if(false){
+            console.log("我是成立")
+        }
+
+        
+
+
+    </script>
+</body>
+</html>

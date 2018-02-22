@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			#box {
+				width:100px;
+				height: 200px;
+				background: red;
+			}
+		</style>
+		<script>
+			
+		</script>
+	</head>
+
+	<body>
+
+		<input type="button"  value="改变div的width" id="btn" />
+		<div id="box" style="width: 100px;height: 100px;background: blue;"></div>
+
+		<script>
+
+			var btn = document.getElementById("btn");
+			var box = document.getElementById("box");
+
+			btn.onclick  =function (){
+				// 只能设置和获取   行间的 样式
+				// 在元素原有的基础上加10
+				//console.log(typeof box.style.width);  // 100px
+				console.log( parseInt(box.style.width) + 10 );
+				box.style.width = parseInt(box.style.width) + 10 + 'px';
+			}
+
+
+		</script>
+	</body>
+</html>

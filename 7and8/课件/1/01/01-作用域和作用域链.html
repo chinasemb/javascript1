@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title></title>
+</head>
+<body>
+  <script>
+    /**
+     * 作用域：用来管理标识符的一套规则，它规定了每个标识符可以在什么范围内被访问和修改。
+     *  - 全局作用域
+     *  - 局部作用域（通常指函数作用域）
+     * 
+     * 作用域链：作用域嵌套的时候会形成作用域链
+     * 作用域链的作用: 保证执行环境对标识符的有序访问（从内向外，不能从外向内）
+     */
+    
+    // var a = 1;
+    // 
+    // function fn1(){
+    //   var a = 2;
+    //   console.log(a); // 2
+    //   fn2();
+    //   function fn2(){
+    //     console.log(a++);  // 2
+    //     console.log(a);  // 3
+    //   }
+    // }
+    // 
+    // fn1();
+    
+    // -------------------------------------------------------------------
+    
+    // function fn1(){
+    //   fn2();
+    //   function fn2(){
+    //     fn3();
+    //     function fn3(){
+    //       console.log(laowang);
+    //     }
+    //   }
+    // }
+    // 
+    // fn1();
+    
+  </script>
+</body>
+</html>

@@ -30,8 +30,19 @@
 			//条件不成立为真,代码块不执行    false
 
 			//在if()中会把条件转化成布尔值:true,false
+		}else{
+	
+			条件不成立 走这里
 		}
+		
+		赋值运算符: =
+
+		比较运算符 : ==
+
+		比较运算符在比较之后得到的会是布尔值
+
 	*/
+
 	// var n =10;
 	// if(n<11){
 	// 	console.log("今天的心情非常美丽")
@@ -44,13 +55,35 @@
 	btn.onclick = function(){
 
 		var value = num.value;
-		if(value == "123"){
+		if(value == "123"){//==比较运算符
 			box.style.backgroundColor = "pink";
 			box.style.width = "600px";
 			box.style.height = "600px";
+		}else if(value == "456"){
+			box.style.backgroundColor = "blue";
+			box.style.width = "500px";
+			box.style.height = "500px";
+		}else if(value == "789"){
+			box.style.backgroundColor = "orange";
+			box.style.width = "400px";
+			box.style.height = "400px";
+		}else if(value == "147"){
+			box.style.backgroundColor = "green";
+			box.style.width = "200px";
+			box.style.height = "200px";
+		}else{
+			box.style.backgroundColor = "purple";
+			box.style.width = "650px";
+			box.style.height = "650px";
 		}
 	}
 
+	var n =3 ;
+	if(n==10){
+		console.log("n是10");
+	}else{
+		console.log("n不是10");
+	}
 
 </script>	
 </body>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			
+		</script>
+	</head>
+
+	<body>
+		<script>
+			/*
+				外层for循环循环一次 执行循环体中的代码 
+				只有等到循环体中的代码执行完之后，外层for循环的i才加1
+			*/
+			for( var i = 0; i < 3; i++ ){
+				// i = 0
+				// i = 1
+				// i = 2
+				console.log('i:'+i);
+				for( var j = 0; j < 3; j++ ){
+					// j = 0 1 2
+					// j = 0 1 2
+					// j = 0 1 2
+					console.log("j:"+j);
+				}
+			}
+
+		</script>
+	</body>
+</html>

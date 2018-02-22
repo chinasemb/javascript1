@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			
+		</script>
+	</head>
+
+	<body>
+		<input type="text" id="num1" />
+		<span>+</span>
+		<input type="text" id="num2" />
+		<input type="button"  value="相加" id="add" />
+		<script>
+			var add = document.querySelector('#add');
+			var num1 = document.querySelector('#num1');
+			var num2 = document.querySelector('#num2');
+
+			add.onclick = function (){
+				// 字符串 - > 数字  
+				console.log( Number(num1.value) + Number(num2.value) );	
+			}
+
+		</script>
+	</body>
+</html>

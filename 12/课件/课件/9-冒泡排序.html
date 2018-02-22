@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+
+			// 排序 从大到小 从小到大  随机排序
+
+			// 冒泡排序
+
+			var arr = [3,1,6,2,0,5,7,8,10,4];
+			// 从小到大排序
+
+			// 拿出数组中的两个值进行比较，如果后一个数比前一个数小 交换位置
+
+			// 经过一轮之后，会把最大的放在最后
+
+			// 每循环一次都会找到最大的，进行几轮呢？ length-1轮
+
+			/*
+				j = 0
+					i = 0 1 2 3 4 5 length-1
+					arr =  [1, 3, 2, 0, 5, 6, 7, 8, 4, 10]
+				j = 1
+					i = 0 1 2 3 4 5 length-1
+					arr = [1, 2, 0, 3, 5, 6, 7, 4, 8, 10];
+				j = 2;
+					i = 0 1 2 3 4 5 length-1
+					arr = [1, 0, 2, 3, 5, 6, 4, 7, 8, 10]
+				....
+			*/
+
+			for( var j = 0; j < arr.length-1; j++ ){
+				for( var i = 0; i < arr.length-1-j; i++ ){
+					if(arr[i] > arr[i+1]){
+						var c = arr[i];
+						arr[i] = arr[i+1];
+						arr[i+1] = c;
+					}
+				}
+
+				console.log(arr);
+			}
+
+
+			console.log(arr);
+
+
+
+
+		</script>
+	</head>
+
+	<body>
+		
+	</body>
+</html>

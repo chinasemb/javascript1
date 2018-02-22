@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+
+			// 把字符串的首字母变为大写
+			function toFirstCharUpper(str){
+				var char = str.charAt(0).toUpperCase();
+				return char + str.slice(1)
+			}
+
+			var str = 'miaov ke tang';
+
+			// 把每个字母的首字母变为大写
+
+			// 利用空格，把字符串切分成一个一个单词，变成数组
+
+			/*var arr = str.split(' ');
+			var newStr = '';
+			for( var i = 0; i < arr.length; i++ ){
+				console.log(toFirstCharUpper(arr[i]));
+
+				newStr += ' ' + toFirstCharUpper(arr[i]);
+			}
+
+			console.log(newStr.slice(1));*/
+
+			function allCharToUpper(str){
+				var arr = str.split(' ');
+				var newStr = '';
+				for( var i = 0; i < arr.length; i++ ){
+					newStr += ' ' + toFirstCharUpper(arr[i]);
+				}
+				return newStr.slice(1);
+			}
+
+			console.log(allCharToUpper(str));
+			console.log(allCharToUpper('i am wang'));
+			console.log(allCharToUpper('are you ok'));
+
+
+		</script>
+	</head>
+
+	<body>
+		<div id="box"></div>
+		<script>
+
+		</script>
+	</body>
+</html>

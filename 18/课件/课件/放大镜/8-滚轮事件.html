@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			
+		</script>
+	</head>
+
+	<body>
+		<input type="text" id="num" value="0" />
+		<script>
+			/*
+				鼠标中键滚动时候触发的事件
+
+				ie chrome  使用onmousewheel
+				ff DOMMouseScroll  DOM3级事件
+					必须使用addEventLitener绑定
+			*/
+			let num = document.getElementById('num');
+
+			//num.onmousewheel = wheel
+			num.addEventListener('mousewheel',wheel)
+			num.addEventListener('DOMMouseScroll',wheel)
+
+			function wheel(ev){
+				console.log('我滚动了');
+				// 要知滚轮的方向
+
+				//console.log(ev.wheelDelta); //ie chrome 上：150 下：-150
+				//console.log(ev.detail);  //ff 上：-3 下：3
+
+				let d = true;  // 默认方向为向上  向上 true 向下为false
+
+				if(ev.wheelDelta){
+					d = ev.wheelDelta > 0 ? true : false
+				}else if(ev.detail){
+					d = ev.detail < 0 ? true :  false;
+				}
+
+				if(d){  // 向上
+					console.log('向上');
+					this.value = ++this.value
+				}else{
+					console.log('向下');
+					this.value = --this.value
+				}
+
+			}
+		</script>
+	</body>
+</html>

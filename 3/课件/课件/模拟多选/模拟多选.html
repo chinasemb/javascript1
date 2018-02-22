@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            display: inline-block;
+            border: 2px solid #bdcec6;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        div.checked {
+            border-color: rgb(228, 57, 60);
+            background: url(images/1.png) no-repeat right bottom;
+        }
+    </style>
+</head>
+<body>
+    <div class="radio">男</div>
+    <div class="radio">女</div>
+    <div class="radio">不确定</div>
+    <hr />
+    <input type="checkbox" name="sex" />男
+    <input type="checkbox" name="sex"  />女
+    <input type="checkbox" name="sex"  />不确定
+    <script>
+        var radio = document.querySelectorAll('.radio');
+
+        for(var i = 0; i < radio.length; i++){
+            radio[i].onclick = function (){
+                
+                this.classList.toggle('checked')    
+            }
+        }
+    </script>
+</body>
+</html>

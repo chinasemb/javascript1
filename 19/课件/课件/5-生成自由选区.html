@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			.dialog{
+				width: 0px;
+				height: 0px;
+				border:1px dashed #000;
+				position: absolute;
+				left: 0;
+				top:0;
+				background: skyblue;
+				opacity: .5;
+			}
+		</style>
+		<script>
+			
+		</script>
+	</head>
+
+	<body>
+		<script>
+			document.onmousedown = function (ev){
+				let newDiv = document.createElement('div');
+				newDiv.className = 'dialog';
+				document.body.appendChild(newDiv);
+
+				let disX = ev.clientX
+				let disY = ev.clientY
+
+				newDiv.style.left = disX + 'px';
+				newDiv.style.top = disY + 'px';
+
+				document.onmousemove = function (ev){
+					// 计算宽高，就是鼠标移动过程中位置减去鼠标恩下去的位置
+
+					// 向上的时候，宽高可能会算出负值
+
+					newDiv.style.width = Math.abs(ev.clientX - disX) + 'px';
+					newDiv.style.height = Math.abs(ev.clientY - disY) + 'px';
+
+					// 同时要改变元素的left值和top，
+					// 移动过程中的鼠标和恩下去鼠标的位置，哪一个小就取哪一个
+					newDiv.style.left = Math.min(ev.clientX, disX) + 'px';
+					newDiv.style.top = Math.min(ev.clientY, disY) + 'px';
+				}
+
+				document.onmouseup = function (){
+					document.onmousemove = 	document.onmouseup = null;
+				}
+
+			}
+		</script>
+	</body>
+</html>

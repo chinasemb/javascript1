@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			/*
+				递归
+					函数调用自身就是递归  自己调用自己 自己玩自己
+
+				在某个条件下停止自己调用自己，否则就形成了无限递归
+			*/
+
+			// 6   6+5+4+3+2+1   10 10+9+8+7 .. +1
+
+			function fn(n){
+				/*if(n <= 1) {
+					return n;
+				}*/
+
+				if(n <= 1) 
+					return n;
+
+				return fn(n-1)+n;	
+			}
+
+			console.log(fn(3));
+
+
+
+
+		</script>
+	</head>
+
+	<body>
+		
+	</body>
+</html>

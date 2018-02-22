@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			
+		</script>
+	</head>
+
+	<body>
+		<input type="text" id="num1" />
+		<span>+</span>
+		<input type="text" id="num2" />
+		<input type="button"  value="相加" id="add" />
+		<script>
+			/*
+				特殊的对象
+					数组 [] 有序的对象
+					函数 可被调用的对象
+					DOM元素也是对象
+
+				JS里除了基本数据类型，剩下的都是对象
+			*/
+
+			var arr = [1,2,3,4,5];  
+
+			/*console.log(arr[0]);
+			console.log(arr[1]);*/
+
+			arr.miaov  = 10;  // 给数组添加属性
+
+			console.log(arr.miaov);
+
+			function fn(){
+				console.log(123);
+			}
+
+			fn.addMiaov = 'ketang';  // 给函数添加属性
+
+			console.log(fn.addMiaov);
+
+			var obj = {};
+
+			obj.ketang = 'leo';
+
+			console.log(obj.ketang);
+
+			var str = 'miaov';  // 不是对象，简单的值
+
+			str.abc = 10;  // ？字符串不是对象，为什么还可以添加属性呢？ 包装对象
+
+			console.log(str.abc);
+
+		</script>
+	</body>
+</html>

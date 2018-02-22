@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	#box{
+		width: 900px;
+		height: 500px;
+		background: url(img/bg.png) no-repeat;
+		position: relative;
+	}
+	#left{
+		width: 335px;
+		height: 188px;
+		position: absolute;
+		left: 148px;
+		top: 155px;
+		-overflow: hidden;
+		cursor: move;
+	}
+	#imgs1{
+		width: 100%;
+		height: 100%;
+	}
+	#right{
+		width: 200px;
+		height: 200px;
+		overflow: hidden;
+		position: absolute;
+		left: 580px;
+		top: 150px;
+		display: none;
+	}
+	#mask{
+		width: 100px;
+		height: 100px;
+		background: #000;
+		opacity: .5;
+		position: absolute;
+		visibility: hidden;
+		left: 0;
+		top: 0;
+	}
+	#border{
+		width: 184px;
+		height: 184px;
+		position: absolute;
+		left: 7px;
+		top: 7px;
+		overflow: hidden;
+	}
+	#img2{
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<div id="left">
+			<img src="img/img.png" id="imgs1">
+			<div id="mask"></div>
+		</div>
+		<div id="right">
+			<img src="img/img.png" id="img2">
+		</div>
+	</div>
+	<script type="text/javascript">
+
+		window.onload = function (){
+			
+
+			function getRect(element){
+				return element.getBoundingClientRect();
+			}
+
+			// 左边的小图
+			let  Leftimgs1 = document.getElementById('imgs1')
+			// 左边的遮罩
+			let  leftMask = document.getElementById('mask')
+
+			// 右边的可视区
+			let rightClient = document.getElementById('right')
+			// 右边的大图
+			let rightImgs = document.getElementById('img2')
+
+			let left = document.getElementById('left');
+
+			// 隐藏起来的元素，获取offsetWidth的时候是0
+
+			console.log(rightImgs.offsetWidth);
+
+			rightClient.style.display = 'block';
+
+			// 右边可视区的width和高
+			rightClient.style.width = leftMask.offsetWidth / Leftimgs1.clientWidth * rightImgs.offsetWidth + 'px';
+			rightClient.style.height = leftMask.offsetHeight / Leftimgs1.offsetHeight * rightImgs.offsetHeight + 'px';
+
+			// 左边遮罩移动的最大值
+			let leftMaxL = Leftimgs1.clientWidth - leftMask.offsetWidth
+			let leftMaxT = Leftimgs1.clientHeight - leftMask.offsetHeight
+
+			// 右边大图移动的范围
+			let rightMaxL = rightImgs.offsetWidth - rightClient.clientWidth;
+			let rightMaxT = rightImgs.offsetHeight - rightClient.clientHeight;
+
+			rightClient.style.display = 'none';
+
+			// left元素到浏览器左边和上边的距离
+			let leftX = getRect(left).left;
+			let leftY = getRect(left).top;
+
+			// 遮罩的width和height
+			let maskW = leftMask.offsetWidth;
+			let maskH = leftMask.offsetHeight;
+
+			// 左边遮罩最小值
+			let maskMinL = 0;
+			let maskMinT = 0;
+
+			
+			left.onmouseenter = function (){
+				leftMask.style.visibility = 'visible';	
+				rightClient.style.display = 'block';	
+			}
+			left.onmouseleave = function (){
+				leftMask.style.visibility = 'hidden';	
+				rightClient.style.display = 'none';	
+			}
+
+
+			// 在左边区域移动
+			left.onmousemove = function (ev){
+				let l = ev.clientX - leftX - maskW/2;
+				let t = ev.clientY - leftY - maskH/2;
+
+				if(l < maskMinL){
+					l = maskMinL
+				}
+				if(t < maskMinT){
+					t = maskMinT
+				}
+
+				if(l > leftMaxL){
+					l = leftMaxL;
+				}
+				if(t > leftMaxT){
+					t = leftMaxT
+				}
+
+				leftMask.style.left = l + 'px';	
+				leftMask.style.top = t + 'px';
+
+				// 算出左边遮罩移动的比例  移动的位置/可移动最大范围	
+				let scaleL = l / leftMaxL;
+				let scaleT = t / leftMaxT;
+
+				console.log(scaleL,rightMaxL);
+
+				rightImgs.style.left = -scaleL * rightMaxL + 'px';
+				rightImgs.style.top = -scaleT * rightMaxT + 'px';
+			};	
+		};
+
+	</script>
+</body>
+</html>

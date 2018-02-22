@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			#box{
+
+			}
+			div{
+
+			}
+			.first{
+
+			}
+			#list1 .active {
+
+			}
+		</style>
+		<script>
+			
+		</script>
+	</head>
+
+	<body>
+
+		<ul id="list1"></ul>
+		<script>
+			// 10个li
+			var list1 = document.getElementById('list1')
+			for(var i = 0; i < 10; i++){
+
+				if(i < 5){  // 前5个
+					list1.innerHTML += '<li style="background: blue;">'+i+'</li>'
+				}else{
+					list1.innerHTML += '<li style="background: yellow;">'+i+'</li>'
+				}
+
+				
+			}
+
+
+		</script>
+	</body>
+</html>

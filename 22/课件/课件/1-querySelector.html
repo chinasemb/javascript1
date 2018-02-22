@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			
+		</script>
+	</head>
+
+	<body>
+		<input type="button" value="测试getElementsByTagName" id="test_element" />
+		<input type="button" value="测试querySelectorAll" id="test_query" />
+		<input type="button" value="向list中添加" id="addItem" />
+		<ul id="list">
+			<li>123</li>
+			<li>123</li>
+			<li>123</li>
+		</ul>
+		<script>
+			let test_element  = document.getElementById('test_element')
+			let test_query  = document.getElementById('test_query')
+			let list  = document.getElementById('list')
+
+			// getElementsByTagName
+			let lisElement = list.getElementsByTagName('li')// 获取3个li元素，如果以后向ul中添加删除li，立马就能狗知道增加或删除，动态
+
+			// querySelectorAll
+			let lisQuery = list.querySelectorAll('li');  // 始终是运行到这里获取的li元素 静态
+
+			test_element.onclick = function (){
+				console.log('getElementsByTagName:::'+lisElement.length);	
+			}
+
+			test_query.onclick = function (){
+				console.log('querySelectorAll:::'+lisQuery.length);		
+			}
+
+			let  addItem = document.getElementById('addItem')
+
+			addItem.onclick = function (){
+				/*let newLi = document.createElement('li')
+				list.appendChild(newLi)	*/
+
+				list.firstElementChild.remove()
+			}
+
+		</script>
+	</body>
+</html>

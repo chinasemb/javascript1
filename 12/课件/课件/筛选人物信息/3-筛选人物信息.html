@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			div {
+				width: 100px;
+				height: 300px;
+			}
+		</style>
+		<script>
+			
+		</script>
+	</head>
+
+	<body>
+		<input type="button" value="小于30岁的" id="btn" />
+		<ul id="list">
+			<!-- <li>
+				<span>姓名：</span><span>leo</span>
+				<span>性别：</span><span>男</span>
+				<span>工作：</span><span>CEO</span>
+				<span>年龄：</span><span>30</span>
+			</li>
+			<li>
+				<span>姓名：</span><span>leo</span>
+				<span>性别：</span><span>男</span>
+				<span>工作：</span><span>CEO</span>
+				<span>年龄：</span><span>30</span>
+			</li> -->
+		</ul>
+		<script>
+			
+			/*
+				数组 对象
+
+				一个人的信息
+					姓名
+					年龄
+					性别
+
+				很多人的信息
+					存在数组中
+			*/
+
+
+			var data = [
+				{
+					name:'leo',
+					age:22,
+					sex: '男',
+					job: 'CEO'
+				},
+				{
+					name:'momo',
+					age:21,
+					sex: '男',
+					job: 'CEO'
+				},
+				{
+					name:'leo',
+					age:40,
+					sex: '男',
+					job: 'CEO'
+				},
+				{
+					name:'momo',
+					age:50,
+					sex: '男',
+					job: 'CEO'
+				}
+			]
+
+			// 数据展示在页面中 标签
+
+			var list = document.getElementById("list");
+
+			var btn = document.getElementById('btn');
+
+			btn.onclick = function (){
+				// 操作数据 再去渲染数据  不要操作html
+
+				var dataFilered = data.filter(function (item){
+					return item.age <= 30
+				})
+
+				
+				list.innerHTML = dataFilered.map(function(item) {
+					return `
+						<li>
+							<span>姓名：</span><span>${item.name}</span>
+							<span>性别：</span><span>${item.sex}</span>
+							<span>工作：</span><span>${item.job}</span>
+							<span>年龄：</span><span>${item.age}</span>
+							<span>年龄：</span><span>${1+1}</span>
+						</li>
+					`
+				}).join('');
+
+			}
+
+			
+			list.innerHTML = data.map(function(item) {
+				return `
+					<li>
+						<span>姓名：</span><span>${item.name}</span>
+						<span>性别：</span><span>${item.sex}</span>
+						<span>工作：</span><span>${item.job}</span>
+						<span>年龄：</span><span>${item.age}</span>
+						<span>年龄：</span><span>${1+1}</span>
+					</li>
+				`
+			}).join('');
+
+			function render(d){
+				
+			}
+
+
+		</script>
+	</body>
+</html>

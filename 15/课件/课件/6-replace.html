@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			
+		</script>
+	</head>
+
+	<body>
+		<input type="text" id="message" />
+		<button id="send">提交</button>
+		<ul id="list">
+			<!-- <li>今天很好<button>删除</button></li> -->
+		</ul>
+		<script>
+
+			/*
+				innerHTML需要要的是html结构类型是字符串
+			*/
+
+			var send = document.getElementById('send')
+			var list = document.getElementById('list')
+			var message = document.getElementById('message')
+
+			send.onclick = function (){
+				var value = message.value;
+				// 生成一个li元素
+				var newLi = document.createElement('li');  // 元素对象
+
+				newLi.innerHTML = value;
+
+				if(list.firstElementChild){
+					// 替换
+					// 做替换两个元素必须存在
+					list.replaceChild(newLi, list.firstElementChild);
+				}else{
+					list.appendChild(newLi);
+				}
+				
+
+			}
+
+
+
+		</script>
+	</body>
+</html>
