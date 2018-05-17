@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str = "skt t1 faker" ;
+
+        function toUpperCase(str) {
+            var char = str.charAt(0).toUpperCase() ;
+            return char + str.slice(1);
+        }
+        console.log(toUpperCase(str)) ;
+
+        //把每一个字母的首字母变为大写
+
+        console.log(str.split(" ")) ;
+
+        var arr = str.split(" ");
+        var newStr = "" ;
+
+        for (let i = 0; i < arr.length; i++) {
+            console.log(toUpperCase(arr[i]))
+            
+            newStr += " " + toUpperCase(arr[i]) ;
+            
+        }
+
+        console.log(newStr.slice(1)) ;
+
+        //全部变为大写
+
+        function allCharToUpper(str) {
+            var arr = str.split(" ");
+            var newStr = "";
+
+            for (let i = 0; i < arr.length; i++) {
+                console.log(toUpperCase(arr[i]))
+
+                newStr += " " + toUpperCase(arr[i]);
+
+            } ;
+            
+            return newStr.slice(1) ;
+        };
+        
+        allCharToUpper(str);
+
+        console.log(allCharToUpper("edg iboy") );
+
+        console.log(allCharToUpper("edg meiko") );
+
+        console.log(allCharToUpper("edg clearlove") );
+
+    </script>
+</body>
+</html>

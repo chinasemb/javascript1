@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	
+	.div1{
+		width: 400px;
+		height: 400px;
+		border :1px solid green;
+			}
+	.div2{
+		margin:20px;
+		width: 200px;
+		height: 200px;
+		border :1px solid pink;
+			}
+	.div3{
+		margin:20px;
+		width: 100px;
+		height: 100px;
+		border :1px solid purple;
+			}
+</style>
+<body>
+	<div class = "div1">
+		<div class="div2">
+			<div class="div3">
+				
+			</div>
+		</div>
+	</div>
+
+	<script>
+		var div1 = document.querySelector(".div1");
+		var div2 = document.querySelector(".div2");
+		var div3 = document.querySelector(".div3");
+
+		console.log(div1.offsetLeft);
+		console.log(div2.offsetLeft);
+		console.log(div3.offsetLeft);
+	</script>
+</body>
+</html>

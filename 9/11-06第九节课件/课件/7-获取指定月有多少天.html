@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+
+			// 获取指定月有多少天
+
+			// 获取的是11月有多少天？
+			// 思路：把月份设置到12月，把date设置到0，就是上个月的最后一天
+
+			/*var d = new Date();
+
+			d.setMonth(12);  // 设置到12月
+
+			d.setDate(0);  // 因为日期是从1开始，设置成0 就是上个月的最后一天
+
+			console.log(d.getDate());*/
+
+			// 获取指定年的指定月的天数
+			/*
+				month,  必填项
+				year   必填项
+			*/
+			function getOneMonthDates(month,year){
+				var d = new Date();
+				d.setFullYear(year || d.getFullYear());
+				d.setMonth(month);  // 设置到下个月
+				d.setDate(0);
+				return d.getDate();
+			}
+
+			console.log(getOneMonthDates(1,2018));
+			console.log(getOneMonthDates(2,2007));
+			console.log(getOneMonthDates(2,2008));
+			console.log(getOneMonthDates(2,2009));
+			console.log(getOneMonthDates(2,2010));
+
+			console.log(getOneMonthDates(2));
+
+
+		</script>
+	</head>
+
+	<body>
+		<div id="box"></div>
+		<script>
+
+
+		</script>
+	</body>
+</html>

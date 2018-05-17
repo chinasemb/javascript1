@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body,
+			ul,
+			li {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+		</style>
+		<link rel="stylesheet" type="text/css" href="./style/baidu.css" />
+	</head>
+
+	<body>
+		<div class="wrap">
+			<div class="baidu">
+				<ul id="list">
+					<li>
+						<div><input type="checkbox" /></div>
+						<span>泡沫</span>
+						<span>邓紫棋</span>
+					</li>
+					<li>
+						<div><input type="checkbox" /></div>
+						<span>说爱你</span>
+						<span>蔡依林</span>
+					</li>
+					<li>
+						<div><input type="checkbox" /></div>
+						<span>稻香</span>
+						<span>周杰伦</span>
+					</li>
+					<li>
+						<div><input type="checkbox" /></div>
+						<span>我的梦</span>
+						<span>张靓颖</span>
+					</li>
+					<li>
+						<div><input type="checkbox" /></div>
+						<span>怎么说我不爱你</span>
+						<span>萧敬腾</span>
+					</li>
+					<li>
+						<div><input type="checkbox" /></div>
+						<span>无处安放</span>
+						<span>白若溪</span>
+					</li>
+				</ul>
+				<div class="select">
+					<span class="selectAll">
+						<input type="checkbox" id="selectAll" />
+						<span>
+						全选
+						</span>
+					</span>
+					<div class="others">
+						<span><em></em>收藏</span>
+						<span><em></em>添加</span>
+						<span><em></em>删除</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+
+			/*
+				1. 隔行变色 %
+				2. 绑定鼠标移入事件处理
+					移入的元素background为yellow
+				3. 绑定鼠标移出事件处理
+					如果 当下的input被选中
+						依然保持background为yellow
+					否则
+						还原之前移动隔行变色的颜色
+				4. 点击全选
+					如果 全选选中
+						所有的button都被选中，并且background为yellow
+					否则
+						所有的button都不被选中，并且background为还原回隔行变色的颜色
+				5. 点击单选
+					利用计数的方式，如果每一个checkbox都选中，则加一
+					如果 计的总数和checkbox总数相同
+						全选选中
+					否则
+						全选不选中
+			*/
+			//1 选择元素
+
+			var lis = document.querySelectorAll("#list li");
+			var checkboxs = document.querySelectorAll("#list input");
+
+			// 2 隔行变色
+
+			var len = lis.length ;
+
+			for (var i = 0; i < len; i++) {
+				lis[i].style.background = i % 2 == 0 ? "#fff" : " grey";
+				//*记录下标
+				lis[i].index = i ;
+				// 3 鼠标移入
+				lis[i].onmouseover = function (){
+					this.style.background = "pink";
+				}
+				// 4 鼠标移出
+				lis[i].onmouseout = function (){
+					// 5 判断 
+					if ( checkboxs[this.index].checked ) {
+
+					} else{
+						this.style.background = this.index % 2 == 0 ? "#fff"
+					: "grey";
+					};
+					
+				}
+
+				//单选
+
+				checkboxs[i].onclick = function () {
+					var n = 0 ;
+					for (var i = 0; i < checkboxs.length; i++) {
+						if ( checkboxs[i].checked ) {
+							n++;
+						} ;
+						if (n == len ) {
+							selectAll.checked = true ;
+						} else{
+							selectAll.checked = false ;
+						};
+					};
+				}
+
+			};
+
+			//6 全选
+
+			var selectAll = document.querySelector("#selectAll");
+
+			selectAll.onclick = function () {
+
+				for (var i = 0; i < lis.length; i++) {
+					checkboxs[i].checked = this.checked ;
+
+					if (this.checked) {
+						lis[i].style.background = "pink";
+					} else{
+						lis[i].style.background = i % 2 == 0 ? "#fff" : "grey"
+					};
+				};
+
+			}
+			
+
+
+
+
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+
+			// 获取一个月的1号星期几
+			var d = new Date();
+
+			d.setMonth(11-1);
+			d.setDate(1);
+
+			//console.log(d.getDay());
+
+			function getOneMonthDay(month,year){
+				var d = new Date();
+				d.setFullYear(year || d.getFullYear())
+				d.setMonth(month-1);
+				d.setDate(1);
+				return d.getDay()	
+			}
+
+			console.log(getOneMonthDay(11),
+			getOneMonthDay(2,2019),
+			getOneMonthDay(2,2020),
+			getOneMonthDay(2,2001));
+
+
+
+		</script>
+	</head>
+
+	<body>
+		<div id="box"></div>
+		<script>
+
+
+		</script>
+	</body>
+</html>

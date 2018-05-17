@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var a = 1;
+
+		function fn1 () {
+
+			var a = 2 ;
+			console.log(a);
+			function fn2 () {
+				console.log(a++);
+				console.log(a);
+			};
+			fn2 ();
+		}
+
+		fn1 ();
+	</script>
+</body>
+</html>

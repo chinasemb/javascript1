@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var str = "experience";
+
+		console.log(str[3]);//只是用于高版本的浏览器
+		console.log(str.charAt(4));//低版本浏览器也可以用
+
+		str[1] = "q";
+		console.log(str);//字符串被赋值之后是不可被修改的
+
+		var arr = ["1","2","3","4","5"];
+		arr[1] = "w";
+		console.log(arr);//数组被修改之后是可以被修改的
+	</script>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title></title>
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+      background-color: #ddd;
+    }
+    .container {
+      border: 4px solid rgb(119, 20, 67);
+      position: relative;
+      margin: 50px auto;
+      overflow: hidden;
+    }
+    .container,
+    .sliders,
+    .sliders span,
+    .sliders span img {
+      width: 860px;
+      height: 540px;
+    }
+    .sliders {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 600%;
+    }
+    .sliders span {
+      float: left;
+    }
+    .sliders span img {
+      display: block;
+    }
+    .prev,
+    .next {
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      background-image: url(./image/btn_next.png);
+      background-size: cover;
+    }
+    .prev {
+      left: 0;
+      background-image: url(./image/btn_prev.png);
+    }
+    .navs {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 5%;
+      text-align: center;
+    }
+    .navs span {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      background-color: #ddd;
+      border-radius: 50%;
+      transform: scale(0.5);
+      cursor: pointer;
+    }
+    .navs span.active {
+      background-color: rgb(34, 103, 221);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="sliders">
+      <span><img src="./image/1.jpg"></span>
+      <span><img src="./image/2.jpg"></span>
+      <span><img src="./image/3.jpg"></span>
+      <span><img src="./image/4.jpg"></span>
+      <span><img src="./image/5.jpg"></span>
+      <span><img src="./image/1.jpg"></span>
+    </div>
+    <div class="prev"></div>
+    <div class="next"></div>
+    <div class="navs">
+      <span class="active"></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <script src="./mTween.js"></script>
+  <script>
+    // 所有图片的父容器
+    var slider = document.querySelector('.sliders');
+    console.log(slider);
+    // 左侧按钮
+    var prevBtn = document.querySelector('.prev');
+    // 右侧按钮
+    var nextBtn = document.querySelector('.next');
+    // 所有的导航按钮
+    var navBtns = document.querySelectorAll('.navs span');
+    
+    var len = navBtns.length, current = 0;   // 当前显示的第几张图
+    var oneSize = -860;  // 每次要运动的left值
+    var index = 0;  // 控制导航按钮的对应的显示
+    
+    // 切换上一张
+    prevBtn.onclick = function (){
+      if(current === 0){
+        current = len;
+        slider.style.left = current * oneSize + 'px';
+      }
+      
+      current--;
+      
+      index--;
+      
+      if(index < 0){
+        index = len - 1;
+      }
+      
+      for(var i=0; i<len; i++){
+        navBtns[i].classList.remove('active');
+      }
+      navBtns[index].classList.add('active');
+      
+      mTween({
+        el: slider,
+        attrs: {
+          left: current * oneSize
+        }
+      });
+    };
+    
+    // 切换下一张
+    nextBtn.onclick = function (){
+      if(current === len){
+        current = 0;
+        slider.style.left = 0;
+      }
+      current++;
+      
+      index++;
+      
+      if(index === len){
+        index = 0;
+      }
+      
+      for(var i=0; i<len; i++){
+        navBtns[i].classList.remove('active');
+      }
+      navBtns[index].classList.add('active');
+      
+      // slider.style.left = current * oneSize + 'px';
+      mTween({
+        el: slider,
+        attrs: {
+          left: current * oneSize
+        }
+      });
+    };
+    
+    
+    
+    
+  </script>
+</body>
+</html>

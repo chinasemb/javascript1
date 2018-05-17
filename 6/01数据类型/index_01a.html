@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" value = "" id = "num1">
+	<span>+</span>
+	<input type="text" value = "" id = "num2">
+	<input type="button"  id = "add" value = "按钮">
+	<script>
+		var num1 = document.querySelector("#num1");
+		var num2 = document.querySelector("#num2");
+		var add  = document.querySelector("#add");
+
+		add.onclick = function  (){
+			console.log(Number(num1.value) + Number(num2.value));
+		}
+	</script>
+</body>
+</html>

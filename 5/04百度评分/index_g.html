@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>百度评分</title>
+		<style>
+			body,h1 {
+				margin: 0;
+				padding: 0;
+				-webkit-font-smoothing: antialiased;
+			}
+			.starts{
+				overflow:hidden;
+			}
+			.starts span{
+				display: block;
+				float: left;
+				padding: 3px;
+			}
+			.starts span:after {
+				content: '☆'
+			}
+			.starts .e4c6e4:after,.starts .e15671:after {
+				content: '★'
+			}
+
+			.wrap .starts .e4c6e4 {
+				color: #e4c6e4;
+			}
+			.wrap .starts .e15671 {
+				color: #e15671;
+			}
+		</style>
+		<link rel="stylesheet" type="text/css" href="./style/pingfen.css"/>
+	</head>
+	<body>
+		<div class="wrap">
+			<div class="baidu">
+				<div class="caption">
+					<h1></h1>
+					<span>总体评价</span>
+				</div>
+				<div class="context">
+					<div class="starts">
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+					<div class="info"></div>
+				</div>
+				<div class="tips">
+					小提示：点击星星就能打分
+				</div>
+			</div>
+		</div>
+		
+		<script>
+			/*
+				1_世界上本没有index,有的人多了就成了下标
+				2_征服了index的人头戴顶戴花翎
+				3_没有征服index的人一辈子布衣青年
+				4_征服了皇帝的人,位极人臣,一人之下万人之上.
+			*/
+			var  spans = document.querySelectorAll(".starts span");
+			console.log(spans)
+			for (var i = 0; i < spans.length; i++) {
+				
+				spans[i].index = i ;
+
+				spans[i].onmouseover = function (){
+					var index = this.index;
+					for (var j = 0; j < spans.length; j++) {
+						if (j <= index) {
+							if(index <= 1){
+							spans[j].className = 'e4c6e4'
+						}else{
+							spans[j].className = 'e15671'
+						}
+						} else{
+							spans[j].className = "";
+						};
+					};
+				}
+
+				spans[i].onmouseout = function (){
+					for (var i = 0; i < spans.length; i++) {
+						spans[i].className = "";
+					};
+				}
+			};
+		</script>
+	</body>
+</html>

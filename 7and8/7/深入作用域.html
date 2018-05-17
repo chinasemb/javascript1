@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/*
+			单线程 : 浏览器在执行JS脚本的时候 , 是单线程的 , 
+
+					同一时刻,只能执行一行代码 
+
+			cpu 只认识 0101 二进制的代码
+
+			浏览器 想运行 JS  脚本至少要包含三个部分 
+
+					编译器  : 负责把 JS 代码 编译成 计算机可以识别的
+					数据
+								在编译的时候首先要找到所有的标识符
+								如果看到变量了,那么会将这个变量名
+								提升到当前作用域所有代码的最前端
+								如果看到了函数声明 ,那么会将整个函数提升到当前作用域的
+								最前端
+					JS 引擎 : 逐行执行 编译后的代码 
+					作用域 
+		*/
+
+		// console.log(a);//undefined 
+
+		// var a = 1 ; 
+
+		// fn2 () ;
+
+
+		// var fn2 = function (){   //变量名而已  所以函数表达式不可以
+		// 											//函数声明可以
+
+		// 	alert(1);
+		// }
+		//----------------------------------------------------------
+
+		var a = 1 ;
+
+		function fn1 () {
+			console.log( a++ ) ;
+
+			a = 2 ;
+
+			console.log( a ) ;
+
+			var a = 3 ;
+
+			fn2();
+
+			function fn2 (){
+				console.log(a);
+			}
+		}
+
+		fn1 () ;
+		
+
+	</script>
+</body>
+</html>

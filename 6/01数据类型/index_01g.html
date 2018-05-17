@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text " id = "num1">
+	<span>+</span>
+	<input type="text " id = "num2">
+	<input type="button" value = "相加" id = "add">
+
+	<script>
+		var add = document.querySelector("#add");
+		var num1 = document.querySelector("#num1");
+		var num2 = document.querySelector("#num2");
+
+		add.onclick = function () {
+			console.log(Number(num1.value) + Number(num2.value))
+		}
+	</script>
+</body>
+</html>

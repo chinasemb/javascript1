@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+
+			// 未来时间
+			var fetureTime = '2017 11 6 21:27:00'
+			var fetureDate = new Date(fetureTime);
+			// 现在时间
+			var nowDate = new Date();
+
+			// 未来时间和现在时间的差值 ms
+			var timeDiff = (fetureDate.getTime() - nowDate.getTime())/1000;  // 差值多少秒
+
+			// 差多少天？
+
+			console.log(24 * 60 * 60);
+
+			console.log(parseInt(timeDiff/86400)); 
+
+			// 差多少时？
+			console.log( parseInt(timeDiff % 86400/3600) );
+
+			// 差多少分？
+			console.log( parseInt(timeDiff % 86400%3600/60) );
+
+			// 差多少秒？
+			console.log( parseInt(timeDiff % 60) );
+
+			/*
+				思考题：
+	100个苹果分给小朋友，每一个小朋友分7个，最多可以分几个小朋友,如果分不完的话，还剩下几个苹果？
+
+			*/
+
+			/*console.log( parseInt(100 / 7) );
+
+			console.log( 100%7 );*/
+
+
+
+		</script>
+	</head>
+
+	<body>
+		<div id="box"></div>
+		<script>
+
+
+		</script>
+	</body>
+</html>

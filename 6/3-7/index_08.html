@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var str = "we are the one";
+
+		function toFirstUpper (str){
+			var char = str.charAt(0).toUpperCase();
+
+			return char + str.slice(1); 
+		}
+
+		var arr = str.split(" ");
+		var newStar = "";
+
+		for (var i = 0; i < arr.length; i++) {
+			newStar +=  " " + toFirstUpper(arr[i]);
+		};
+		console.log(newStar.slice(1));
+
+		function allToUpper (str){
+				function toFirstUpper (str){
+					var char = str.charAt(0).toUpperCase();
+
+					return char + str.slice(1); 
+				}
+
+			var arr = str.split(" ");
+			var newStar = "";
+
+			for (var i = 0; i < arr.length; i++) {
+				newStar +=  " " + toFirstUpper(arr[i]);
+			};
+
+			return newStar.slice(1);
+		}
+
+		console.log(allToUpper("you are food!"))
+
+		console.log(allToUpper("this is a shoe!"))
+
+		console.log(allToUpper("that is my boys!"))
+	</script>
+</body>
+</html>

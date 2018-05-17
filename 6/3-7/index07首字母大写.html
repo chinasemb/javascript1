@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var str = "experience";
+
+		var char = str.charAt(0).toUpperCase();
+
+		console.log(char);
+
+		console.log(char + str.slice(1));
+
+		function toFirstCharUpper (str){
+			var char = str.charAt(0).toUpperCase();
+
+			return  char + str.slice(1);
+		};
+		console.log(toFirstCharUpper("hello"));
+		console.log(toFirstCharUpper("europe"));
+		console.log(toFirstCharUpper("japan"));
+		console.log(toFirstCharUpper("family"));
+	</script>
+</body>
+</html>

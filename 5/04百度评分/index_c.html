@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>百度评分</title>
+		<style>
+			body,h1 {
+				margin: 0;
+				padding: 0;
+				-webkit-font-smoothing: antialiased;
+			}
+			.starts{
+				overflow:hidden;
+			}
+			.starts span{
+				display: block;
+				float: left;
+				padding: 3px;
+			}
+			.starts span:after {
+				content: '☆'
+			}
+			.starts .e4c6e4:after,.starts .e15671:after {
+				content: '★'
+			}
+
+			.wrap .starts .e4c6e4 {
+				color: #e4c6e4;
+			}
+			.wrap .starts .e15671 {
+				color: #e15671;
+			}
+		</style>
+		<link rel="stylesheet" type="text/css" href="./style/pingfen.css"/>
+	</head>
+	<body>
+		<div class="wrap">
+			<div class="baidu">
+				<div class="caption">
+					<h1></h1>
+					<span>总体评价</span>
+				</div>
+				<div class="context">
+					<div class="starts">
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+					<div class="info"></div>
+				</div>
+				<div class="tips">
+					小提示：点击星星就能打分
+				</div>
+			</div>
+		</div>
+		
+		<script>
+			/*
+				1_所有元素加上class,加上深色.
+				2_选择元素的左边加上深色,不变.
+				3_选择元素的右边颜色清空,className清空
+				4_选择元素的index小于2,颜色变浅.
+			*/
+			var spans = document.querySelectorAll(".starts span");
+
+			for (var i = 0; i < spans.length; i++) {
+
+				spans[i].index = i;
+				
+				spans[i].onmouseover = function (){
+					for (var j = 0; j < spans.length; j++) {
+						var index = this.index;
+						if(j <= index ){
+							if ( index <2) {
+								spans[j].className = "e4c6e4";
+							} else{
+								spans[j].className = "e15671";
+							};
+						}else{
+							spans[j].className = "";
+						}
+					};
+				}
+
+				spans[i].onmouseout = function (){
+					for (var j = 0; j < spans.length; j++) {
+						if (j <= clickIndex ) {
+							if (clickIndex < 2) {
+								spans[j].className = "e4c6e4";
+							} else{
+								spans[j].className = "e15671";
+							};
+						} else{
+							spans[j].className = "";
+						};
+						
+					};
+				}
+
+				spans[i].onclick = function (){
+					clickIndex = this.index;
+				}
+			};
+		</script>
+	</body>
+</html>

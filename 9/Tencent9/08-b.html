@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title></title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: rgb(231, 199, 62);
+      position: absolute;
+      left: 100px;
+      top: 80px;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+  <script>
+   var box = document.querySelector(".box");
+   var speed = 20 ;
+   
+   var targetpos = 400 ;
+
+   document.onclick = function () {
+           
+           timer = setInterval(function () {
+             var s = box.offsetLeft + speed ;
+            if( s > targetpos){
+              s = targetpos;
+             clearTimeout(timer);
+            }
+            box.style.left = s+ "px";
+
+          
+       },200)
+   }
+  
+    
+  
+  
+  
+  
+  
+  </script>
+</body>
+</html>

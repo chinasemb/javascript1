@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str = "miaovketang" ;
+
+        //首字母变为大写
+        var char = str.charAt(0).toUpperCase() ;
+
+        console.log(char+str.slice(1));
+
+        function toUpperCase(str) {
+            var char = str.charAt(0).toUpperCase() ;
+
+            return char + str.slice(1) ;
+        };
+
+        console.log(toUpperCase("sktt1faker"));
+
+        //找到第一个字符变为大写 , 然后拼接上 字符串 从第一位
+    </script>
+</body>
+</html>

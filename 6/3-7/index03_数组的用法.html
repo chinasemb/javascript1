@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var str = "   miao v ke tang    ";
+
+		console.log(str.trim());
+
+		var arr = ["wang","zhong","liu","leo"];
+
+		//1  向数组中 后面添加一个到多个元素
+		//2  向数组中 前面添加一个到多个元素
+		//3  删除最后一个元素
+		//4  删除第一个元素
+		//5  取出指定位置的(开始,结束) 的元素
+		//6.删除指定位置的元素
+		//7.指定位置的元素替换为别的元素
+
+		//1  数组调用push方法之后,原来的数组会发生改变
+		//	 arr.push() 的返回值是添加之后数组的长度
+
+		arr.push("abc");
+		var x = arr.push("abc","1",2,3);
+
+		console.log(arr);
+
+		console.log(x);
+
+		//2  数组调用arr.unshift 方法之后,向数组的前面添加了元素,改变了原来的数组
+
+		arr.unshift("p");
+		console.log(arr);
+
+		//3 删除最后一个元素  arr.pop 的返回值是 删除的最后一项
+		
+		arr.pop();
+		arr.pop();
+		arr.pop();
+		arr.pop();
+		var n = arr.pop();
+		console.log(n);
+		console.log(arr);
+
+		//4 删除第一个元素  arr.shift 的返回值是 删除的第一项
+
+		arr.shift();
+		
+		var y = arr.shift();
+		console.log(y);
+		console.log(arr);
+
+		//5 取出指定位置的元素不改变原来的数组    返回值是数组,数组中的值是截取的值,不包含结束位置的值,["zhong"].
+
+		arr.slice(1,2);
+
+		var newArr = arr.slice(1,2);
+
+		console.log(newArr);
+
+		console.log(arr);
+
+		//6   从第一位截取到最后 
+		arr.slice(1);
+
+		var newArr2 = arr.slice(1);
+
+		console.log(newArr2);
+
+		console.log(arr);
+
+		 //7  从指定位置一直删除到最后 , 会改变原数组,  返回值是删除的元素
+
+
+		 var j = arr.splice(1); //指定删除的个数
+
+		 arr.splice(0,1,"miaov");//替换第0个元素为miaov
+
+		 console.log(arr);
+
+		 arr.splice(0,0,"miaov");//插入 一个元素在第0位前面
+		 arr.splice(0,0,"miaov1");
+		 arr.splice(0,0,"miaov2");
+		 arr.splice(0,0,"miaov3");
+		 arr.splice(0,0,"miaov4");
+
+		 console.log(arr);
+
+		 arr.splice(0,1);
+		 console.log(arr);
+
+		 console.log(j);
+	</script>
+</body>
+</html>

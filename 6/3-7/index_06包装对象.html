@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/*
+			
+			JS提供了11种引用类型：Object、Array、Date、Function、Error、RegExp、Math、Number、String、Boolean、Globle。其中包括了三种基本包装类型，也就是Number、String和Boolean，它们是特殊的引用类型，既与其他的引用类型相似，同时又具有与各自的原始类型相应的特殊行为。
+
+				一、什么是包装类型？
+
+				因为这字符串、数值、布尔三种 原始类型的值，在一定条件下会自动转化为对象，因此被称为 原始类型的        “包装类型”。
+
+				例如：var a1="some text";
+
+				var a2=a1.substring(0,2);
+
+				console.log(a2);//"so"
+
+				上面这个例子中，变量a1是一个字符串，字符创必然是基本类型的值，但是它却在第二行调用了substring()方法，并将结果返回保存在a2中，我们都知道，既然a1是基本类型的值而不是对象，因而从逻辑上讲，它是没有方法的。其实在在实现这个操作的时候，JS内部已经隐式地帮我们帮创建了一个包装对象了，以上的实际的情形应该是这样的：
+
+				var a1=new String("some text");
+
+				var a2=a1.substring(0,2);
+
+				a1=null;
+
+				console.log(a2);//"so"
+
+				但是这两种方式还是有区别的：
+
+				区别一：浏览器 自己隐式创建的包装对象 
+				和你 
+				显式创建的包装对象 
+				不严格相等。
+
+				var a1="test";
+
+				var a2=new String("test");
+
+				console.log(a1==a2);//true
+
+				console.log(a1===a2);//false
+
+				区别2：隐式创建的包装对象，
+						在使用完后之后就会被销毁了。
+						例如：
+
+				var s1="some text";
+
+				var s1.color="red";
+
+				console.log(s1.color);//undefined
+
+				上面的代码，在第二行代码试图为一个字符s1添加一个color属性，但是当第三行再次访问的时候，color属性已经不见了。
+				原因就是第二行代码创建的String对象在执行第三行代码时已经被销毁了，
+				第三行代码又创建来了自己的String对象，可是没有了color属性，
+				所以最终返回的值是undefined。
+
+				在实际运用中，我们可以显式的调用String、Number和Boolean来创建基本包装类型的对象，
+				不过，应该在**绝对必要**的时候再这么做，
+				因为这种做法很容易让人分不清自己是在处理**基本类型**还是**引用类型**。
+				对基本包装类型的实例调用  typeof 会返回 object。
+
+				二、包装类型和引用类型的区别
+
+
+				引用类型和包装类型的主要区别是  对象的生存期。使用new操作符     创建的   引用类型的实例，在执行离开当前作用域之前  都一直保存在内存中。而自动 穿件 的基本包装类型的对象，则只存在于一行代码的执行期间，然后立即被销毁，这也意味着我们不能在运行时为基本类型添加属性和方法。
+
+		*/
+	</script>
+</body>
+</html>

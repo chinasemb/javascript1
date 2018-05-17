@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="box" style = "width: 100px; height :10px ; background-color : #fac">
+		
+	</div>
+	<input type="button" value = "click">
+	<input type="button" value = "clickadd">
+
+	<script>
+		var box = document.querySelector("#box");
+		var clicks = document.querySelectorAll("input")[0];
+		var clicks2 = document.querySelectorAll("input")[1];
+		var x = true ;
+		clicks.onclick = function  () {
+			
+			if (x) { 
+				setInterval(function add () {
+					box.style.width = parseInt(box.style.width) + 10 + "px" ;
+				},400)
+				x = false ; 
+			}
+
+		}
+		clicks2.onclick = function  () { 
+				setInterval(function add () {
+					box.style.width = parseInt(box.style.width) + 10 + "px" ;
+				},400)
+			
+		}
+		console.log(box.style.width);
+	</script>
+</body>
+</html>

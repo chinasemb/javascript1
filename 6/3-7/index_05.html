@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/*
+			特殊对象:
+						数组  有序的对象
+						函数  可以被调用的对象
+						DOM元素   对象
+			JS里面,除了基本数据类型,剩下的都是对象
+
+			包装对象 : 字符串本身不是对象 ,为什么可以调用 字符串的某些对象,
+						之所以可以用,是为了方便使用字符串的那些方法.
+
+			
+
+		*/
+
+		var arr = [1,2,3,4,5,6];
+		console.log(arr[1]);
+
+		function fn () {
+			// body...
+			console.log(123);
+		};
+
+		fn();
+
+		arr.miaov = 10;
+		console.log(arr.miaov);//给数组添加属性
+
+		fn.addM = "miaovketang";
+		console.log(fn.addM);//给函数添加属性
+
+		var obj = {};
+		obj.li = "ledsda";
+		console.log(obj.li);//给对象添加属性
+
+		var str = "2asdsadasd";
+		str.abc = 10;
+		console.log(str.abc);//undefined  是包装对象的结果
+		//不能给字符串添加属性,基本类型的不可以添加属性
+
+
+
+	</script>
+</body>
+</html>

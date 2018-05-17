@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+
+			// 未来时间
+			var fetureTime = '2017 11 8 12:33:00';
+
+			
+
+			function times(fetureTime){
+				
+				var fetureDate = new Date(fetureTime);
+				// 现在时间
+				var nowDate = new Date();
+
+				// 未来时间和现在时间的差值 ms
+				var timeDiff = (fetureDate.getTime() - nowDate.getTime())/1000;  // 差值多少秒
+
+				// 差多少天？
+
+				var d = parseInt(timeDiff/86400);
+				var h = parseInt(timeDiff % 86400/3600);
+				var m = parseInt(timeDiff % 86400%3600/60);
+				var s = parseInt(timeDiff % 60);
+
+				var t =  d + '天' + h + '时'+ m + '分'+ s + '秒';
+
+				return t;
+			}
+
+			
+
+
+
+		</script>
+	</head>
+
+	<body>
+		<div id="box"></div>
+		<script>
+			var box = document.getElementById("box")
+			box.innerHTML = times(fetureTime);
+			setInterval(function (){
+				box.innerHTML = times(fetureTime);
+			},1000)
+
+		</script>
+	</body>
+</html>

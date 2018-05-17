@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" id = "num1">
+	<span>+</span>
+	<input type="text" id = "num2">
+	<input type="button" id = "add" value = "相加">
+
+	<script>
+
+		/*
+			对象:
+					属性的无序集合 
+					       属性:
+					       			键值对构成
+					       						 对象数据结构的
+					       					***	 key 可以是 任意的 字符串
+					       					***	 value 值可以是任意类型
+		*/
+		var add = document.querySelector("#add");//获取的任意一个元素都是对象
+		var num1 = document.querySelector("#num1");
+		var num2 = document.querySelector("#num2");
+
+		add.abac = "2321";
+
+		console.dir(add);
+
+		var obj = {
+			miaov : 123,
+			X:     345,
+			k:  "miaob"
+		};
+
+		console.log(obj);
+		console.log(obj.miaov);
+		console.log(obj["miaov"]);
+
+	</script>
+</body>
+</html>

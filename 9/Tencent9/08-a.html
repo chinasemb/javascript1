@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title></title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: rgb(231, 199, 62);
+      position: absolute;
+      left: 100px;
+      top: 80px;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+  <script>
+    var box = document.querySelector(".box");
+
+    /*
+        让物体运动
+                  起始位置
+                  终止位置
+                  运动的速度
+    */
+    var startPos = box.offsetLeft;
+    var targetPos = 400 ;
+    var speed = 4 ;
+
+    document.onclick = function  () {/*
+      box.style.left = box.offsetLeft + speed + "px";*/
+
+    }
+
+    var timer = setInterval(function(){
+      var s = box.offsetLeft + speed ;
+      if (s > targetPos) {
+          s = targetPos;
+        return clearTimeout(timer);
+      };
+      box.style.left = box.offsetLeft + speed + "px";
+    },20)
+    
+  
+  
+  
+  
+  
+  </script>
+</body>
+</html>

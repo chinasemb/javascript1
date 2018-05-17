@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="button" id = "add">
+	<script>
+		/*布尔值  
+				布尔表示一个逻辑的实体
+
+			未定义
+				undefined  值   undefined  数据类型都是  首字母大写Undefined
+
+				1.使用var 声明一个变量,未赋值的时候
+				2.访问对象 的属性不存在的时候
+				3.一个函数如果没有返回值 , 执行之后的结果是undefined (后面的)
+
+			空 
+				Null 类型
+						值null 是javascript 的一个字面量 ,表示空值
+
+						***undefined 实际上是派生于 null ,所以在比较的时候是相同的. 
+						undefined == null
+						设计者 后来设计的undefined 
+
+
+			简单(基础)数据类型 
+						数字, 字符串 , 布尔值 ,未定义 ,空 ,symbol(ES 6)
+			复合(引用)数据类型
+						对象
+							属性组成的 无序集合
+										属性由键值对构成
+
+										对象结构的 key  可以是任意字符串
+										属性值          可以是任意类型
+
+						
+
+		*/
+
+		var str = true;
+		console.log(str);
+		console.log(1 < 2);
+
+		var miao ;
+		console.log(miao);
+
+		var arr = ["1","2"];
+		console.log(arr[3]);
+
+		var add = document.getElementById('add');//对象元素
+		console.log(add.ids);
+
+		console.log( undefined == null ) ;
+	</script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body,
+			ul,
+			li {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+		</style>
+		<link rel="stylesheet" type="text/css" href="price.css" />
+	</head>
+
+	<body onselectstart="return false;">
+		<div class="wrap">
+			<div class="box">
+				<ul class="list">
+					<!-- <li>
+						<i></i>
+						<em>0</em>
+						<i></i>
+						<span>
+							单价（元）：<strong>12.5 </strong> 小计：<strong>0</strong>
+						</span>
+					</li>
+					<li>
+						<i></i>
+						<em>0</em>
+						<i></i>
+						<span>
+							单价（元）：<strong>10.5 </strong> 小计：<strong>0</strong>
+						</span>
+					</li>
+					<li>
+						<i></i>
+						<em>0</em>
+						<i></i>
+						<span>
+							单价（元）：<strong>8.5 </strong> 小计：<strong>0</strong>
+						</span>
+					</li>
+					<li>
+						<i></i>
+						<em>0</em>
+						<i></i>
+						<span>
+							单价（元）：<strong>8 </strong> 小计：<strong>0</strong>
+						</span>
+					</li>
+					<li>
+						<i></i>
+						<em>0</em>
+						<i></i>
+						<span>
+							单价（元）：<strong>14.5 </strong> 小计：<strong>0</strong>
+						</span>
+					</li> -->
+				</ul>
+				<div class="info">
+					<span>商品公合计：<em>0</em>件</span>
+					<span>共花费了：<em>0</em>元</span>
+					<br />
+					<br />
+					<span>其中最贵的商品单价是：<em>0</em>元</span>
+				</div>
+			</div>
+		</div>
+		<script>
+			/**
+			 * mvc:
+			 *  m: model 数据
+			 *  v: view  视图（html + css）
+			 *  c: 控制器（JS脚本）
+			 */
+			
+			var data = [
+				{
+					id : 0 ,
+					num : 0 ,
+					price : 12.5 ,
+					total : 0 
+				}, {
+					id: 1,
+					num: 0,
+					price: 8.5,
+					total: 0
+				}, {
+					id: 2,
+					num: 0,
+					price: 10.5,
+					total: 0
+				}, {
+					id: 3,
+					num: 0,
+					price: 6.5,
+					total: 0
+				}, {
+					id: 4,
+					num: 0,
+					price: 11,
+					total: 0
+				}
+			]
+
+			//根据数据生成商品列表
+			function createGoodsListHTML(data) {
+				var list = document.querySelector('.list');
+				var str = '' ;
+				for (let i = 0; i < data.length; i++) {
+					str += '<li><i></i><em>'+data[i].num+'</em><i></i><span>单价（元）:<strong>'+data[i].price+'</strong>小计:<strong>'+data[i].total+'</strong></span></li>'
+				}
+				list.innerHTML = str ;
+			} ;
+			createGoodsListHTML (data) ;	
+
+
+
+
+
+
+		</script>
+	</body>
+
+</html>

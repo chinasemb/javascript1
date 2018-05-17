@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+
+			var str = 'miaov ke tang';
+
+			// 对这个字符串进行操作 必须调用字符串的方法
+			/*
+				1. 获取指定位置的字符  5  1
+				2. 指定字符在str这个字符串中所在的位置  n是老几
+				3. 截取指定位置的字符串  0 5  1- 6   3 - 10
+				4. 截取指定位置指定个数的字符串  4- 截取10个  2 截取2个
+				5. 小写变为大写
+				6. 大写变为小写
+			*/
+
+			//5
+				console.log(str.toUpperCase());
+				console.log('MIAVO'.toLowerCase());
+
+			// 4.
+
+			console.log( str.substr(3,5) );  // 获取指定位置的指定的个数
+
+			console.log( str );  // 字符串定义后不会改变
+
+			// 3
+
+			/*console.log( str.slice(0,3) );   // 指定的开始到结束的位置 不包含结束为止
+			console.log( str.slice(2) );  // 指定开始没指定结束，一直截取到最后
+			console.log( str.slice(6,2) );  // 空
+
+			// 可以接受负数为参数 -1 代表的是最后一位 -2 倒数第二位 一次类推
+
+			console.log( str.slice(-2,-1) );
+
+			console.log( str.substring(0,3) );
+			console.log( str.substring(3,0) );  // 开始大于结束，会互换位置
+
+			console.log( str.substring(-2,-1) );  // 不能接受负参数*/
+
+
+			/*// 1
+			console.log(str.charAt(-1));
+
+			// 2
+
+			console.log(str.indexOf('n'));  // 11
+			console.log(str.indexOf('tang'));  // 9
+			console.log(str.indexOf('a'));  // 2 首次出现的
+			console.log(str.indexOf('a',5));  // 从第5为开始向后搜索
+			console.log(str.indexOf('leo'));  // -1*/
+
+			
+
+
+
+		</script>
+	</head>
+
+	<body>
+		<div id="box"></div>
+		<script>
+
+		</script>
+	</body>
+</html>

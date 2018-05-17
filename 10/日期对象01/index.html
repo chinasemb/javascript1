@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <body>
+        <div id="box">
+
+        </div>
+    </body>
+    <script>
+        var obj = {}; //字面量的形式 ,直接量
+        var arr = [] ;
+
+        var obj2 = new Object() ;//创建了一个对象
+        var arr2 = new Array() ; //创建了一个数组
+
+        //处理日期对象
+        var d = new Date () ; //日期对象
+        // console.log(d);
+        // console.dir(d);  // 使用console.log() 向控制台输出的是文本,会把对象转成字符串
+
+        // /*
+        //     1.不传入参数
+        //                 程序运行时的时间
+        //     2.依次传入年月日时分秒
+        //                 new Date(2017,10,12,10,12,14) 
+        //                 至少传入两个参数
+        //     3.传入字符串
+
+        //     4.传入时间戳
+        //                 new Date (timstamp)
+
+
+        // */
+        // var d2 = new Date(2018,0,12,19,14,17);
+        // console.log(d2);
+
+        // var d3 = new Date("2017 11 6 20:01:03");
+        // console.log(d3);
+
+        // var d4 = new Date( 'June 10,2017 12:12:14' );//老外的 日期 写法  2017 和 12:12:14 之间有空格 
+        // console.log(d4);
+
+        // console.log(d.getTime()); //获取毫秒数
+
+        // var d5 = new Date(1526199944414);
+        // console.log(d5);
+
+
+        // //年
+        // console.log(d5.getFullYear()); //以系统时间为准的
+
+        // //月
+        // console.log(d5.getMonth()+ 1); // 月是从 0开始为第一月  11为  第十二月    =1为真实的月份
+
+        //  //日
+        // console.log(d5.getDate() );
+        //  //星期  西方  星期日是每个星期的第一天  显示为第0天  1代表周一 23456 周二-周六 0代表周日
+
+        // console.log(d5.getDay() );
+        //  //时
+        // console.log(d5.getHours() );
+        //  //分
+        // console.log(d5.getMinutes() );
+        //  //秒
+        // console.log(d5.getSeconds() );
+
+        var arr =['日','一','二', '三', '四', '五', '六'] ;
+        // console.log('星期' + arr[d5.getDay()]) ;
+
+        // //获取毫秒
+        // d5.getMilliseconds () //获取毫秒
+        // d5.getTime() //获取毫秒为单位的时间戳
+
+
+        //数字时钟
+
+         var box = document.querySelector('#box');
+        
+       function getcurTime(params) {
+
+           var  d = new Date() ;
+
+            var y = d.getFullYear();
+
+           var m = d.getMonth()+1;
+
+           var da = d.getDay();
+
+           var h = d.getHours();
+
+           var m = d.getMinutes();
+
+           var s = d.getSeconds();
+
+           var str = y + "年"   +  h  + "时" + m + " 分" + s + "秒"  + " 星期" + arr[d.getDay()] ;
+
+           
+
+           return str ;
+
+           
+          
+       }
+
+        box.innerHTML = getcurTime() ;
+
+       
+
+        setInterval(function (params) {
+            box.innerHTML = getcurTime() ;
+        },1000);
+    </script>
+</body>
+</html>

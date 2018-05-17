@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var str = "1erw";
+		
+
+		console.log(str.length);
+
+		console.log(str[0]); //低版本不要这样取对应下标的值
+
+		console.log(str.charAt(2));//低版本下取对应下标的值
+
+		var arr = [ 'm',"i","v"];
+		arr[0] = "z";
+		console.log(arr);//数组定义之后可以改变
+
+		str[0] = "a";
+		console.log(str);//字符串定义之后不可以改变
+
+	</script>
+</body>
+</html>
