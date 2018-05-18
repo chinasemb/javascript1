@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function toFirstUpper(str) {
+                var char = str.charAt(0).toUpperCase();
+
+                return char + str.slice(1);
+            };
+
+        function allUpper(str) {
+            var arr = str.split(" ");
+            var newStr = "" ;
+            for (let i = 0; i < arr.length; i++) {
+                newStr += " " + toFirstUpper(arr[i]) ;
+                
+            }
+            return newStr.slice(1) ;
+        }
+
+        console.log(allUpper('skt t1 faker')) ;
+    </script>
+</body>
+</html>
