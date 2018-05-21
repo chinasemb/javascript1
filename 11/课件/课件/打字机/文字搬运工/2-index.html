@@ -104,47 +104,30 @@
 			<div id="right"></div>
 		</div>
 		<script>
-			// 中间按钮，点击开始打字
-			var btn = document.getElementById("btn");
-			// 左侧的输入框textarea
-			var left = document.getElementById("left");
-			// 右侧出现的字，是一个div
-			var right = document.getElementById("right");
-			// 统计打的字数
-			var text1 = document.getElementById("text");
+			var btn = document.querySelector("#btn") ;
+			var left = document.querySelector("#left") ;
+			var right = document.querySelector("#right") ;
+			var text1 = document.querySelector("#text") ;
 
-			var start = 1;
+			text1.innerHTML = '0/' + left.value.length ;
 
-			var len = left.value.length;  // 最开始的字符串的长度
+			var len = left.value.length ;
 
-			text1.innerHTML = '0/'+len;
-
-			var state = false;  // 状态 记录有没有开启定时器
+			var start = 1 ;
 
 			btn.onclick = function () {
-				if(left.value.length === 0){  //每次重新去找value的length
-					alert('请输入内容');
-					return;
-				}
-				if(state){
-					return;
-				}
-
-				state = true;  // 标记为开启了定时器
-				right.innerHTML = '';
-				var timer = setInterval(function (){
-					var val = left.value; // 每次变化的最新的字符串
-					left.value = val.slice(start);  //'堂是一支独具特色的IT培训团队'
-					right.innerHTML += val.slice(0,1);
-					text1.innerHTML = (len - val.length)+'/'+len;
-					
-					if(left.value.length === 0){
-						// 关闭定时器
-						clearInterval(timer);
-						state = false;
-					}
-				},0)
+				setInterval(function () {
+					var val = left.value;
+					left.value = val.slice(start);
+					right.innerHTML += val.slice(0, 1);
+					text1.innerHTML = (len - val.length) + '/' + len
+				},20)
 			}
+
+
+
+
+			
 
 
 
