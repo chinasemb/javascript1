@@ -139,14 +139,33 @@
 
         var start = 1 ;
         var len = left.value.length ;
+        var state = false ;
+
+
+        text1.innerHTML = '0/' + left.value.length;
 
         btn.onclick = function () {
-            setInterval(function () {
+            if ( left.value.length === 0) {
+                alert('请输入内容!!!')
+            }
+
+            if (state) {
+                return ;
+            }
+            state = true ; //标记状态为 开启了定时器 
+
+            right.innerHTML = '' ;
+            var timer = setInterval(function () {
                 var val = left.value;
                 left.value = val.slice(start);
                 right.innerHTML += val.slice(0, 1);
-                text1.innerHTML = (len - val.length) + "/" + len;
-            },20)
+                text1.innerHTML = (len - val.length) + '/' + len
+                console.log(1);
+                if (left.value.length === 0) {
+                    clearInterval(timer);
+                    state  =  false ;
+                };
+            },10)
         }
 
 

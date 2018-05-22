@@ -115,12 +115,35 @@
 
 			var start = 1 ;
 
+			var state = false ;
+
+			
+
+
 			btn.onclick = function () {
-				setInterval(function () {
+
+				if ( left.value.length === 0) {
+					alert('请输入内容!') ;
+				}
+
+				if (state) {
+					return //当已经开启了一个定时器的时候 , state 的状态为true , 再次点击按钮 ,程序巡行这段代码 , 直接 return ,后续代码
+							//不再执行
+				}
+				state = true ; //标记为开启了定时器的状态
+
+				right.innerHTML = '';
+
+				var timer = setInterval(function () {
 					var val = left.value;
 					left.value = val.slice(start);
 					right.innerHTML += val.slice(0, 1);
 					text1.innerHTML = (len - val.length) + '/' + len
+					console.log(1) ;
+					if ( left.value.length === 0 ) {
+						clearInterval(timer) ;
+						state = false ; //关闭了定时器 时候    state的状态变为false ,以便于 下次再次点击的时候,程序可以再 只开一个定时器  
+					} ;
 				},20)
 			}
 
