@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+
+        /*
+				1. 把数组调换位置
+				2. 把数组每一项根据连接符拼成字符串 把数组转成字符串
+				3. 拼接数组
+				4. 循环数组
+			*/
+
+
+
+        arr11 = ['zhang','wang','li','zhao'] ;
+
+        // 翻转数组 会影响原数组
+
+        arr11.reverse() ;
+
+        console.log(arr11) ;
+
+
+        //把数组转成字符串
+
+
+        
+			// 字符串 -> 数组 str.split('分割符')
+			// 数组 -> 字符串 str.join('连接符')
+
+        arr12 = ['zhang', 'wang', 'li', 'zhao'];
+
+        arr12.join('-');
+
+        var str = arr12.join('-') ;
+
+        arr12.join('');
+
+        var str2 = arr12.join('') ;
+
+        console.log(str) ;
+
+        console.log(str2) ;
+
+
+
+        arr13 = ['zhang', 'wang', 'li', 'zhao'];
+
+
+        var newArr = arr11.concat(arr12) ;   //拼接两个数组不会改变原数组
+
+        console.log(newArr) ;
+
+        var newArr2 = arr11.concat(arr12, 1, 2, 3, 4); // 遇到数组展开，把每一项放在新数组中，
+        //不是数组直接放在新数组中
+
+        console.log(newArr2);
+
+    </script>
+</body>
+</html>
