@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = ['zhang','wang','li','zhao'] ;
+
+        var arr2 = ['skt'] ;
+
+        // map filter forEach 共同点 都可以 遍历数组 取值 下标
+
+        arr.filter(function (item,index) {
+            console.log(item,index) ;
+        })
+
+        arr.map(function (item,index) {
+            console.log(item,index) ;
+        })
+
+        arr.forEach(function (item,index) {
+            console.log(item,index) ;
+        })
+    </script>
+</body>
+</html>
