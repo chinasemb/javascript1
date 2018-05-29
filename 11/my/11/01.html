@@ -64,6 +64,27 @@
 
         console.log(newArr2);
 
+        arr14 = ['zhang', 'wang', 'li', 'zhao'];
+
+        //循环数组 要干什么 ????? 
+                    // 取值 下标
+
+        for (let i = 0; i < arr14.length; i++) {
+            arr14[i]
+            
+        } // 好处 渐变清晰 函数式编程
+        // 不好 写的比较长
+
+        arr14.forEach(function(item,index){ //每次循环内部都会调用这个参数
+        //调用一次这个回调函数,这个回调函数就会得到两个参数
+
+            console.log(item,index);
+            console.log(this) ;
+
+        },[1,2,3]) ;
+
+        //改变forEach糊掉函数的this 指向 ,用到forEach 的第二个参数
+
     </script>
 </body>
 </html>
