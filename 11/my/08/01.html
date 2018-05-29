@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = ['zhang','wang','li','zhao'];
+        var arr2 = ['zhang','wang','li','zhao'];
+        var arr3 = ['zhang','wang','li','zhao'];
+        var arr4 = ['zhang','wang','li','zhao'];
+
+        //仓库 书架
+
+        /*
+            1. 向数组的后面添加一个或者多个元素
+            2. 向数组前面添加一个或者多个元素
+            3. 删除数组中 的最后一个元素
+            4. 删除数组中的 第一个元素
+            5. 取出指定位置的元素 (开始,结束) 
+            6. 指定位置的元素替换为别的元素
+            7. 删除指定位置的元素
+
+
+        */
+        
+        
+        arr.push("abc"); //向数组后追加了元素,改变了原数组
+
+        var n = arr.push('iop');//push的返回值是追加后数组的长度
+
+        console.log(arr);
+
+        console.log(n);
+
+
+
+        arr2.unshift(1,2,3); // 向数组前追加了元素,改变了原数组
+
+        console.log(arr2);
+
+        var n2 = arr2.unshift(1, 2, 3); //push的返回值是追加后数组的长度
+
+        console.log(n2) ;
+
+
+
+        var n3 = arr3.pop();//这样把方法运行 赋值给变量的时候 ,也算运行
+        //返回值是刚才删除的那个元素
+
+        console.log(arr3) ;
+
+        
+
+        console.log(n3) ;
+
+
+
+
+
+        
+        var n4 = arr4.shift(); //删除第一个元素 , 改变了原数组
+        //这样把方法运行 赋值给变量的时候 ,也算运行
+
+        console.log(arr4) ;
+
+        console.log(n4) ;
+    </script>
+</body>
+</html>

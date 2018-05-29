@@ -1,0 +1,70 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>Document</title>
+ </head>
+ <body>
+     <script>
+         var arr5 = ['zhang','wang','li','zhao'] ;
+
+         //5 取出指定(开始,结束) 位置的元素 不改变原数组
+
+         arr5.slice(1,2) ;
+
+         var newArr = arr5.slice(1,2) ;
+
+         console.log(newArr) ;
+
+
+         var newArr2 = arr5.slice(1) ;//从指定位置 截取到最后
+
+         console.log(newArr2);
+
+         console.log(arr5) ;
+
+
+
+         var arr6 = ['zhang', 'wang', 'li', 'zhao'];
+
+        //6  删除第二项的元素
+
+         arr6.splice(2) ; // 从指定位置一直删除到最后 会改变原数组
+
+         console.log(arr6);
+
+         arr6.splice(0,1); //指定删除的个数
+
+         console.log(arr6) ;
+
+         arr6.splice(0,0) ; //不删除元素
+
+         var newArr = arr6.splice(0) ; //返回值是一个数组 , 数组的值是删除的元素
+
+         console.log(newArr) ;
+        
+
+        //7 删除并且替换指定位置的值   指定位置插入一个元素
+
+         var arr7 = ['zhang', 'wang', 'li', 'zhao'];
+        
+        arr7.splice(2,1,'skt') ;
+
+        console.log(arr7) ;
+        
+        arr7.splice(2,1,'bang','faker') ;
+
+        console.log(arr7) ;
+        
+        arr7.splice(2,0,'uzi','clearlove') ; //指定位置前插入 一个或多个元素
+
+        console.log(arr7) ;
+
+
+
+
+     </script>
+ </body>
+ </html>
