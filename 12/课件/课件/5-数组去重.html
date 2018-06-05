@@ -13,7 +13,8 @@
 				var obj = {};
 				var i = 0,len=arr.length;
 				for(; i < len; i++ ){
-					// 把arr没的一项作为对象的key值，如果这一项没有作为key值，则添加这个属性，如果已经有了，就不添加了，说明之前已经添加过了
+					// 把arr没的一项作为对象的key值，如果这一项没有作为key值，
+					//则添加这个属性，如果已经有了，就不添加了，说明之前已经添加过了
 					var s = (typeof arr[i])+'---'+arr[i]
 					if(!obj[s]){
 						newArr.push(arr[i]);

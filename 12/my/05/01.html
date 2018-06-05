@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        var arr = [1, 2, 3, 3, 4, 6, 76, 5, 4, 21, 1, 2, 3, 3, 4, 1, 1, 1, "1"];
+        var newArr = [];
+        
+        var obj = {} ;
+        
+        for (let i = 0; i < arr.length; i++) {
+            //把 arr的每一项作为对象的key值,
+            //如果这一项 没有作为key值,则添加这个属性名,
+            //如果已经有了,就不添加了
+            
+            console.log(typeof (arr[i])) ;
+            var s = (typeof (arr[i])) +'---'+arr[i]
+            console.log(s) ; 
+             
+            if (!obj[s]) {
+                newArr.push(arr[i]) ;
+                obj[s] = true ; // 把这一项作为对象的key值,在对象中占一个位置
+                                // 都是键值对的形式 ,赋予键一个值,都可以什么
+                                //对象的key 值类型都是字符串类型
+
+            }
+            
+            
+        }
+
+        console.log(newArr) ;
+        
+        console.log(obj) ;
+
+
+
+    </script>
+</body>
+</html>

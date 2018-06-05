@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = [5, 3, 8, 9, 4, 6, 76, 5, 4, 21, 1, 2, 3, 3, 4, 1, 1, 1, "1"];
+
+        /*冒泡排序
+
+            排序 从大到小  从小到大  随机排序
+
+            冒泡排序 : 依次比较数组的两个值按照大小条件交换位置 ,持续重复
+                       的比较 ,直到没有再需要交换为止 , 说明该数组排序完成了.
+
+
+                     1.  比较数组中的每一对相邻的元素,
+                       如果第一个比第二个大,就交换他们的位置
+                       从数组的第一对到结尾的最后一对
+                     2.  经过一轮比较之后,会把最大的排到末尾
+                     3. 针对所有的元素 重复第一步 ,除了最后一个 ,(因为已经是最后一个)
+                     4. 持续每次对越来越少的元素重复第一步,直到没有
+                        任何一对数字需要比较
+
+        */
+
+        //拿出数组中的2个值,进行比较,如果数组中后一个比前一个小 ,交换位置
+        
+        //1
+        // if (arr[0] > arr[1]) { //交换位置
+        //     var c = arr[0] ;
+
+        //     arr[0] = arr[1] ;
+
+        //     arr[1] = c ;
+        // }
+
+        //2
+        // if (arr[1] > arr[2]) { //交换位置
+        //     var d = arr[1] ;
+
+        //     arr[2] = arr[1] ;
+
+        //     arr[2] = d ;
+        // }
+        
+        //3
+        // if (arr[2] > arr[3]) { //交换位置
+        //     var e = arr[2] ;
+
+        //     arr[3] = arr[2] ;
+
+        //     arr[2] = e ;
+        // }
+
+        // console.log(arr) ;
+        
+
+
+        /*
+            每循环一次 ,都会找到最大的 ,进行几轮呢?  length-1 轮
+
+        */
+
+        for (let j = 0; j < arr.length-1; j++) {
+
+            for (let i = 0; i < arr.length - 1 -j; i++) {
+                if (arr[i] > arr[i + 1]) {
+                    var c = arr[i];
+                    arr[i] = arr[i + 1];
+                    arr[i + 1] = c;
+                }
+
+            }
+            
+        }
+
+        console.log(arr) ;
+
+    </script>
+</body>
+</html>

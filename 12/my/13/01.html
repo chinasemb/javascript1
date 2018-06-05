@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            快速排序 : 
+                    先从数组中找一个基准值 ,
+                    如果小于基准值 ,放在左边[]
+                            从左边的[]中,再找一个基准值
+                                    如果小于基准值 ,放在左边[]
+                                    如果大于基准值,放在右边[]
+                    如果大于基准值,放在右边[]
+                                    如果小于基准值 ,放在左边[]
+                                    如果大于基准值,放在右边[]
+        
+
+        [3]  比较arr ----> [-]  [+]
+
+        */
+
+        var arr = [3, 1, 6, 2, 0, 5, 7, 8, 10, 4];
+
+        function sorts(arr) {
+
+
+            if (arr.length <= 1) {
+                return arr ;
+            }
+            
+            var pivot = arr.shift();
+
+            var left = [];
+            var right = [];
+
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] < pivot) {
+                    left.push(arr[i])
+                } else {
+                    right.push(arr[i])
+                }
+            }
+
+            return sorts(left).concat(pivot,sorts(right)) ;
+        }
+        console.log(sorts(arr)) ;
+
+        
+        
+    </script>
+</body>
+</html>
