@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = [1, 2, 3, 3, 4, 6, 76, 5, 4, 21, 1, 2, 3, 3, 4, 1, 1, 1, "1"];
+
+        // 利用特性 : 对象的key值是惟一的
+
+        var obj = {
+            a:1,
+            a:10,
+            a:20
+        }
+
+        // obj.b = 'momo' ; 无情的把原有的所有的属性覆盖掉
+
+        console.log(obj.b) ; //没有b这个属性obj.b 返回 undefined
+        if (!obj.b) {
+            obj.b = 'momo' ;
+        }
+        
+        console.log(obj) ;
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = [1, 2, 3, 3, 4, 6, 76, 5, 4, 21, 1, 2, 3, 3, 4, 1, 1, 1, "1"] ;
+
+        var newArr = [arr[0]] ;
+
+        /*
+            newArr = [1] ;
+
+            开启for循环
+                arr[1] 2 
+                newArr = [1,2]
+
+                arr[2] 3 
+                newArr = [1,2,3]
+
+                arr[3] 3 //已经存在不放在新的数组中
+                newArr = [1,2,3]
+
+
+        */
+
+        for (let i = 1; i < arr.length; i++) {
+            
+
+            var isExsit = false ; //定义一个是否存在的状态 不存在的状态
+
+            for (let j = 0; j < newArr.length; j++) {
+                if (arr[i] === newArr[j]) { //说明已经存在新的数组了
+                    isExsit = true ;
+                    break ;
+                    
+                }
+                
+            }
+            //只有等上面的内层循环循环完了之后 ,才知道有没有重复项
+            
+            if (!isExsit) { //如果没有存在 把它push 到新的数组中
+                newArr.push(arr[i]) ;
+                
+            }
+        }
+
+        console.log(newArr) ;
+    </script>
+</body>
+</html>
