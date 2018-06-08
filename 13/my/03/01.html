@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = [3, 1, 6, 2, 0, 5, 7, 8, 4, 10];
+
+        arr.sort(function (a,b) {  // 回调函数会接收2个数组中的值 作为参数
+
+            //这两个值要不要交换位置,取决于 sort 的这个回调函数的返回值
+            // 负数 整数 0 
+           // console.log(a,b)
+           //return  -3 ;// 这两个值不交换位置
+           //return  0 ;// 这两个值不交换位置
+           //return  123 ;// 这两个值交换位置 ,是整个顺序的倒置 
+             return b-a ;   //返回值大于0,b>a,交换位置,b在前边,即大数在前边,
+             //从大到小排序
+             //return a-b  返回值大于0,a>b,交换位置,b在前边,即小数在前边,
+             //从大到小排序
+        })
+
+        console.log(arr) ;
+    </script>
+</body>
+</html>
