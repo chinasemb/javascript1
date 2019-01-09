@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var
+      arr = [
+        1,
+        1,
+        'true',
+        'true',
+        true,
+        true,
+        15,
+        15,
+        false,
+        false,
+        undefined,
+        undefined,
+        null,
+        null,
+        NaN,
+        NaN,
+        'NaN',
+        0,
+        0,
+        'a',
+        'a', {}, {}
+      ];
+
+
+
+    /* 1 start*/
+    // function unique(arr) {
+    //   return Array.from(new Set(arr))
+    // }
+
+    // console.log(unique(arr));
+
+    //13
+    //利用 ES 6 的 Set 去重不考虑兼容性,这种去重的方法代码量最少,这种方法不能去掉"{}" 空对象,
+    /* 1 end*/
+
+    /* 2start  */
+      // function unique(arr) {
+      //   for (let i = 0; i < arr.length; i++) {
+      //     for (let j = i + 1 ; j < arr.length; j++) {
+      //       if (arr[i] == arr[j]) {
+      //         arr.splice(j,1);
+      //         j --;
+      //       }
+            
+      //     }
+          
+      //   }
+      //   return arr
+      // }
+
+
+      // console.log(unique(arr));
+
+      //11  不能 去重  NaN
+      
+      //双层 for 循环,外层循环元素,内层循环时比较值,值相同时删除这个值,j--
+
+    /* 2end */
+
+    /* 3 start  */
+        // function unique(arr) {
+        //   if (!Array.isArray(arr)) {
+        //     console.log('type error');
+        //     return
+        //   }
+
+        //   var array = [];
+
+        //   for (let i = 0; i < arr.length; i++) {
+        //     if (array.indexOf(arr[i]) === -1) {
+        //       array.push(arr[i])
+        //     }
+            
+        //   }
+
+        //   return array;
+
+        // }
+
+        // console.log(unique(arr));
+
+        //14 认为 : NaN === NaN , {} === {}.
+        //新建一个空数组,for循环原数组,判断结果数组是否存在 当前元素,如果有相同值跳过,不同值push 进数组
+        
+
+    /* 3 end  */
+
+    /* 4 start */
+
+          // function unique(arr) {
+          //   if (!Array.isArray(arr)) {
+          //     console.log('type error');
+          //     return
+          //   }
+
+          //   arr = arr.sort();
+          //   var array = [arr[0]];
+
+          //   for (let i = 1; i < arr.length; i++) {
+          //     if (arr[i] !== arr[i-1]) {
+          //       array.push(arr[i])
+          //     }
+              
+          //   }
+
+          //   return array
+          // }
+
+          // console.log(unique(arr));
+          //14 无法去重  NaN 和 {}
+
+          //利用 sort 排序方法,遍历排序结果,相邻元素对比
+
+
+
+    /* 4 end */
+
+    /* 5start */
+
+          // function unique(arr) {
+          //   if (!Array.isArray(arr)) {
+          //     console.log('type error');
+          //     return
+          //   }
+          //   let array = [];
+          //   let obj = {};
+
+          //   for (let i = 0; i < arr.length; i++) {
+          //     if (!obj[arr[i]]) {
+          //       array.push(arr[i])
+          //       obj[arr[i]] = 1
+          //     }else{
+          //       obj[arr[i]] ++
+          //     }
+              
+          //   } 
+          //   return array
+          // }
+
+          // console.log(unique(arr));
+
+          //10 对象的属性不能相同 
+          
+          
+
+    /* 5end */
+
+    /* 5 start */
+
+          // function unique (arr) {
+          //   if (!Array.isArray(arr)) {
+          //     console.log('type error');
+          //     return
+          //   }
+          //   let array = [];
+          //   for (let i = 0; i < arr.length; i++) {
+          //     if (!array.includes(arr[i])) {
+          //       array.push(arr[i])
+          //     }
+              
+          //   }
+          //   return array
+          // }
+
+          // console.log(unique(arr));
+
+          //13  无法去重  {}
+          //  利用 includes
+          
+    /* 5 start */
+
+    /* 6 start  */
+          function unique (arr) {
+            return [...new Set(arr)]
+          }
+
+          console.log(unique(arr));
+
+          //13  {}
+          
+
+
+    /* 6 end  */
+  </script>
+</body>
+
+</html>
